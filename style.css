@@ -8,11 +8,8 @@
 
 :root {
     --bg-color: #ffffff;        /* Чисто бяло */
-    --card-bg: #ffffff;         /* Чисто бяло */
     --text-main: #000000;       /* Чисто черно */
-    --text-muted: #000000;      /* Чисто черно */
-    --accent-color: #c8c8c8;    /* Сиво за акценти, рамки и детайли */
-    --border-color: #c8c8c8;    /* Сиво за линии и контури */
+    --border-color: #000000;    /* Чисто черно за сдържани акцентни линии */
 }
 
 body {
@@ -26,8 +23,8 @@ body {
 
 /* HEADER & NAVIGATION */
 .header {
-    background-color: var(--card-bg);
-    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    border-bottom: 2px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -44,7 +41,7 @@ body {
 
 .logo {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--text-main);
     text-decoration: none;
     letter-spacing: 0.5px;
@@ -63,12 +60,12 @@ body {
 .nav-link {
     text-decoration: none;
     color: var(--text-main);
-    font-weight: 500;
-    transition: opacity 0.3s ease;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
 }
 
 .nav-link:hover {
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .burger {
@@ -117,28 +114,26 @@ body {
 .btn {
     display: inline-block;
     padding: 0.8rem 1.8rem;
-    border-radius: 8px;
-    font-weight: 600;
+    border-radius: 0px; /* Изчистен контур без закръгления */
+    font-weight: 700;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     cursor: pointer;
 }
 
-/* Основен бутон - Сив детайл с черен текст */
+/* Основен черен бутон */
 .btn-primary {
-    background-color: var(--accent-color);
-    color: var(--text-main);
-    border: 2px solid var(--accent-color);
+    background-color: var(--text-main);
+    color: var(--bg-color);
+    border: 2px solid var(--text-main);
 }
 
 .btn-primary:hover {
-    background-color: var(--text-main);
-    color: var(--bg-color);
-    border-color: var(--text-main);
-    transform: translateY(-2px);
+    background-color: var(--bg-color);
+    color: var(--text-main);
 }
 
-/* Вторичен бутон - Чисто бял със сива рамка */
+/* Вторичен бутон с черна рамка */
 .btn-outline {
     background-color: var(--bg-color);
     color: var(--text-main);
@@ -146,14 +141,14 @@ body {
 }
 
 .btn-outline:hover {
-    border-color: var(--text-main);
-    transform: translateY(-2px);
+    background-color: var(--text-main);
+    color: var(--bg-color);
 }
 
 /* FOOTER */
 .footer {
-    background-color: var(--card-bg);
-    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    border-top: 2px solid var(--border-color);
     padding: 3rem 2rem 2rem 2rem;
     text-align: center;
 }
@@ -172,27 +167,25 @@ body {
     gap: 1.5rem;
 }
 
-/* Социални бутони като сиви балончета/детайли */
+/* Черни контрастни иконки */
 .social-icon {
     width: 44px;
     height: 44px;
-    border-radius: 50%;
-    background-color: var(--accent-color);
-    border: 1px solid var(--accent-color);
+    border-radius: 0px;
+    background-color: var(--bg-color);
+    border: 2px solid var(--text-main);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-main);
     font-size: 1.2rem;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .social-icon:hover {
     background-color: var(--text-main);
     color: var(--bg-color);
-    border-color: var(--text-main);
-    transform: translateY(-3px);
 }
 
 .footer-links {
@@ -206,12 +199,13 @@ body {
 .footer-link {
     text-decoration: none;
     color: var(--text-main);
+    font-weight: 600;
     font-size: 0.9rem;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
 }
 
 .footer-link:hover {
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .copyright {
@@ -231,11 +225,11 @@ body {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--card-bg);
+        background-color: var(--bg-color);
         flex-direction: column;
         align-items: center;
         padding: 1.5rem 0;
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 2px solid var(--border-color);
         display: none;
     }
 
