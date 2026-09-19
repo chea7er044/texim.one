@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         burgerBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             
-            // Смяна на иконата между хамбургер (три ленти) и 'X'
+            // Смяна на иконата при отваряне/затваряне
             const icon = burgerBtn.querySelector('i');
             if (icon) {
                 if (navMenu.classList.contains('active')) {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Плавна навигация (Smooth Scroll) и автоматично затваряне на мобилното меню
+    // 2. Плавна навигация (Smooth Scroll)
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     
     anchorLinks.forEach(anchor => {
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         behavior: 'smooth'
                     });
 
-                    // Затваряне на мобилното меню при преход към секция
+                    // Затваряне на мобилното меню при клик върху линк
                     if (navMenu && navMenu.classList.contains('active')) {
                         navMenu.classList.remove('active');
                         const icon = burgerBtn ? burgerBtn.querySelector('i') : null;
