@@ -35,22 +35,23 @@ body {
 .navbar {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0.8rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--text-light);
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    letter-spacing: 0.5px;
 }
 
-.logo span {
-    color: var(--text-light);
+/* Ограничение за размера на логото */
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 .nav-menu {
@@ -103,46 +104,6 @@ body {
 .hero-subtitle {
     font-size: 1.25rem;
     color: var(--text-dark);
-    margin-bottom: 2.5rem;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-block;
-    padding: 0.8rem 1.8rem;
-    border-radius: 0px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    cursor: pointer;
-}
-
-.btn-primary {
-    background-color: var(--text-dark);
-    color: var(--text-light);
-    border: 2px solid var(--text-dark);
-}
-
-.btn-primary:hover {
-    background-color: var(--bg-main);
-    color: var(--text-dark);
-}
-
-.btn-outline {
-    background-color: var(--bg-main);
-    color: var(--text-dark);
-    border: 2px solid var(--border-color);
-}
-
-.btn-outline:hover {
-    background-color: var(--text-dark);
-    color: var(--text-light);
 }
 
 /* FOOTER (Черен фон / Бял текст) */
@@ -167,7 +128,6 @@ body {
     gap: 1.5rem;
 }
 
-/* Иконки във футъра - Черни с бяла рамка, ховър обръща цветовете */
 .social-icon {
     width: 44px;
     height: 44px;
@@ -186,26 +146,6 @@ body {
 .social-icon:hover {
     background-color: var(--text-light);
     color: var(--bg-dark);
-}
-
-.footer-links {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.footer-link {
-    text-decoration: none;
-    color: var(--text-light);
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: opacity 0.2s ease;
-}
-
-.footer-link:hover {
-    opacity: 0.6;
 }
 
 .copyright {
@@ -243,14 +183,5 @@ body {
 
     .hero-subtitle {
         font-size: 1.05rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .btn {
-        width: 100%;
     }
 }
