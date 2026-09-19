@@ -134,8 +134,8 @@ body {
 }
 
 /* Чисто бял цвят и премахване на синьото подчертаване */
-.footer-link, 
-.footer-link:visited, 
+.footer-link,
+.footer-link:visited,
 .footer-link:active {
     color: #ffffff !important;
     text-decoration: none !important;
@@ -182,7 +182,6 @@ body {
     }
 
     .footer-links {
-        flex-direction: column;
-        gap: 1rem;
+        gap: 1.2rem;
     }
 }
