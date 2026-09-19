@@ -7,14 +7,12 @@
 }
 
 :root {
-    --bg-color: #f8f9fa;
-    --card-bg: #ffffff;
-    --text-main: #212529;
-    --text-muted: #6c757d;
-    --accent-color: #0d6efd;
-    --accent-hover: #0b5ed7;
-    --border-color: #e9ecef;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --bg-color: #ffffff;        /* Чисто бяло */
+    --card-bg: #ffffff;         /* Чисто бяло */
+    --text-main: #000000;       /* Чисто черно */
+    --text-muted: #000000;      /* Чисто черно */
+    --accent-color: #c8c8c8;    /* Сиво за акценти, рамки и детайли */
+    --border-color: #c8c8c8;    /* Сиво за линии и контури */
 }
 
 body {
@@ -33,7 +31,6 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow);
 }
 
 .navbar {
@@ -54,7 +51,7 @@ body {
 }
 
 .logo span {
-    color: var(--accent-color);
+    color: var(--text-main);
 }
 
 .nav-menu {
@@ -67,11 +64,11 @@ body {
     text-decoration: none;
     color: var(--text-main);
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .nav-link:hover {
-    color: var(--accent-color);
+    opacity: 0.6;
 }
 
 .burger {
@@ -89,7 +86,7 @@ body {
     justify-content: center;
     text-align: center;
     padding: 6rem 2rem;
-    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    background-color: var(--bg-color);
 }
 
 .hero-content {
@@ -101,11 +98,12 @@ body {
     font-weight: 800;
     margin-bottom: 1rem;
     line-height: 1.2;
+    color: var(--text-main);
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
-    color: var(--text-muted);
+    color: var(--text-main);
     margin-bottom: 2.5rem;
 }
 
@@ -126,20 +124,23 @@ body {
     cursor: pointer;
 }
 
+/* Основен бутон - Сив детайл с черен текст */
 .btn-primary {
     background-color: var(--accent-color);
-    color: #ffffff;
+    color: var(--text-main);
     border: 2px solid var(--accent-color);
 }
 
 .btn-primary:hover {
-    background-color: var(--accent-hover);
-    border-color: var(--accent-hover);
+    background-color: var(--text-main);
+    color: var(--bg-color);
+    border-color: var(--text-main);
     transform: translateY(-2px);
 }
 
+/* Вторичен бутон - Чисто бял със сива рамка */
 .btn-outline {
-    background-color: transparent;
+    background-color: var(--bg-color);
     color: var(--text-main);
     border: 2px solid var(--border-color);
 }
@@ -171,12 +172,13 @@ body {
     gap: 1.5rem;
 }
 
+/* Социални бутони като сиви балончета/детайли */
 .social-icon {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
+    background-color: var(--accent-color);
+    border: 1px solid var(--accent-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -187,9 +189,9 @@ body {
 }
 
 .social-icon:hover {
-    background-color: var(--accent-color);
-    color: #ffffff;
-    border-color: var(--accent-color);
+    background-color: var(--text-main);
+    color: var(--bg-color);
+    border-color: var(--text-main);
     transform: translateY(-3px);
 }
 
@@ -203,17 +205,17 @@ body {
 
 .footer-link {
     text-decoration: none;
-    color: var(--text-muted);
+    color: var(--text-main);
     font-size: 0.9rem;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .footer-link:hover {
-    color: var(--accent-color);
+    opacity: 0.6;
 }
 
 .copyright {
-    color: var(--text-muted);
+    color: var(--text-main);
     font-size: 0.85rem;
     margin-top: 1rem;
 }
@@ -235,7 +237,6 @@ body {
         padding: 1.5rem 0;
         border-bottom: 1px solid var(--border-color);
         display: none;
-        box-shadow: var(--shadow);
     }
 
     .nav-menu.active {
