@@ -7,24 +7,26 @@
 }
 
 :root {
-    --bg-color: #ffffff;        /* Чисто бяло */
-    --text-main: #000000;       /* Чисто черно */
-    --border-color: #000000;    /* Чисто черно за сдържани акцентни линии */
+    --bg-main: #ffffff;         /* Чисто бял фон за тялото */
+    --bg-dark: #000000;         /* Чисто черен фон за хедър/футър */
+    --text-dark: #000000;       /* Текст за белия фон */
+    --text-light: #ffffff;      /* Текст за черния фон */
+    --border-color: #000000;    /* Черни линии */
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-main);
+    background-color: var(--bg-main);
+    color: var(--text-dark);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     line-height: 1.6;
 }
 
-/* HEADER & NAVIGATION */
+/* HEADER & NAVIGATION (Черен фон / Бял текст) */
 .header {
-    background-color: var(--bg-color);
-    border-bottom: 2px solid var(--border-color);
+    background-color: var(--bg-dark);
+    border-bottom: 1px solid #333333;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -42,13 +44,13 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--text-main);
+    color: var(--text-light);
     text-decoration: none;
     letter-spacing: 0.5px;
 }
 
 .logo span {
-    color: var(--text-main);
+    color: var(--text-light);
 }
 
 .nav-menu {
@@ -59,23 +61,23 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-main);
+    color: var(--text-light);
     font-weight: 600;
     transition: opacity 0.2s ease;
 }
 
 .nav-link:hover {
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .burger {
     display: none;
     cursor: pointer;
     font-size: 1.5rem;
-    color: var(--text-main);
+    color: var(--text-light);
 }
 
-/* HERO SECTION */
+/* HERO SECTION (Бял фон / Черен текст) */
 .hero {
     flex: 1;
     display: flex;
@@ -83,7 +85,7 @@ body {
     justify-content: center;
     text-align: center;
     padding: 6rem 2rem;
-    background-color: var(--bg-color);
+    background-color: var(--bg-main);
 }
 
 .hero-content {
@@ -95,12 +97,12 @@ body {
     font-weight: 800;
     margin-bottom: 1rem;
     line-height: 1.2;
-    color: var(--text-main);
+    color: var(--text-dark);
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
-    color: var(--text-main);
+    color: var(--text-dark);
     margin-bottom: 2.5rem;
 }
 
@@ -114,41 +116,39 @@ body {
 .btn {
     display: inline-block;
     padding: 0.8rem 1.8rem;
-    border-radius: 0px; /* Изчистен контур без закръгления */
+    border-radius: 0px;
     font-weight: 700;
     text-decoration: none;
     transition: all 0.2s ease;
     cursor: pointer;
 }
 
-/* Основен черен бутон */
 .btn-primary {
-    background-color: var(--text-main);
-    color: var(--bg-color);
-    border: 2px solid var(--text-main);
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    border: 2px solid var(--text-dark);
 }
 
 .btn-primary:hover {
-    background-color: var(--bg-color);
-    color: var(--text-main);
+    background-color: var(--bg-main);
+    color: var(--text-dark);
 }
 
-/* Вторичен бутон с черна рамка */
 .btn-outline {
-    background-color: var(--bg-color);
-    color: var(--text-main);
+    background-color: var(--bg-main);
+    color: var(--text-dark);
     border: 2px solid var(--border-color);
 }
 
 .btn-outline:hover {
-    background-color: var(--text-main);
-    color: var(--bg-color);
+    background-color: var(--text-dark);
+    color: var(--text-light);
 }
 
-/* FOOTER */
+/* FOOTER (Черен фон / Бял текст) */
 .footer {
-    background-color: var(--bg-color);
-    border-top: 2px solid var(--border-color);
+    background-color: var(--bg-dark);
+    border-top: 1px solid #333333;
     padding: 3rem 2rem 2rem 2rem;
     text-align: center;
 }
@@ -167,25 +167,25 @@ body {
     gap: 1.5rem;
 }
 
-/* Черни контрастни иконки */
+/* Иконки във футъра - Черни с бяла рамка, ховър обръща цветовете */
 .social-icon {
     width: 44px;
     height: 44px;
     border-radius: 0px;
-    background-color: var(--bg-color);
-    border: 2px solid var(--text-main);
+    background-color: var(--bg-dark);
+    border: 2px solid var(--text-light);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-main);
+    color: var(--text-light);
     font-size: 1.2rem;
     text-decoration: none;
     transition: all 0.2s ease;
 }
 
 .social-icon:hover {
-    background-color: var(--text-main);
-    color: var(--bg-color);
+    background-color: var(--text-light);
+    color: var(--bg-dark);
 }
 
 .footer-links {
@@ -198,18 +198,18 @@ body {
 
 .footer-link {
     text-decoration: none;
-    color: var(--text-main);
+    color: var(--text-light);
     font-weight: 600;
     font-size: 0.9rem;
     transition: opacity 0.2s ease;
 }
 
 .footer-link:hover {
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .copyright {
-    color: var(--text-main);
+    color: var(--text-light);
     font-size: 0.85rem;
     margin-top: 1rem;
 }
@@ -225,11 +225,11 @@ body {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--bg-color);
+        background-color: var(--bg-dark);
         flex-direction: column;
         align-items: center;
         padding: 1.5rem 0;
-        border-bottom: 2px solid var(--border-color);
+        border-bottom: 1px solid #333333;
         display: none;
     }
 
