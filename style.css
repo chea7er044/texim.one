@@ -105,9 +105,9 @@ body {
     color: var(--text-dark);
 }
 
-/* FOOTER (Линкове подравнени в центъра) */
+/* FOOTER */
 .footer {
-    background-color: var(--bg-dark);
+    background-color: #000000;
     border-top: 1px solid #333333;
     padding: 2.5rem 2rem;
     text-align: center;
@@ -121,17 +121,24 @@ body {
     align-items: center;
 }
 
+/* Хоризонтално подреждане на списъка */
 .footer-links {
-    display: flex;
-    gap: 1.8rem;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 2rem;
     list-style: none;
+    padding: 0;
+    margin: 0;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.footer-link {
-    text-decoration: none;
-    color: var(--text-light);
+/* Чисто бял цвят и премахване на синьото подчертаване */
+.footer-link, 
+.footer-link:visited, 
+.footer-link:active {
+    color: #ffffff !important;
+    text-decoration: none !important;
     font-weight: 600;
     font-size: 0.9rem;
     transition: opacity 0.2s ease;
@@ -139,6 +146,8 @@ body {
 
 .footer-link:hover {
     opacity: 0.6;
+    color: #ffffff !important;
+    text-decoration: none !important;
 }
 
 /* RESPONSIVE DESIGN */
