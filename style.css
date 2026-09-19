@@ -1,187 +1,34 @@
-/* CSS RESET & VARS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-:root {
-    --bg-main: #ffffff;         /* Чисто бял фон за тялото */
-    --bg-dark: #000000;         /* Чисто черен фон за хедър/футър */
-    --text-dark: #000000;       /* Текст за белия фон */
-    --text-light: #ffffff;      /* Текст за черния фон */
-    --border-color: #000000;    /* Черни линии */
-}
-
-body {
-    background-color: var(--bg-main);
-    color: var(--text-dark);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    line-height: 1.6;
-}
-
-/* HEADER & NAVIGATION */
-.header {
-    background-color: var(--bg-dark);
-    border-bottom: 1px solid #333333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0.8rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.logo-img {
-    height: 40px;
-    width: auto;
-    display: block;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: var(--text-light);
-    font-weight: 600;
-    transition: opacity 0.2s ease;
-}
-
-.nav-link:hover {
-    opacity: 0.6;
-}
-
-.burger {
-    display: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: var(--text-light);
-}
-
-/* HERO SECTION */
-.hero {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 6rem 2rem;
-    background-color: var(--bg-main);
-}
-
-.hero-content {
-    max-width: 800px;
-}
-
-.hero-title {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    color: var(--text-dark);
-}
-
-.hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--text-dark);
-}
-
-/* FOOTER */
-.footer {
-    background-color: #000000;
-    border-top: 1px solid #333333;
-    padding: 2.5rem 2rem;
-    text-align: center;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Хоризонтално подреждане на списъка */
-.footer-links {
+/* ПРИНУДИТЕЛНО СТИЛИЗИРАНЕ НА ФУТЪРА */
+footer ul, 
+footer ul.footer-links {
     display: flex !important;
     flex-direction: row !important;
-    gap: 2rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 2rem !important;
+    list-style: none !important;
+    list-style-type: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-/* Чисто бял цвят и премахване на синьото подчертаване */
-.footer-link,
-.footer-link:visited,
-.footer-link:active {
+footer ul li {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+footer a, 
+footer a:link, 
+footer a:visited, 
+footer a:hover, 
+footer a:active {
     color: #ffffff !important;
     text-decoration: none !important;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: opacity 0.2s ease;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
 }
 
-.footer-link:hover {
-    opacity: 0.6;
-    color: #ffffff !important;
-    text-decoration: none !important;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-    .burger {
-        display: block;
-    }
-
-    .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--bg-dark);
-        flex-direction: column;
-        align-items: center;
-        padding: 1.5rem 0;
-        border-bottom: 1px solid #333333;
-        display: none;
-    }
-
-    .nav-menu.active {
-        display: flex;
-    }
-
-    .hero-title {
-        font-size: 2.2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.05rem;
-    }
-
-    .footer-links {
-        gap: 1.2rem;
-    }
+footer a:hover {
+    opacity: 0.6 !important;
 }
