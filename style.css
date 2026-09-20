@@ -54,14 +54,14 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1rem; /* Намалено разстояние между линковете на 1rem */
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 700;
-    font-size: 17px; /* Намален размер на навигацията до 17px */
+    font-size: 17px; /* Размер на навигацията 17px */
     letter-spacing: 0.5px;
     transition: opacity 0.2s ease;
 }
@@ -147,7 +147,7 @@ footer ul.footer-links {
     flex-direction: row !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 2rem !important;
+    gap: 1rem !important; /* Намалено разстояние между линковете на 1rem */
     list-style: none !important;
     padding: 0 !important;
     margin: 0 !important;
@@ -169,7 +169,7 @@ footer a:active {
     font-weight: 600 !important;
     font-size: 17px !important; /* Размер на текста във футъра 17px */
     letter-spacing: 0.3px !important;
-    line-height: 1 !important;   /* Премахва допълнителния празен отстъп на шрифта отгоре */
+    line-height: 1 !important;
     transition: opacity 0.2s ease !important;
 }
 
@@ -200,6 +200,7 @@ footer a:hover {
         padding: 1.5rem 0;
         border-bottom: 1px solid var(--border-color);
         display: none;
+        gap: 1rem;
     }
 
     .nav-menu.active {
@@ -223,6 +224,6 @@ footer a:hover {
 
     footer ul, 
     footer ul.footer-links {
-        gap: 1.2rem !important;
+        gap: 0.8rem !important;
     }
 }
