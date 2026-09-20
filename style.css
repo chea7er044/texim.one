@@ -9,6 +9,7 @@
 :root {
     --bg-color: #ffffff;
     --text-color: #000000;
+    --border-color: #000000;
 }
 
 body {
@@ -17,7 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
 /* HEADER & NAVIGATION */
@@ -68,7 +69,14 @@ body {
     opacity: 0.5;
 }
 
-/* MAIN CONTENT - COMPACT FIT */
+.burger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
+/* MAIN CONTENT AREA - ФИТВА СЕ БЕЗ СКРОЛВАНЕ */
 .page-content {
     flex: 1;
     width: 100%;
@@ -81,13 +89,13 @@ body {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
-    padding: 0.5rem 2rem;
+    padding: 0.2rem 2rem;
 }
 
 .products-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem 1.5rem;
+    gap: 0.8rem 1.5rem;
 }
 
 .product-card {
@@ -104,10 +112,10 @@ body {
 
 .product-image-wrapper {
     width: 100%;
-    height: 31vh;
-    max-height: 320px;
+    height: 29vh; /* Динамична височина според екрана */
+    max-height: 290px;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 16px; /* Заоблени ъгли 16px */
     background-color: #f5f5f5;
 }
 
@@ -201,10 +209,17 @@ body {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .product-image-wrapper {
+        height: 25vh;
+    }
 }
 
 @media (max-width: 600px) {
     .products-grid {
         grid-template-columns: repeat(1, 1fr);
+    }
+    .product-image-wrapper {
+        height: auto;
+        aspect-ratio: 4 / 5;
     }
 }
