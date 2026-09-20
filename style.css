@@ -31,9 +31,9 @@ body {
 }
 
 .navbar {
-    max-width: 100%; /* Разпъване на хедеровия съдържител */
+    max-width: 100%;
     margin: 0 auto;
-    padding: 1.2rem 3rem;
+    padding: 1rem 3rem; /* Намалено и симетрично отстояние над и под логото */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -88,10 +88,10 @@ body {
 }
 
 .hero-banner {
-    width: 100vw;          /* Точно 100% от ширината на целия екран */
-    height: 450px;         /* Ограничаваме височината (можеш да промениш на 400px или 500px) */
-    object-fit: cover;     /* Автоматично изрязва изображението без да го сплесква */
-    object-position: center; /* Центрира кадъра при изрязването */
+    width: 100vw;          /* Ширина от край до край */
+    height: 50vh;          /* Ограничение точно до половината от височината на екрана */
+    object-fit: cover;     /* Запазва съотношението и изрязва излишното */
+    object-position: center; /* Центрира кадъра */
     display: block;
 }
 
@@ -125,7 +125,7 @@ input[type="submit"]:hover {
 .footer {
     background-color: var(--bg-color);
     border-top: none;
-    padding: 3rem 2rem;
+    padding: 1.5rem 2rem; /* Намалено и еднакво отстояние отгоре и отдолу */
     text-align: center;
 }
 
@@ -163,7 +163,8 @@ footer a:active {
     color: #000000 !important;
     text-decoration: none !important;
     font-weight: 600 !important;
-    font-size: 18px !important; /* Намален размер на футъра 18px */
+    font-size: 18px !important; /* Размер на текста във футъра 18px */
+    line-height: 1 !important;   /* Премахва излишния празен отстъп от шрифта */
     transition: opacity 0.2s ease !important;
 }
 
@@ -180,7 +181,7 @@ footer a:hover {
     }
 
     .navbar {
-        padding: 1.2rem 1.5rem;
+        padding: 0.8rem 1.5rem;
     }
 
     .nav-menu {
@@ -205,7 +206,7 @@ footer a:hover {
     }
 
     .hero-banner {
-        height: 300px; /* По-малка височина за мобилни устройства */
+        height: 40vh; /* Леко по-малка височина за мобилни екрани */
     }
 
     footer a, 
