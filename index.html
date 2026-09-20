@@ -1,225 +1,144 @@
-/* CSS RESET & VARIABLES */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXIM ONE</title>
+    <!-- Font Awesome за иконите -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Външен CSS файл (версия 21.0) -->
+    <link rel="stylesheet" href="style.css?v=30.0">
+</head>
+<body>
 
-:root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --border-color: #000000;
-}
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="file/logo/TEXIM%20ONE%20vertical.png" alt="TEXIM ONE" class="logo-img">
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">COLLECTION</a></li>
+                <li><a href="page/n7200.html" class="nav-link">N7200</a></li>
+                <li><a href="page/n7211.html" class="nav-link">N7211</a></li>
+                <li><a href="page/n7610.html" class="nav-link">N7610</a></li>
+                <li><a href="page/n9007.html" class="nav-link">N9007</a></li>
+                <li><a href="page/n9087.html" class="nav-link">N9087</a></li>
+                <li><a href="page/n9307.html" class="nav-link">N9307</a></li>
+            </ul>
+            <div class="burger" id="burgerBtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    line-height: 1.4;
-}
+    <!-- MAIN CONTENT AREA -->
+    <main class="page-content">
+        <section class="products-section">
+            <div class="products-grid">
 
-/* HEADER & NAVIGATION */
-.header {
-    background-color: var(--bg-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+                <!-- N7211 -->
+                <a href="page/n7211.html" class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="file/model/N7211_model.jpg" alt="N7211" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <h3 class="product-code">N7211</h3>
+                            <p class="product-title">Unisex Heavyweight Long Sleeve</p>
+                        </div>
+                        <img src="file/color/Color5.png" alt="5 цвята" class="color-badge">
+                    </div>
+                </a>
 
-.navbar {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0.7rem 3rem 0rem 3rem; /* Премахнат паддинг отдолу за точно 30px разстояние */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+                <!-- N7610 -->
+                <a href="page/n7610.html" class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="file/model/N7610_model.jpg" alt="N7610" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <h3 class="product-code">N7610</h3>
+                            <p class="product-title">Womens Heavyweight Boxy T-Shirt</p>
+                        </div>
+                        <img src="file/color/Color6.png" alt="6 цвята" class="color-badge">
+                    </div>
+                </a>
 
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
+                <!-- N7200 -->
+                <a href="page/n7200.html" class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="file/model/N7200_model.jpg" alt="N7200" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <h3 class="product-code">N7200</h3>
+                            <p class="product-title">Unisex Heavyweight T-Shirt</p>
+                        </div>
+                        <img src="file/color/Color11.png" alt="11 цвята" class="color-badge">
+                    </div>
+                </a>
 
-.logo-img {
-    height: 40px;
-    width: auto;
-    display: block;
-}
+                <!-- N9007 -->
+                <a href="page/n9007.html" class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="file/model/N9007_model.jpg" alt="N9007" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <h3 class="product-code">N9007</h3>
+                            <p class="product-title">Unisex Heavyweight Sweatshirt</p>
+                        </div>
+                        <img src="file/color/Color10.png" alt="10 цвята" class="color-badge">
+                    </div>
+                </a>
 
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-}
+                <!-- N9087 -->
+                <a href="page/n9087.html" class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="file/model/N9087_model.jpg" alt="N9087" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <h3 class="product-code">N9087</h3>
+                            <p class="product-title">Womens Heavyweight Sweatshirt</p>
+                        </div>
+                        <img src="file/color/Color5.png" alt="5 цвята" class="color-badge">
+                    </div>
+                </a>
 
-.nav-link {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 700;
-    font-size: 17px;
-    letter-spacing: 0.5px;
-    transition: opacity 0.2s ease;
-}
+                <!-- N9307 -->
+                <a href="page/n9307.html" class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="file/model/N9307_model.jpg" alt="N9307" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <h3 class="product-code">N9307</h3>
+                            <p class="product-title">Unisex Heavyweight Hoodie</p>
+                        </div>
+                        <img src="file/color/Color10.png" alt="10 цвята" class="color-badge">
+                    </div>
+                </a>
 
-.nav-link:hover {
-    opacity: 0.5;
-}
+            </div>
+        </section>
+    </main>
 
-.burger {
-    display: none;
-    cursor: pointer;
-    font-size: 1.8rem;
-    color: var(--text-color);
-}
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="terms.html" class="footer-link">Общи условия</a></li>
+                <li><a href="privacy.html" class="footer-link">Политика за поверителност</a></li>
+                <li><a href="shipping.html" class="footer-link">Плащане и доставка</a></li>
+                <li><a href="returns.html" class="footer-link">Връщане и рекламация</a></li>
+                <li><a href="contact.html" class="footer-link">Данни за контакт</a></li>
+            </ul>
+        </div>
+    </footer>
 
-/* MAIN CONTENT AREA */
-.page-content {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.products-section {
-    max-width: 1100px;
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 30px;    /* Точно 30px разстояние от хедъра до панелите */
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 20px; /* 20px отдолу (заедно с 10px от футъра прави 30px до него) */
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem 1.8rem;
-}
-
-.product-card {
-    text-decoration: none;
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-3px);
-}
-
-/* ЗАОБЛЕНИ ЪГЛИ НА ПАНЕЛИТЕ И ПЪЛНО ЗАПЪЛВАНЕ */
-.product-image-wrapper {
-    width: 100%;
-    aspect-ratio: 3 / 4.2;
-    overflow: hidden;
-    border-radius: 16px;
-    background-color: #f5f5f5;
-}
-
-.product-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-}
-
-/* ИНФОРМАЦИЯ ПОД СНИМКАТА */
-.product-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0.6rem;
-    padding: 0 0.1rem;
-}
-
-.product-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-}
-
-.product-code {
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: #000000;
-    line-height: 1.1;
-}
-
-.product-title {
-    font-size: 1.02rem;
-    color: #444444;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-/* ИКОНКА ЗА ЦВЕТОВЕТЕ */
-.color-badge {
-    height: 2.6rem;
-    width: auto;
-    object-fit: contain;
-    flex-shrink: 0;
-    margin-left: 0.5rem;
-}
-
-/* FOOTER */
-.footer {
-    background-color: var(--bg-color);
-    padding-top: 10px;    /* 10px отгоре (общо 30px от съдържанието) */
-    padding-bottom: 1.2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    text-align: center;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: #000000;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 17px;
-    letter-spacing: 0.3px;
-    transition: opacity 0.2s ease;
-}
-
-.footer-links a:hover {
-    opacity: 0.5;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 1024px) {
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .products-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
+    <!-- Външен JavaScript файл -->
+    <script src="script.js"></script>
+</body>
+</html>
