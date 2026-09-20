@@ -46,7 +46,7 @@ body {
 }
 
 .logo-img {
-    height: 50px; /* Увеличено лого за баланс с големия текст */
+    height: 42px;
     width: auto;
     display: block;
 }
@@ -54,14 +54,14 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2.2rem;
+    gap: 2rem;
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 700;
-    font-size: 30px; /* Текст на навигацията 30px */
+    font-size: 18px; /* Оптимален и изчистен размер */
     transition: opacity 0.2s ease;
 }
 
@@ -72,7 +72,7 @@ body {
 .burger {
     display: none;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: var(--text-color);
 }
 
@@ -153,7 +153,7 @@ footer ul.footer-links {
     flex-direction: row !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 2.2rem !important;
+    gap: 2rem !important;
     list-style: none !important;
     padding: 0 !important;
     margin: 0 !important;
@@ -173,7 +173,7 @@ footer a:active {
     color: #000000 !important;
     text-decoration: none !important;
     font-weight: 600 !important;
-    font-size: 30px !important; /* Текст на футъра 30px */
+    font-size: 18px !important; /* Текст на футъра 18px */
     transition: opacity 0.2s ease !important;
 }
 
@@ -183,7 +183,7 @@ footer a:hover {
     text-decoration: none !important;
 }
 
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE DESIGN (За мобилни устройства) */
 @media (max-width: 768px) {
     .burger {
         display: block;
@@ -207,14 +207,14 @@ footer a:hover {
     }
 
     .nav-link {
-        font-size: 22px; /* По-подходящ размер за телефони */
+        font-size: 18px;
     }
 
     footer a, 
     footer a:link, 
     footer a:visited, 
     footer a:active {
-        font-size: 20px !important;
+        font-size: 16px !important;
     }
 
     .hero-title {
