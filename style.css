@@ -24,7 +24,7 @@ body {
 /* HEADER & NAVIGATION */
 .header {
     background-color: var(--bg-color);
-    border-bottom: none; /* Премахната черна линия */
+    border-bottom: none;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -46,7 +46,7 @@ body {
 }
 
 .logo-img {
-    height: 45px;
+    height: 50px; /* Увеличено лого за баланс с големия текст */
     width: auto;
     display: block;
 }
@@ -61,7 +61,7 @@ body {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 700;
-    font-size: 1.05rem; /* По-голям текст за навигацията */
+    font-size: 30px; /* Текст на навигацията 30px */
     transition: opacity 0.2s ease;
 }
 
@@ -72,7 +72,7 @@ body {
 .burger {
     display: none;
     cursor: pointer;
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: var(--text-color);
 }
 
@@ -92,7 +92,7 @@ body {
 }
 
 .hero-title {
-    font-size: 3.5rem; /* По-голямо главно заглавие */
+    font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 1.2rem;
     line-height: 1.2;
@@ -100,7 +100,7 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.4rem; /* По-голям подзаглавен текст */
+    font-size: 1.4rem;
     color: var(--text-color);
     margin-bottom: 2rem;
 }
@@ -134,7 +134,7 @@ input[type="submit"]:hover {
 /* FOOTER */
 .footer {
     background-color: var(--bg-color);
-    border-top: none; /* Премахната черна линия */
+    border-top: none;
     padding: 3rem 2rem;
     text-align: center;
 }
@@ -173,7 +173,7 @@ footer a:active {
     color: #000000 !important;
     text-decoration: none !important;
     font-weight: 600 !important;
-    font-size: 1.05rem !important; /* По-голям текст за линковете във футъра */
+    font-size: 30px !important; /* Текст на футъра 30px */
     transition: opacity 0.2s ease !important;
 }
 
@@ -204,6 +204,17 @@ footer a:hover {
 
     .nav-menu.active {
         display: flex;
+    }
+
+    .nav-link {
+        font-size: 22px; /* По-подходящ размер за телефони */
+    }
+
+    footer a, 
+    footer a:link, 
+    footer a:visited, 
+    footer a:active {
+        font-size: 20px !important;
     }
 
     .hero-title {
