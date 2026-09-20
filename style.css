@@ -33,7 +33,7 @@ body {
 .navbar {
     max-width: 100%;
     margin: 0 auto;
-    padding: 1rem 3rem; /* Намалено и симетрично отстояние над и под логото */
+    padding: 1rem 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,7 +61,7 @@ body {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 700;
-    font-size: 23px; /* Размер на навигацията 23px */
+    font-size: 20px; /* Размер на навигацията 20px */
     transition: opacity 0.2s ease;
 }
 
@@ -89,7 +89,7 @@ body {
 
 .hero-banner {
     width: 100vw;          /* Ширина от край до край */
-    height: 50vh;          /* Ограничение точно до половината от височината на екрана */
+    height: 50vh;          /* Ограничение до половината от височината на екрана */
     object-fit: cover;     /* Запазва съотношението и изрязва излишното */
     object-position: center; /* Центрира кадъра */
     display: block;
@@ -125,7 +125,10 @@ input[type="submit"]:hover {
 .footer {
     background-color: var(--bg-color);
     border-top: none;
-    padding: 1.5rem 2rem; /* Намалено и еднакво отстояние отгоре и отдолу */
+    padding-top: 1.5rem;   /* Отстояние отгоре */
+    padding-bottom: 0.8rem;/* Намалено отстояние под текста */
+    padding-left: 2rem;
+    padding-right: 2rem;
     text-align: center;
 }
 
@@ -164,7 +167,7 @@ footer a:active {
     text-decoration: none !important;
     font-weight: 600 !important;
     font-size: 18px !important; /* Размер на текста във футъра 18px */
-    line-height: 1 !important;   /* Премахва излишния празен отстъп от шрифта */
+    line-height: 1 !important;
     transition: opacity 0.2s ease !important;
 }
 
@@ -202,11 +205,11 @@ footer a:hover {
     }
 
     .nav-link {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .hero-banner {
-        height: 40vh; /* Леко по-малка височина за мобилни екрани */
+        height: 40vh;
     }
 
     footer a, 
