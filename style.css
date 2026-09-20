@@ -125,8 +125,8 @@ input[type="submit"]:hover {
 .footer {
     background-color: var(--bg-color);
     border-top: none;
-    padding-top: 1.5rem;   /* Отстояние отгоре */
-    padding-bottom: 0.8rem;/* Намалено отстояние под текста */
+    padding-top: 0 !important; /* Нулево отстояние над текста */
+    padding-bottom: 0.8rem;   /* Намалено отстояние под текста */
     padding-left: 2rem;
     padding-right: 2rem;
     text-align: center;
@@ -167,7 +167,7 @@ footer a:active {
     text-decoration: none !important;
     font-weight: 600 !important;
     font-size: 18px !important; /* Размер на текста във футъра 18px */
-    line-height: 1 !important;
+    line-height: 1 !important;   /* Премахва допълнителния празен отстъп на шрифта отгоре */
     transition: opacity 0.2s ease !important;
 }
 
