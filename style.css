@@ -76,33 +76,21 @@ body {
     color: var(--text-color);
 }
 
-/* HERO SECTION */
+/* HERO SECTION / BANNER */
 .hero {
     flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 6rem 2rem;
+    width: 100%;
+    padding: 0; /* Разпъване от край до край */
+    margin: 0;
+    display: block;
     background-color: var(--bg-color);
 }
 
-.hero-content {
-    max-width: 850px;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 1.2rem;
-    line-height: 1.2;
-    color: var(--text-color);
-}
-
-.hero-subtitle {
-    font-size: 1.4rem;
-    color: var(--text-color);
-    margin-bottom: 2rem;
+.hero-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
 /* БУТОНИ */
@@ -173,7 +161,7 @@ footer a:active {
     color: #000000 !important;
     text-decoration: none !important;
     font-weight: 600 !important;
-    font-size: 23px !important; /* Размер на футъра 23px */
+    font-size: 20px !important; /* Намален размер на футъра 20px */
     transition: opacity 0.2s ease !important;
 }
 
@@ -214,15 +202,7 @@ footer a:hover {
     footer a:link, 
     footer a:visited, 
     footer a:active {
-        font-size: 18px !important;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.15rem;
+        font-size: 16px !important;
     }
 
     footer ul, 
