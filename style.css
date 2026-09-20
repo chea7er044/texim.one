@@ -110,30 +110,28 @@ body {
     transform: translateY(-3px);
 }
 
-/* РАМКА ЗА СНИМКИТЕ С ПО-ВИСОКА ПРОПОРЦИЯ ЗА ПЪЛЕН КАДЪР */
+/* ЗАОБЛЕНИ ЪГЛИ НА ПАНЕЛИТЕ И ПЪЛНО ЗАПЪЛВАНЕ */
 .product-image-wrapper {
     width: 100%;
     aspect-ratio: 3 / 4.2;
     overflow: hidden;
-    border-radius: 16px;
+    border-radius: 16px; /* Заоблените ъгли */
     background-color: #f5f5f5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .product-img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Показва целия кадър с главите и ръцете без да го реже */
+    object-fit: cover; /* Запълва целия панел плътно с видимост на заоблените ъгли */
+    object-position: center top; /* Пази главата и горната част на моделите */
     display: block;
 }
 
-/* ИНФОРМАЦИЯ ПОД СНИМКАТА */
+/* ИНФОРМАЦИЯ И УВЕЛИЧЕНИ ТЕКСТОВЕ ПОД СНИМКАТА */
 .product-info {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center; /* Центрира вертикално иконката спрямо текста */
     margin-top: 0.6rem;
     padding: 0 0.1rem;
 }
@@ -145,22 +143,22 @@ body {
 }
 
 .product-code {
-    font-size: 1rem;
+    font-size: 1.15rem; /* Увеличен размер на кода (номера) */
     font-weight: 800;
     color: #000000;
     line-height: 1.1;
 }
 
 .product-title {
-    font-size: 0.92rem;
+    font-size: 1.02rem; /* Увеличен размер на заглавието */
     color: #444444;
     font-weight: 500;
     line-height: 1.2;
 }
 
-/* ИКОНКА ЗА ЦВЕТОВЕТЕ */
+/* ИКОНКА ЗА ЦВЕТОВЕТЕ - СЪОБРАЗЕНА С ВИСОЧИНАТА НА ТЕКСТА */
 .color-badge {
-    height: 2.2rem;
+    height: 2.6rem; /* Издължена за съответствие с по-големия текст */
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
