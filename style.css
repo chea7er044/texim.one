@@ -89,7 +89,7 @@ body {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 15px;    /* Точно 15px разстояние от хедъра до панелите */
+    padding-top: 10px;    /* Точно 10px разстояние от хедъра до панелите */
     padding-left: 2rem;
     padding-right: 2rem;
     padding-bottom: 20px; /* 20px отдолу (заедно с 10px от футъра прави 30px до него) */
