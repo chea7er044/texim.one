@@ -33,7 +33,7 @@ body {
 .navbar {
     max-width: 100%;
     margin: 0 auto;
-    padding: 0.6rem 3rem; /* Намалено отстояние отгоре и отдолу (0.6rem) */
+    padding: 0.7rem 3rem; /* 0.7rem отстояние отгоре и отдолу */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -126,7 +126,7 @@ input[type="submit"]:hover {
     background-color: var(--bg-color);
     border-top: none;
     padding-top: 0 !important; /* Нулево отстояние над текста */
-    padding-bottom: 0.8rem;   /* Намалено отстояние под текста */
+    padding-bottom: 0.7rem;   /* 0.7rem отстояние под текста (точно колкото в хедъра) */
     padding-left: 2rem;
     padding-right: 2rem;
     text-align: center;
@@ -184,7 +184,7 @@ footer a:hover {
     }
 
     .navbar {
-        padding: 0.5rem 1.5rem;
+        padding: 0.7rem 1.5rem;
     }
 
     .nav-menu {
