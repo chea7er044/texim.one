@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXIM ONE - Направете поръчка</title>
+    <link rel="stylesheet" href="style.css?v=40.0">
+</head>
+<body>
 
+    <!-- HEADER & NAVIGATION -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="logo.svg" alt="TEXIM ONE" class="logo-img">
+            </a>
+
+            <!-- ИНДИКАТОРИ В СРЕДАТА + ЛИНК ЗА ПОРЪЧКА -->
+            <div class="header-features">
+                <div class="feature-item">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                    <span>Предварително плащане</span>
+                </div>
+                <div class="feature-item">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11c0 .6-.4 1-1 1h-2"></path><path d="M14 9h4l3 3v6h-7V9z"></path><circle cx="7.5" cy="18.5" r="2.5"></circle><circle cx="17.5" cy="18.5" r="2.5"></circle></svg>
+                    <span>Безплатна доставка</span>
+                </div>
+                <div class="feature-item">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+                    <span>Безплатно връщане</span>
+                </div>
+
+                <!-- ЛИНК КЪМ СТРАНИЦАТА ЗА ПОРЪЧКА -->
+                <a href="order.html" class="header-order-link">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span>Поръчка</span>
+                </a>
+            </div>
+
+            <!-- МЕНЮ С МОДЕЛИТЕ -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">COLLECTION</a></li>
+                <li><a href="#" class="nav-link">N7200</a></li>
+                <li><a href="#" class="nav-link">N7211</a></li>
+                <li><a href="#" class="nav-link">N7610</a></li>
+                <li><a href="#" class="nav-link">N9007</a></li>
+                <li><a href="#" class="nav-link">N9087</a></li>
+                <li><a href="#" class="nav-link">N9307</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ОСНОВНО СЪДЪРЖАНИЕ / ФОРМА ЗА ПОРЪЧКА -->
+    <main class="page-content">
+        <div class="order-form-container">
+            <h2>Форма за поръчка</h2>
+            <form id="orderForm">
+                <input type="hidden" name="data[Date]" id="orderDate">
+
+                <div class="form-group">
+                    <label for="fullName">Име и Фамилия</label>
+                    <input type="text" id="fullName" name="data[Name]" required placeholder="Иван Иванов">
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumber">Телефонен номер</label>
+                    <input type="tel" id="phoneNumber" name="data[Phone]" required placeholder="0888123456">
+                </div>
+
+                <div class="form-group">
+                    <label for="productSelect">Модел</label>
+                    <select id="productSelect" name="data[Product]" required>
+                        <option value="">Изберете модел</option>
+                        <option value="N7200">N7200 - Unisex Heavyweight T-Shirt</option>
+                        <option value="N7211">N7211 - Unisex Heavyweight Long Sleeve</option>
+                        <option value="N7610">N7610 - Womens Heavyweight Boxy T-Shirt</option>
+                        <option value="N9007">N9007</option>
+                        <option value="N9087">N9087</option>
+                        <option value="N9307">N9307</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="productSize">Размер</label>
+                    <select id="productSize" name="data[Size]" required>
+                        <option value="">Изберете размер</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="2XL">2XL</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="boxNowOffice">Автомат / Офис на BOX NOW</label>
+                    <input type="text" id="boxNowOffice" name="data[BoxNowOffice]" required placeholder="№ на автомат или адрес">
+                </div>
+
+                <div class="form-group">
+                    <label>Начин на плащане</label>
+                    <input type="text" name="data[PaymentMethod]" value="Предварително плащане" readonly style="background-color: #f5f5f5; cursor: not-allowed;">
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">ПОТВЪРДИ ПОРЪЧКАТА</button>
+                <p id="formStatus" class="form-status"></p>
+            </form>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="#">Общи условия</a></li>
+                <li><a href="#">Доставка и връщане</a></li>
+                <li><a href="#">Контакти</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
