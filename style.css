@@ -138,7 +138,7 @@ body {
 }
 
 .products-section {
-    max-width: 1100px;
+    max-width: 1400px;    /* Увеличена ширина, за да даде повече място на широките снимки */
     width: 100%;
     margin: 0 auto;
     padding-top: 10px;    /* 10px разстояние от хедъра до панелите */
@@ -149,8 +149,8 @@ body {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem 1.8rem;
+    grid-template-columns: repeat(2, 1fr); /* 2 колони са по-подходящи за широки изображения */
+    gap: 2rem 2rem;
 }
 
 .product-card {
@@ -168,17 +168,20 @@ body {
 /* ЗАОБЛЕНИ ЪГЛИ НА ПАНЕЛИТЕ И ПЪЛНО ЗАПЪЛВАНЕ */
 .product-image-wrapper {
     width: 100%;
-    aspect-ratio: 3 / 4.2;
+    aspect-ratio: 16 / 10; /* Широк формат за новите банери/изображения */
     overflow: hidden;
     border-radius: 16px;
     background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .product-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    object-fit: cover;    /* Запазва цялата ширина и изпълва панела приложимо */
+    object-position: center;
     display: block;
 }
 
@@ -348,14 +351,8 @@ body {
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 850px) {
     .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .products-grid {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr); /* На мобилни и по-малки екрани преминава в 1 широка колона */
     }
 }
