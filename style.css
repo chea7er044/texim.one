@@ -52,25 +52,25 @@ body {
     display: block;
 }
 
-/* HEADER FEATURES (ИНДИКАТОРИ В СРЕДАТА - ИДЕНТИЧНИ С МЕНЮТО) */
+/* HEADER FEATURES (ИНДИКАТОРИ В СРЕДАТА - С ЕДНАКВИ РАЗСТОЯНИЯ КАТО МЕНЮТО) */
 .header-features {
     display: flex;
     align-items: center;
-    gap: 1.8rem;
-    margin: 0 auto;
+    gap: 1rem;                  /* Същото разстояние (1rem), както при .nav-menu */
+    margin: 0 auto;             /* Центриране между логото и менюто */
 }
 
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 17px;            /* Точно като менюто (17px) */
-    font-weight: 700;           /* Същата дебелина (700) */
+    gap: 0.4rem;                /* Компактно разстояние между иконката и текста */
+    font-size: 17px;            /* Идентичен размер с менюто */
+    font-weight: 700;           /* Идентична дебелина с менюто */
     color: #000000;
     text-transform: uppercase;   /* Главни букви */
-    letter-spacing: 0.5px;      /* Същото отстояние между буквите */
+    letter-spacing: 0.5px;      /* Идентичен letter-spacing с менюто */
     white-space: nowrap;
-    line-height: 1;             /* Точно вертикално подравняване */
+    line-height: 1;             /* Точно вертикално изравняване */
 }
 
 .feature-icon {
@@ -84,7 +84,7 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 1rem;
+    gap: 1rem;                  /* 1rem разстояние между линковете */
     flex-shrink: 0;
 }
 
@@ -124,7 +124,7 @@ body {
     padding-top: 10px;    /* 10px разстояние от хедъра до панелите */
     padding-left: 2rem;
     padding-right: 2rem;
-    padding-bottom: 10px; /* 10px отдолу (заедно с 5px от футъра прави 15px) */
+    padding-bottom: 10px; /* 10px отдолу */
 }
 
 .products-grid {
@@ -203,7 +203,7 @@ body {
 /* FOOTER */
 .footer {
     background-color: var(--bg-color);
-    padding-top: 5px;     /* 5px отгоре (общо 15px от съдържанието) */
+    padding-top: 5px;     /* 5px отгоре */
     padding-bottom: 1.2rem;
     padding-left: 2rem;
     padding-right: 2rem;
