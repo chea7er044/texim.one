@@ -124,7 +124,7 @@ body {
     padding-top: 10px;    /* 10px разстояние от хедъра до панелите */
     padding-left: 2rem;
     padding-right: 2rem;
-    padding-bottom: 10px; /* 10px отдолу */
+    padding-bottom: 0px;  /* Нулирано, отстоянието се контролира от footer margin-top */
 }
 
 .products-grid {
@@ -203,11 +203,11 @@ body {
 /* FOOTER */
 .footer {
     background-color: var(--bg-color);
-    padding-top: 5px;      /* 5px отгоре */
-    padding-bottom: 0;    /* Нулирано, за да се контролира точно от margin-bottom */
+    margin-top: 25px;      /* ТОЧНО 25px разстояние от панелите с артикули до футъра */
+    padding-top: 0;        
+    padding-bottom: 1.2rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    margin-bottom: 25px;   /* Точно 25px разстояние от текста във футъра до скрипта/следващия елемент */
     text-align: center;
 }
 
