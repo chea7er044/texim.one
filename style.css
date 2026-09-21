@@ -92,7 +92,7 @@ body {
     padding-top: 10px;    /* 10px разстояние от хедъра до панелите */
     padding-left: 2rem;
     padding-right: 2rem;
-    padding-bottom: 10px; /* 10px отдолу (заедно с 5px от футъра прави точно 15px) */
+    padding-bottom: 10px; /* 10px отдолу (заедно с 10px от футъра прави точно 20px) */
 }
 
 .products-grid {
@@ -171,7 +171,7 @@ body {
 /* FOOTER */
 .footer {
     background-color: var(--bg-color);
-    padding-top: 5px;     /* 5px отгоре (общо 15px от съдържанието) */
+    padding-top: 10px;    /* 10px отгоре (общо 20px от съдържанието) */
     padding-bottom: 1.2rem;
     padding-left: 2rem;
     padding-right: 2rem;
