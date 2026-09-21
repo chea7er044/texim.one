@@ -36,12 +36,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1.5rem;
 }
 
 .logo {
     display: flex;
     align-items: center;
     text-decoration: none;
+    flex-shrink: 0;
 }
 
 .logo-img {
@@ -50,10 +52,37 @@ body {
     display: block;
 }
 
+/* HEADER FEATURES (ИНДИКАТОРИ В СРЕДАТА) */
+.header-features {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    margin: 0 auto; /* Центрира индикаторите спрямо свободното място */
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 13px;
+    font-weight: 600;
+    color: #222222;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+}
+
+.feature-icon {
+    width: 18px;
+    height: 18px;
+    stroke: #000000;
+    flex-shrink: 0;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
     gap: 1rem;
+    flex-shrink: 0;
 }
 
 .nav-link {
@@ -92,7 +121,7 @@ body {
     padding-top: 10px;    /* 10px разстояние от хедъра до панелите */
     padding-left: 2rem;
     padding-right: 2rem;
-    padding-bottom: 10px; /* 10px отдолу (заедно с 10px от футъра прави точно 20px) */
+    padding-bottom: 10px; /* 10px отдолу (заедно с 5px от футъра прави 15px) */
 }
 
 .products-grid {
@@ -171,7 +200,7 @@ body {
 /* FOOTER */
 .footer {
     background-color: var(--bg-color);
-    padding-top: 10px;    /* 10px отгоре (общо 20px от съдържанието) */
+    padding-top: 5px;     /* 5px отгоре (общо 15px от съдържанието) */
     padding-bottom: 1.2rem;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -212,6 +241,12 @@ body {
 }
 
 /* RESPONSIVE DESIGN */
+@media (max-width: 1100px) {
+    .header-features {
+        display: none; /* Скрива индикаторите на по-тесни екрани, за да не пречат */
+    }
+}
+
 @media (max-width: 1024px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
