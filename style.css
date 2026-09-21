@@ -57,25 +57,28 @@ body {
     display: flex;
     align-items: center;
     gap: 1.8rem;
-    margin: 0 auto; /* Центрира индикаторите спрямо свободното място */
+    margin: 0 auto;
 }
 
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
-    font-size: 13px;
-    font-weight: 600;
-    color: #222222;
-    letter-spacing: 0.2px;
+    gap: 0.45rem;
+    font-size: 16px;            /* Текстът е 16px */
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;   /* Изцяло главни букви */
+    letter-spacing: 0.5px;
     white-space: nowrap;
+    line-height: 1;             /* Изравнява височината на текстовия блок */
 }
 
 .feature-icon {
-    width: 18px;
-    height: 18px;
+    width: 16px;                /* Иконката е 16px × 16px */
+    height: 16px;
     stroke: #000000;
     flex-shrink: 0;
+    display: block;
 }
 
 .nav-menu {
@@ -241,9 +244,9 @@ body {
 }
 
 /* RESPONSIVE DESIGN */
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .header-features {
-        display: none; /* Скрива индикаторите на по-тесни екрани, за да не пречат */
+        display: none; /* Скрива индикаторите на по-тесни екрани, за да не закриват менюто */
     }
 }
 
