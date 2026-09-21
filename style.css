@@ -52,7 +52,7 @@ body {
     display: block;
 }
 
-/* HEADER FEATURES (ИНДИКАТОРИ В СРЕДАТА - С ЕДНАКВИ РАЗСТОЯНИЯ КАТО МЕНЮТО) */
+/* HEADER FEATURES (ИНДИКАТОРИ В СРЕДАТА + ЛИНК ЗА ПОРЪЧКА) */
 .header-features {
     display: flex;
     align-items: center;
@@ -67,10 +67,10 @@ body {
     font-size: 17px;        /* Идентичен размер с менюто */
     font-weight: 700;       /* Идентична дебелина с менюто */
     color: #000000;
-    text-transform: uppercase;  /* Главни букви */
-    letter-spacing: 0.5px;  /* Идентичен letter-spacing с менюто */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     white-space: nowrap;
-    line-height: 1;         /* Точно вертикално изравняване */
+    line-height: 1;
 }
 
 .feature-icon {
@@ -79,6 +79,26 @@ body {
     stroke: #000000;
     flex-shrink: 0;
     display: block;
+}
+
+/* ЛИНК КЪМ СТРАНИЦАТА ЗА ПОРЪЧКА (В СРЕДАТА ВДЯСНО ОТ ИНДИКАТОРИТЕ) */
+.header-order-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 17px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 1;
+    transition: opacity 0.2s ease;
+}
+
+.header-order-link:hover {
+    opacity: 0.5;
 }
 
 .nav-menu {
@@ -198,6 +218,83 @@ body {
     object-fit: contain;
     flex-shrink: 0;
     margin-left: 0.5rem;
+}
+
+/* ORDER FORM STYLES (ЗА ORDER.HTML) */
+.order-form-container {
+    max-width: 480px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 12px;
+}
+
+.order-form-container h2 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #000000;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s ease;
+    margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+    opacity: 0.8;
+}
+
+.form-status {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 /* FOOTER */
