@@ -52,7 +52,7 @@ body {
     display: block;
 }
 
-/* HEADER FEATURES (ИНДИКАТОРИ В СРЕДАТА) */
+/* HEADER FEATURES (ИНДИКАТОРИ В СРЕДАТА - ИДЕНТИЧНИ С МЕНЮТО) */
 .header-features {
     display: flex;
     align-items: center;
@@ -63,19 +63,19 @@ body {
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 0.45rem;
-    font-size: 16px;            /* Текстът е 16px */
-    font-weight: 700;
+    gap: 0.5rem;
+    font-size: 17px;            /* Точно като менюто (17px) */
+    font-weight: 700;           /* Същата дебелина (700) */
     color: #000000;
-    text-transform: uppercase;   /* Изцяло главни букви */
-    letter-spacing: 0.5px;
+    text-transform: uppercase;   /* Главни букви */
+    letter-spacing: 0.5px;      /* Същото отстояние между буквите */
     white-space: nowrap;
-    line-height: 1;             /* Изравнява височината на текстовия блок */
+    line-height: 1;             /* Точно вертикално подравняване */
 }
 
 .feature-icon {
-    width: 16px;                /* Иконката е 16px × 16px */
-    height: 16px;
+    width: 17px;                /* Точно 17px височина и ширина */
+    height: 17px;
     stroke: #000000;
     flex-shrink: 0;
     display: block;
@@ -92,7 +92,7 @@ body {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 700;
-    font-size: 17px;
+    font-size: 17px;            /* 17px */
     letter-spacing: 0.5px;
     transition: opacity 0.2s ease;
 }
@@ -244,9 +244,9 @@ body {
 }
 
 /* RESPONSIVE DESIGN */
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
     .header-features {
-        display: none; /* Скрива индикаторите на по-тесни екрани, за да не закриват менюто */
+        display: none; /* Скрива индикаторите при по-малка ширина на екрана */
     }
 }
 
