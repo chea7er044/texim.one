@@ -1,263 +1,38 @@
-/* CSS RESET & VARIABLES */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* ==========================================
+   СТИЛОВЕ ЗА ФУТЪР И ОТСТОЯНИЕ (25px)
+   ========================================== */
+
+/* 1. Основно отстояние над целия футър спрямо съдържанието над него */
+footer, 
+.site-footer {
+  margin-top: 25px;         /* 25 пиксела разстояние от горния елемент/скрипт */
+  padding: 20px 0;          /* Вътрешно разстояние (горе/долу и ляво/дясно) */
+  background-color: #f8f9fa; /* Цвят на фона на футъра (по избор) */
+  text-align: center;       /* Центриране на текста */
+  border-top: 1px solid #e9ecef; /* Тънка разделителна линия (по избор) */
 }
 
-:root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --border-color: #000000;
+/* 2. Отстояние под текста във футъра (ако има скрипт/елемент под него) */
+footer p, 
+.footer-text {
+  margin: 0;                /* Премахва подразбиращите се CSS граници на <p> */
+  margin-bottom: 25px;      /* 25 пиксела разстояние под текста */
+  color: #6c757d;           /* Цвят на текста (сив) */
+  font-size: 14px;          /* Размер на шрифта */
+  font-family: inherit;     /* Взема шрифта от основния сайт */
+  line-height: 1.5;
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    line-height: 1.4;
+/* 3. Ако футърът съдържа линкове */
+footer a, 
+.footer-text a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-/* HEADER & NAVIGATION */
-.header {
-    background-color: var(--bg-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0.7rem 3rem 0rem 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    flex-shrink: 0;
-}
-
-.logo-img {
-    height: 40px;
-    width: auto;
-    display: block;
-}
-
-/* HEADER FEATURES (ИНДИКАТОРИ В СРЕДАТА - С ЕДНАКВИ РАЗСТОЯНИЯ КАТО МЕНЮТО) */
-.header-features {
-    display: flex;
-    align-items: center;
-    gap: 1rem;                  /* Същото разстояние (1rem), както при .nav-menu */
-    margin: 0 auto;             /* Центриране между логото и менюто */
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;                /* Компактно разстояние между иконката и текста */
-    font-size: 17px;            /* Идентичен размер с менюто */
-    font-weight: 700;           /* Идентична дебелина с менюто */
-    color: #000000;
-    text-transform: uppercase;   /* Главни букви */
-    letter-spacing: 0.5px;      /* Идентичен letter-spacing с менюто */
-    white-space: nowrap;
-    line-height: 1;             /* Точно вертикално изравняване */
-}
-
-.feature-icon {
-    width: 17px;                /* Точно 17px височина и ширина */
-    height: 17px;
-    stroke: #000000;
-    flex-shrink: 0;
-    display: block;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 1rem;                  /* 1rem разстояние между линковете */
-    flex-shrink: 0;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 700;
-    font-size: 17px;            /* 17px */
-    letter-spacing: 0.5px;
-    transition: opacity 0.2s ease;
-}
-
-.nav-link:hover {
-    opacity: 0.5;
-}
-
-.burger {
-    display: none;
-    cursor: pointer;
-    font-size: 1.8rem;
-    color: var(--text-color);
-}
-
-/* MAIN CONTENT AREA */
-.page-content {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.products-section {
-    max-width: 1100px;
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 10px;    /* 10px разстояние от хедъра до панелите */
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 10px; /* 10px отдолу */
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem 1.8rem;
-}
-
-.product-card {
-    text-decoration: none;
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-3px);
-}
-
-/* ЗАОБЛЕНИ ЪГЛИ НА ПАНЕЛИТЕ И ПЪЛНО ЗАПЪЛВАНЕ */
-.product-image-wrapper {
-    width: 100%;
-    aspect-ratio: 3 / 4.2;
-    overflow: hidden;
-    border-radius: 16px;
-    background-color: #f5f5f5;
-}
-
-.product-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-}
-
-/* ИНФОРМАЦИЯ ПОД СНИМКАТА */
-.product-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0.6rem;
-    padding: 0 0.1rem;
-}
-
-.product-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-}
-
-.product-code {
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: #000000;
-    line-height: 1.1;
-}
-
-.product-title {
-    font-size: 1.02rem;
-    color: #444444;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-/* ИКОНКА ЗА ЦВЕТОВЕТЕ */
-.color-badge {
-    height: 2.6rem;
-    width: auto;
-    object-fit: contain;
-    flex-shrink: 0;
-    margin-left: 0.5rem;
-}
-
-/* FOOTER */
-.footer {
-    background-color: var(--bg-color);
-    padding-top: 5px;     /* 5px отгоре */
-    padding-bottom: 1.2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    text-align: center;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: #000000;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 17px;
-    letter-spacing: 0.3px;
-    transition: opacity 0.2s ease;
-}
-
-.footer-links a:hover {
-    opacity: 0.5;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 1250px) {
-    .header-features {
-        display: none; /* Скрива индикаторите при по-малка ширина на екрана */
-    }
-}
-
-@media (max-width: 1024px) {
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .products-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
+footer a:hover, 
+.footer-text a:hover {
+  text-decoration: underline;
+  color: #333333;
 }
