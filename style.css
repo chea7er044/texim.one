@@ -77,11 +77,18 @@ body {
     font-weight: 700;
     font-size: 17px;
     letter-spacing: 0.5px;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, border-bottom 0.2s ease;
+    padding-bottom: 2px;
 }
 
 .nav-link:hover {
     opacity: 0.5;
+}
+
+/* АКТИВНА СТРАНИЦА В МЕНЮТО */
+.nav-link.active {
+    opacity: 1;
+    border-bottom: 2px solid var(--text-color); /* Фино черна линия под активната страница */
 }
 
 .burger {
@@ -147,19 +154,21 @@ body {
     display: block;
 }
 
-/* ИНФОРМАЦИЯ ПОД СНИМКАТА */
+/* ИНФОРМАЦИЯ ПОД СНИМКАТА (СВИВАМЕ В ЦЕНТЪРА) */
 .product-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;   /* Центрира целия блок под снимката */
     align-items: center;
+    gap: 1.2rem;               /* Балансирано разстояние между текста и значката */
     margin-top: 0.6rem;
-    padding: 0 0.1rem;
+    padding: 0 0.5rem;
 }
 
 .product-text {
     display: flex;
     flex-direction: column;
     gap: 0.15rem;
+    text-align: left;
 }
 
 .product-code {
@@ -178,11 +187,11 @@ body {
 
 /* ИКОНКА ЗА ЦВЕТОВЕТЕ */
 .color-badge {
-    height: 2.6rem;
+    height: 2.4rem;
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
-    margin-left: 0.5rem;
+    margin-left: 0;
 }
 
 /* RESPONSIVE DESIGN & MOBILE MENU */
