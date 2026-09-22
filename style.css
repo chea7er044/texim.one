@@ -41,7 +41,7 @@ body {
 .navbar {
     max-width: 100%;
     margin: 0 auto;
-    padding-top: 10px;      /* Маркер 1: Точно 10px отгоре на менюто */
+    padding-top: 10px;      /* Точно 10px отгоре на менюто */
     padding-bottom: 0px;    /* Без излишен отстъп отдолу */
     padding-left: 3rem;
     padding-right: 3rem;
@@ -88,7 +88,7 @@ body {
 /* АКТИВНА СТРАНИЦА В МЕНЮТО */
 .nav-link.active {
     opacity: 1;
-    border-bottom: 2px solid var(--text-color); /* Фино черна линия под активната страница */
+    border-bottom: 2px solid var(--text-color);
 }
 
 .burger {
@@ -110,8 +110,8 @@ body {
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 10px;     /* Маркер 2: Точно 10px между менюто и картите */
-    padding-bottom: 10px;  /* Маркер 3: Точно 10px в дъното под картите */
+    padding-top: 10px;     /* Точно 10px между менюто и картите */
+    padding-bottom: 10px;  /* Точно 10px в дъното под картите */
     padding-left: 2rem;
     padding-right: 2rem;
 }
@@ -154,12 +154,12 @@ body {
     display: block;
 }
 
-/* ИНФОРМАЦИЯ ПОД СНИМКАТА (СВИВАМЕ В ЦЕНТЪРА) */
+/* ИНФОРМАЦИЯ ПОД СНИМКАТА */
 .product-info {
     display: flex;
     justify-content: center;   /* Центрира целия блок под снимката */
     align-items: center;
-    gap: 1.2rem;               /* Балансирано разстояние между текста и значката */
+    gap: 2rem;                 /* Обновено разстояние: 2rem (~32px) */
     margin-top: 0.6rem;
     padding: 0 0.5rem;
 }
