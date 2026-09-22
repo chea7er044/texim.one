@@ -41,7 +41,7 @@ body {
 .navbar {
     max-width: 100%;
     margin: 0 auto;
-    padding: 0.7rem 3rem;
+    padding: 1rem 3rem; /* Равно разстояние от 1rem (16px) над и под текста/логото */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -93,18 +93,14 @@ body {
     flex: 1;
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: center; /* Премахнато центрирането вертикално (align-items) */
 }
 
 .products-section {
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 10px;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 2rem;
+    padding: 0 2rem; /* Премахнато цялото разстояние отгоре (0px) и отдолу (0px) */
 }
 
 .products-grid {
