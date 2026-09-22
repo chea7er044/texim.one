@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     // ==========================================
     // 1. МОБИЛНО БУРГЕР МЕНЮ (TOGGLE)
     // ==========================================
@@ -9,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         burgerBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             
-            // Смяна на иконата при отваряне/затваряне
             const icon = burgerBtn.querySelector('i');
             if (icon) {
                 if (navMenu.classList.contains('active')) {
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
             
-            if (targetId !== '#') {
+            if (targetId && targetId !== '#') {
                 const targetElement = document.querySelector(targetId);
                 
                 if (targetElement) {
@@ -64,33 +64,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const thumbnails = document.querySelectorAll('.thumb-item');
 
     function updateSelectedColor(colorCode) {
-        // Намираме съответния цвят и миниатюра
+        if (!colorCode) return;
+
         const activeSwatch = document.querySelector(`.swatch[data-color="${colorCode}"]`);
         const activeThumb = document.querySelector(`.thumb-item[data-color="${colorCode}"]`);
 
         if (!activeSwatch || !activeThumb) return;
 
-        // Премахваме активните класове от всички
+        // Премахваме активния клас от всички
         swatches.forEach(s => s.classList.remove('active'));
         thumbnails.forEach(t => t.classList.remove('active'));
 
-        // Добавяме активен клас на избраните елементи
+        // Маркираме избрания цвят и миниатюра
         activeSwatch.classList.add('active');
         activeThumb.classList.add('active');
 
-        // Сменяме основното изображение и текста с името на цвята
+        // Автоматично превъртане до миниатюрата, ако е извън видимата част (при мобилни)
+        activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
         const newImgSrc = activeSwatch.getAttribute('data-img');
         const newColorName = activeSwatch.getAttribute('data-color-name');
 
-        if (mainImg && newImgSrc) {
-            mainImg.src = newImgSrc;
-        }
+        // Смяна на текста с името на цвята
         if (colorNameLabel && newColorName) {
             colorNameLabel.textContent = newColorName;
         }
+
+        // Смяна на основното изображение с кратък плавен преход
+        if (mainImg && newImgSrc && mainImg.src !== newImgSrc) {
+            mainImg.style.opacity = '0.3';
+            setTimeout(() => {
+                mainImg.src = newImgSrc;
+                mainImg.style.opacity = '1';
+            }, 120);
+        }
     }
 
-    // Клик върху квадратче с цвят
+    // Клик събитие за квадратите с цвят
     swatches.forEach(swatch => {
         swatch.addEventListener('click', () => {
             const color = swatch.getAttribute('data-color');
@@ -98,11 +108,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Клик върху миниатюра с модел
+    // Клик събитие за миниатюрите
     thumbnails.forEach(thumb => {
         thumb.addEventListener('click', () => {
             const color = thumb.getAttribute('data-color');
             updateSelectedColor(color);
         });
     });
+
+    // Лека CSS стилизация за плавен преход на изображението
+    if (mainImg) {
+        mainImg.style.transition = 'opacity 0.15s ease-in-out';
+    }
 });
