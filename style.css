@@ -1,7 +1,7 @@
 /* FONT DECLARATION */
 @font-face {
     font-family: 'Futura PT Bold';
-    src: url('file/font/FuturaPTBold.otf') format('opentype');
+    src: url('/file/font/FuturaPTBold.otf') format('opentype'); /* Абсолютен път за подстраниците */
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -41,8 +41,8 @@ body {
 .navbar {
     max-width: 100%;
     margin: 0 auto;
-    padding-top: 15px;      /* Маркер 1: Точно 15px отгоре на менюто */
-    padding-bottom: 0px;    /* Премахваме отстъпа отдолу в хедъра */
+    padding-top: 10px;      /* Маркер 1: Точно 10px отгоре на менюто */
+    padding-bottom: 0px;    /* Без излишен отстъп отдолу */
     padding-left: 3rem;
     padding-right: 3rem;
     display: flex;
@@ -103,8 +103,8 @@ body {
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 15px;     /* Маркер 2: Точно 15px между менюто и картите */
-    padding-bottom: 15px;  /* Маркер 3: Точно 15px в дъното под картите */
+    padding-top: 10px;     /* Маркер 2: Точно 10px между менюто и картите */
+    padding-bottom: 10px;  /* Маркер 3: Точно 10px в дъното под картите */
     padding-left: 2rem;
     padding-right: 2rem;
 }
@@ -185,7 +185,7 @@ body {
     margin-left: 0.5rem;
 }
 
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE DESIGN & MOBILE MENU */
 @media (max-width: 1024px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -193,6 +193,32 @@ body {
 }
 
 @media (max-width: 650px) {
+    .navbar {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+        padding: 1rem 1.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        gap: 0.8rem;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
     .products-grid {
         grid-template-columns: repeat(1, 1fr);
     }
