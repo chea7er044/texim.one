@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.getElementById('navMenu');
 
     if (burgerBtn && navMenu) {
-        burgerBtn.addEventListener('click', () => {
+        burgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             navMenu.classList.toggle('active');
             
             const icon = burgerBtn.querySelector('i');
@@ -18,6 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     icon.classList.remove('fa-xmark');
                     icon.classList.add('fa-bars');
+                }
+            }
+        });
+
+        // Затваряне на менюто при клик извън него
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !burgerBtn.contains(e.target)) {
+                navMenu.classList.remove('active');
+                const icon = burgerBtn.querySelector('i');
+                if (icon) {
+                    icon.className = 'fa-solid fa-bars';
                 }
             }
         });
@@ -69,23 +81,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeSwatch = document.querySelector(`.swatch[data-color="${colorCode}"]`);
         const activeThumb = document.querySelector(`.thumb-item[data-color="${colorCode}"]`);
 
-        if (!activeSwatch || !activeThumb) return;
-
-        // Премахваме активния клас от всички
+        // Премахваме активния клас от всички налични елементи
         swatches.forEach(s => s.classList.remove('active'));
         thumbnails.forEach(t => t.classList.remove('active'));
 
-        // Маркираме избрания цвят и миниатюра
-        activeSwatch.classList.add('active');
-        activeThumb.classList.add('active');
+        // Маркираме избрания цвят и миниатюра (ако съществуват)
+        if (activeSwatch) activeSwatch.classList.add('active');
+        if (activeThumb) {
+            activeThumb.classList.add('active');
+            activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
 
-        // Автоматично превъртане до миниатюрата, ако е извън видимата част (при мобилни)
-        activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        const newImgSrc = activeSwatch ? activeSwatch.getAttribute('data-img') : null;
+        const newColorName = activeSwatch ? activeSwatch.getAttribute('data-color-name') : null;
 
-        const newImgSrc = activeSwatch.getAttribute('data-img');
-        const newColorName = activeSwatch.getAttribute('data-color-name');
-
-        // Смяна на текста с името на цвята
+        // Смяна на текста с името на цвета
         if (colorNameLabel && newColorName) {
             colorNameLabel.textContent = newColorName;
         }
@@ -116,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Лека CSS стилизация за плавен преход на изображението
+    // CSS стилизация за плавен преход на изображението
     if (mainImg) {
         mainImg.style.transition = 'opacity 0.15s ease-in-out';
     }
