@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N3600 | TEXIM ONE</title>
     <!-- Правилен път към style.css -->
-    <link rel="stylesheet" href="../style.css?v=41.0">
+    <link rel="stylesheet" href="../style.css?v=42.0">
     <!-- FontAwesome за иконата на бургер менюто -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -37,7 +37,120 @@
         </nav>
     </header>
 
+    <!-- PRODUCT CONTAINER -->
+    <main class="product-container">
+        <div class="product-main">
+            
+            <!-- ЛЯВА КОЛОНА: ГАЛЕРИЯ -->
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="currentImg" src="../file/n3600/main.jpg" alt="N3600 Unisex T-shirt">
+                </div>
+                <div class="thumbnail-list">
+                    <img src="../file/n3600/main.jpg" class="thumb active" onclick="changeImage(this.src)">
+                    <img src="../file/n3600/white.jpg" class="thumb" onclick="changeImage(this.src)">
+                    <img src="../file/n3600/black.jpg" class="thumb" onclick="changeImage(this.src)">
+                    <img src="../file/n3600/blue.jpg" class="thumb" onclick="changeImage(this.src)">
+                </div>
+            </div>
+
+            <!-- ДЯСНА КОЛОНА: ИНФОРМАЦИЯ -->
+            <div class="product-info">
+                <span class="product-code">N3600</span>
+                <h1 class="product-title">Unisex Cotton T-shirt</h1>
+                <p class="product-description">
+                    Unisex T-shirt made of 100% high-quality ring-spun combed cotton. Soft to the skin and perfectly suited for all kinds of printing and embroidery techniques. With side seams for a perfect fit.
+                </p>
+
+                <!-- ТАБЛИЦА С СПЕЦИФИКАЦИИ -->
+                <table class="specs-table">
+                    <tr>
+                        <td>Size Range</td>
+                        <td>XS-5XL</td>
+                    </tr>
+                    <tr>
+                        <td>Fit</td>
+                        <td>Regular Fit</td>
+                    </tr>
+                    <tr>
+                        <td>Grammage</td>
+                        <td>145 g / m²</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>Unisex</td>
+                    </tr>
+                    <tr>
+                        <td>Printing and embroidery options</td>
+                        <td>DTG, DTF, screen printing, embroidery, transfer</td>
+                    </tr>
+                </table>
+
+                <!-- ЦВЕТОВЕ -->
+                <div class="colors-section">
+                    <h3>Colours</h3>
+                    <div class="color-grid">
+                        <span class="color-box" style="background-color: #000000;" title="Black"></span>
+                        <span class="color-box" style="background-color: #ffffff; border: 1px solid #ccc;" title="White"></span>
+                        <span class="color-box" style="background-color: #1c2e4a;" title="Navy"></span>
+                        <span class="color-box" style="background-color: #2b547e;" title="Royal Blue"></span>
+                        <span class="color-box" style="background-color: #3b7a57;" title="Forest Green"></span>
+                        <span class="color-box" style="background-color: #808080;" title="Grey"></span>
+                        <span class="color-box" style="background-color: #d32f2f;" title="Red"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ДОЛНА ЧАСТ: ТАБОВЕ С ДЕТАЙЛИ -->
+        <div class="product-details-tabs">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(event, 'details')">Product details</button>
+                <button class="tab-btn" onclick="openTab(event, 'care')">Textile Care</button>
+            </div>
+
+            <div id="details" class="tab-content active">
+                <ul>
+                    <li>100% ring-spun combed cotton; single jersey</li>
+                    <li>High-quality ring-spun combed cotton</li>
+                    <li>Tear-away size and care label in neckline</li>
+                    <li>Taped shoulder to shoulder</li>
+                    <li>Side seams</li>
+                </ul>
+            </div>
+
+            <div id="care" class="tab-content">
+                <ul>
+                    <li>Washable at 40°C</li>
+                    <li>Do not bleach</li>
+                    <li>Tumble dry at low temperature</li>
+                    <li>Iron at medium temperature</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
     <!-- JS Скрипт в главната папка -->
     <script src="../script.js"></script>
+
+    <!-- Локални скриптове за галерията и табовете -->
+    <script>
+        function changeImage(src) {
+            document.getElementById('currentImg').src = src;
+            document.querySelectorAll('.thumb').forEach(thumb => thumb.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function openTab(evt, tabName) {
+            let tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            let tabBtns = document.querySelectorAll('.tab-btn');
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
