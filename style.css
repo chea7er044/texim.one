@@ -180,7 +180,7 @@ body {
 .product-info {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Центрира иконката спрямо целия текстов блок */
+    align-items: center;
     gap: 1rem;
     margin-top: 0.6rem;
     padding: 0 0.5rem;
@@ -189,7 +189,7 @@ body {
 .product-text {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem; /* Еднакво разстояние между Номер, Заглавие и Цена */
+    gap: 0.25rem;
     text-align: left;
 }
 
@@ -207,27 +207,27 @@ body {
     line-height: 1.2;
 }
 
-/* СТИЛИЗИРАНЕ НА ЦЕНАТА В КАРТАТА (ОЛЕКОТЕН ДЕСКТОП ИЗГЛЕД) */
+/* СТИЛИЗИРАНЕ НА ЦЕНАТА В КАРТАТА */
 .product-card-price {
     font-size: 0.98rem;
     font-weight: 500;
     color: #222222;
-    margin-top: 0; /* Премахнат излишен марджин за еднакви разстояния */
+    margin-top: 0;
     letter-spacing: 0.2px;
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1.1;
 }
 
-/* ИКОНКА ЗА ЦВЕТОВЕТЕ В КАТАЛОГА (УВЕЛИЧЕНА СПРЯМО ВЕРИТИКАЛНИЯ ТЕКСТ) */
+/* ИКОНКА ЗА ЦВЕТОВЕТЕ В КАТАЛОГА */
 .color-badge {
-    height: 3.8rem; /* Разпъва се вертикално от цената до номера на артикула */
+    height: 3.8rem;
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
     margin-left: 0;
 }
 
-/* ================= INFO PAGES (FULL WIDTH WITH ORIGINAL ASPECT RATIO) ================= */
+/* ================= INFO PAGES ================= */
 .info-page-section {
     width: 100%;
     margin: 0;
@@ -359,7 +359,6 @@ body {
     margin-bottom: 0.3rem;
 }
 
-/* СТИЛИЗИРАНЕ НА ЦЕНАТА В МОДАЛА */
 .modal-price {
     font-size: 1.2rem;
     font-weight: 600;
@@ -392,6 +391,7 @@ body {
     color: #000000;
     letter-spacing: 0.5px;
     margin-bottom: 0.3rem;
+    text-transform: uppercase;
 }
 
 .modal-section p {
