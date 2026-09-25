@@ -216,15 +216,11 @@ body {
     margin-left: 0;
 }
 
-/* ================= INFO PAGES (SINGLE IMAGE - COLORS/SIZES/CARE) ================= */
+/* ================= INFO PAGES (FULL WIDTH IMAGE - COLORS/SIZES/CARE) ================= */
 .info-page-section {
-    max-width: 1400px;
     width: 100%;
-    margin: 0 auto;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
 }
@@ -238,9 +234,8 @@ body {
 .info-img {
     width: 100%;
     height: auto;
-    max-width: 100%;
-    border-radius: 16px;
     display: block;
+    border-radius: 0;
 }
 
 /* ================= PRODUCT MODAL (POPUP) ================= */
@@ -651,10 +646,5 @@ body {
 
     .products-grid {
         grid-template-columns: repeat(1, 1fr);
-    }
-
-    .info-page-section {
-        padding-left: 1rem;
-        padding-right: 1rem;
     }
 }
