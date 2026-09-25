@@ -69,9 +69,9 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-weight: 700;
-    color: #555555;
+    color: #000000;
     font-family: system-ui, -apple-system, sans-serif;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -82,7 +82,7 @@ body {
 }
 
 .badge-divider {
-    color: #cccccc;
+    color: #000000;
     font-size: 0.8rem;
 }
 
