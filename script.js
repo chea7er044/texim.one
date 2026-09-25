@@ -44,23 +44,28 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
             
-            if (targetId && targetId !== '#') {
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    e.preventDefault();
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+            // Проверка за валиден селектор (избягва грешки при href="#")
+            if (targetId && targetId.length > 1) {
+                try {
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
 
-                    // Затваряне на мобилното меню при клик върху линк
-                    if (navMenu && navMenu.classList.contains('active')) {
-                        navMenu.classList.remove('active');
-                        const icon = burgerBtn ? burgerBtn.querySelector('i') : null;
-                        if (icon) {
-                            icon.className = 'fa-solid fa-bars';
+                        // Затваряне на мобилното меню при клик върху линк
+                        if (navMenu && navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            const icon = burgerBtn ? burgerBtn.querySelector('i') : null;
+                            if (icon) {
+                                icon.className = 'fa-solid fa-bars';
+                            }
                         }
                     }
+                } catch (err) {
+                    // Предотвратява срив при невалидни ID-та
                 }
             }
         });
@@ -74,6 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const swatches = document.querySelectorAll('.swatch');
     const thumbnails = document.querySelectorAll('.thumb-item');
+
+    // Функция за плавна смяна на основното изображение
+    function changeMainImage(newSrc) {
+        if (mainImg && newSrc && mainImg.src !== newSrc) {
+            mainImg.style.opacity = '0.3';
+            setTimeout(() => {
+                mainImg.src = newSrc;
+                mainImg.style.opacity = '1';
+            }, 120);
+        }
+    }
 
     function updateSelectedColor(colorCode) {
         if (!colorCode) return;
@@ -100,17 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
             colorNameLabel.textContent = newColorName;
         }
 
-        // Смяна на основното изображение с кратък плавен преход
-        if (mainImg && newImgSrc && mainImg.src !== newImgSrc) {
-            mainImg.style.opacity = '0.3';
-            setTimeout(() => {
-                mainImg.src = newImgSrc;
-                mainImg.style.opacity = '1';
-            }, 120);
+        // Смяна на основната снимка
+        if (newImgSrc) {
+            changeMainImage(newImgSrc);
         }
     }
 
-    // Клик събитие за квадратите с цвят
+    // Клик събитие за квадратите с цвят (swatches)
     swatches.forEach(swatch => {
         swatch.addEventListener('click', () => {
             const color = swatch.getAttribute('data-color');
@@ -118,11 +130,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Клик събитие за миниатюрите
+    // Клик събитие за миниатюрите (thumbnails)
     thumbnails.forEach(thumb => {
         thumb.addEventListener('click', () => {
             const color = thumb.getAttribute('data-color');
-            updateSelectedColor(color);
+            if (color) {
+                updateSelectedColor(color);
+            } else {
+                // Ако миниатюрата няма data-color, сменяме снимката директно
+                const imgSrc = thumb.getAttribute('data-img') || thumb.getAttribute('src');
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+                changeMainImage(imgSrc);
+            }
         });
     });
 
