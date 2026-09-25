@@ -207,13 +207,14 @@ body {
     line-height: 1.2;
 }
 
-/* СТИЛИЗИРАНЕ НА ЦЕНАТА В КАРТАТА */
+/* СТИЛИЗИРАНЕ НА ЦЕНАТА В КАРТАТА (ОЛЕКОТЕН ДЕСКТОП ИЗГЛЕД) */
 .product-card-price {
-    font-size: 1.05rem;
-    font-weight: 800;
-    color: #000000;
-    margin-top: 0.2rem;
-    letter-spacing: 0.3px;
+    font-size: 0.98rem;
+    font-weight: 500;
+    color: #222222;
+    margin-top: 0.25rem;
+    letter-spacing: 0.2px;
+    font-family: system-ui, -apple-system, sans-serif;
 }
 
 /* ИКОНКА ЗА ЦВЕТОВЕТЕ В КАТАЛОГА */
@@ -357,11 +358,14 @@ body {
     margin-bottom: 0.3rem;
 }
 
+/* СТИЛИЗИРАНЕ НА ЦЕНАТА В МОДАЛА */
 .modal-price {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: #000000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #111111;
     margin-bottom: 0.4rem;
+    letter-spacing: 0.2px;
+    font-family: system-ui, -apple-system, sans-serif;
 }
 
 .modal-colors-count {
