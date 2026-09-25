@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
             
-            // Проверка за валиден селектор
             if (targetId && targetId.length > 1) {
                 try {
                     const targetElement = document.querySelector(targetId);
@@ -77,10 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainImg = document.getElementById('main-product-img');
     const colorNameLabel = document.getElementById('selected-color-name');
     
-    const swatches = document.querySelectorAll('.swatch');
-    const thumbnails = document.querySelectorAll('.thumb-item');
+    const swatches = document.querySelectorAll('.swatch, .color-box');
+    const thumbnails = document.querySelectorAll('.thumb-item, .thumb');
 
-    // Функция за плавна смяна на основното изображение
     function changeMainImage(newSrc) {
         if (mainImg && newSrc && mainImg.src !== newSrc) {
             mainImg.style.opacity = '0.3';
@@ -94,14 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateSelectedColor(colorCode) {
         if (!colorCode) return;
 
-        const activeSwatch = document.querySelector(`.swatch[data-color="${colorCode}"]`);
-        const activeThumb = document.querySelector(`.thumb-item[data-color="${colorCode}"]`);
+        const activeSwatch = document.querySelector(`[data-color="${colorCode}"]`);
+        const activeThumb = document.querySelector(`.thumb-item[data-color="${colorCode}"], .thumb[data-color="${colorCode}"]`);
 
-        // Премахваме активния клас от всички налични елементи
         swatches.forEach(s => s.classList.remove('active'));
         thumbnails.forEach(t => t.classList.remove('active'));
 
-        // Маркираме избрания цвят и миниатюра
         if (activeSwatch) activeSwatch.classList.add('active');
         if (activeThumb) {
             activeThumb.classList.add('active');
@@ -111,18 +107,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const newImgSrc = activeSwatch ? activeSwatch.getAttribute('data-img') : null;
         const newColorName = activeSwatch ? activeSwatch.getAttribute('data-color-name') : null;
 
-        // Смяна на текста с името на цвета
         if (colorNameLabel && newColorName) {
             colorNameLabel.textContent = newColorName;
         }
 
-        // Смяна на основната снимка
         if (newImgSrc) {
             changeMainImage(newImgSrc);
         }
     }
 
-    // Клик събитие за квадратите с цвят (swatches)
     swatches.forEach(swatch => {
         swatch.addEventListener('click', () => {
             const color = swatch.getAttribute('data-color');
@@ -130,7 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Клик събитие за миниатюрите (thumbnails)
     thumbnails.forEach(thumb => {
         thumb.addEventListener('click', () => {
             const color = thumb.getAttribute('data-color');
@@ -168,25 +160,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalOverlay = document.getElementById('modalOverlay') || modal.querySelector('.modal-overlay');
 
         function openModal(card) {
-            // Вземане на данни от data- атрибутите
-            const code = card.getAttribute('data-code');
-            const title = card.getAttribute('data-title');
-            const price = card.getAttribute('data-price');
-            const imgSrc = card.getAttribute('data-img');
-            const colors = card.getAttribute('data-colors');
-            const description = card.getAttribute('data-description');
-            const fabric = card.getAttribute('data-fabric');
+            // Вземане от data- атрибути или fallback от структурата на картата
+            const code = card.getAttribute('data-code') || card.querySelector('.product-code')?.textContent || '';
+            const title = card.getAttribute('data-title') || card.querySelector('.product-title')?.textContent || '';
+            const price = card.getAttribute('data-price') || card.querySelector('.product-card-price')?.textContent || '';
+            const imgSrc = card.getAttribute('data-img') || card.querySelector('.product-img')?.src || '';
+            const colors = card.getAttribute('data-colors') || '';
+            const description = card.getAttribute('data-description') || '';
+            const fabric = card.getAttribute('data-fabric') || '';
 
-            // Заместване на съдържанието
             if (modalImg && imgSrc) modalImg.src = imgSrc;
-            if (modalCode && code) modalCode.textContent = code;
-            if (modalTitle && title) modalTitle.textContent = title;
-            if (modalPrice && price) modalPrice.textContent = price;
-            if (modalColors && colors) modalColors.textContent = colors;
-            if (modalDescription && description) modalDescription.textContent = description;
-            if (modalFabric && fabric) modalFabric.textContent = fabric;
+            if (modalCode) modalCode.textContent = code;
+            if (modalTitle) modalTitle.textContent = title;
+            if (modalPrice) modalPrice.textContent = price;
+            if (modalColors) modalColors.textContent = colors;
+            if (modalDescription) modalDescription.textContent = description;
+            if (modalFabric) modalFabric.textContent = fabric;
 
-            // Отваряне и спиране на скрола на тялото
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -196,7 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = '';
         }
 
-        // Закачане на клик върху всяка карта
         productCards.forEach(card => {
             card.addEventListener('click', () => openModal(card));
         });
@@ -204,11 +193,33 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
         if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
 
-        // Затваряне с Escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.classList.contains('active')) {
                 closeModal();
             }
+        });
+    }
+
+    // ==========================================
+    // 5. ПРЕВКЛЮЧВАНЕ НА ТАБОВЕ (PRODUCT TABS)
+    // ==========================================
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    if (tabBtns.length > 0 && tabContents.length > 0) {
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.getAttribute('data-tab');
+
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                btn.classList.add('active');
+                if (targetTab) {
+                    const activeContent = document.getElementById(targetTab);
+                    if (activeContent) activeContent.classList.add('active');
+                }
+            });
         });
     }
 });
