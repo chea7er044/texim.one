@@ -1,7 +1,7 @@
 /* FONT DECLARATION */
 @font-face {
     font-family: 'Futura PT Bold';
-    src: url('/file/font/FuturaPTBold.otf') format('opentype'); /* Абсолютен път за подстраниците */
+    src: url('/file/font/FuturaPTBold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -41,8 +41,8 @@ body {
 .navbar {
     max-width: 100%;
     margin: 0 auto;
-    padding-top: 12px;      /* Симетричен отстъп отгоре */
-    padding-bottom: 12px;   /* Симетричен отстъп отдолу */
+    padding-top: 12px;
+    padding-bottom: 12px;
     padding-left: 3rem;
     padding-right: 3rem;
     display: flex;
@@ -132,8 +132,8 @@ body {
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 10px;      /* Точно 10px между менюто и картите */
-    padding-bottom: 10px;   /* Точно 10px в дъното под картите */
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 2rem;
     padding-right: 2rem;
 }
@@ -179,9 +179,9 @@ body {
 /* ИНФОРМАЦИЯ ПОД СНИМКАТА В КАТАЛОГА */
 .product-info {
     display: flex;
-    justify-content: center;   /* Центрира целия блок под снимката */
+    justify-content: space-between;
     align-items: center;
-    gap: 2rem;                  /* Обновено разстояние: 2rem (~32px) */
+    gap: 1.5rem;
     margin-top: 0.6rem;
     padding: 0 0.5rem;
 }
@@ -205,6 +205,15 @@ body {
     color: #444444;
     font-weight: 500;
     line-height: 1.2;
+}
+
+/* СТИЛИЗИРАНЕ НА ЦЕНАТА В КАРТАТА */
+.product-card-price {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #000000;
+    margin-top: 0.2rem;
+    letter-spacing: 0.3px;
 }
 
 /* ИКОНКА ЗА ЦВЕТОВЕТЕ В КАТАЛОГА */
@@ -348,6 +357,13 @@ body {
     margin-bottom: 0.3rem;
 }
 
+.modal-price {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 0.4rem;
+}
+
 .modal-colors-count {
     font-size: 0.85rem;
     font-weight: 700;
@@ -380,7 +396,6 @@ body {
     line-height: 1.45;
 }
 
-/* ЗАЗДАВАНЕ НА ПРЕХВЪРЛЯНЕ НА НОВ РЕД ЗА ИЗБРОЕНИТЕ ДЕТАЙЛИ */
 #modalFabric {
     white-space: pre-line;
 }
@@ -399,7 +414,6 @@ body {
     margin-bottom: 50px;
 }
 
-/* Лява колона: Галерия */
 .product-gallery {
     flex: 1;
     max-width: 500px;
@@ -443,7 +457,6 @@ body {
     border-color: #000000;
 }
 
-/* Дясна колона: Детайли за продукта */
 .product-detail-info {
     flex: 1;
     display: flex;
@@ -473,7 +486,6 @@ body {
     font-weight: 400;
 }
 
-/* Таблица със спецификации */
 .specs-table {
     width: 100%;
     border-collapse: collapse;
@@ -505,7 +517,6 @@ body {
     font-weight: 500;
 }
 
-/* Цветова палитра */
 .colors-section h3 {
     font-size: 1.1rem;
     font-weight: 700;
@@ -530,7 +541,6 @@ body {
     transform: scale(1.15);
 }
 
-/* Долни табове (Tabs) */
 .product-details-tabs {
     border-top: 1px solid #eeeeee;
     padding-top: 25px;
