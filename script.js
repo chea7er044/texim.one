@@ -150,29 +150,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 4. ПРОДУКТОВ МОДАЛЕН ПРОЗОРЕЦ (QUICK VIEW)
+    // 4. ДИНАМИЧЕН ПРОДУКТОВ МОДАЛЕН ПРОЗОРЕЦ (QUICK VIEW)
     // ==========================================
     const productCards = document.querySelectorAll('.product-card');
     const modal = document.getElementById('productModal');
 
     if (modal && productCards.length > 0) {
-        const modalImg = modal.querySelector('.modal-image-wrapper img');
-        const modalCode = modal.querySelector('.modal-code');
-        const modalTitle = modal.querySelector('.modal-title');
-        const modalCloseBtn = modal.querySelector('.modal-close-btn');
-        const modalOverlay = modal.querySelector('.modal-overlay');
+        const modalImg = document.getElementById('modalImg') || modal.querySelector('.modal-image-wrapper img');
+        const modalCode = document.getElementById('modalCode') || modal.querySelector('.modal-code');
+        const modalTitle = document.getElementById('modalTitle') || modal.querySelector('.modal-title');
+        const modalColors = document.getElementById('modalColors') || modal.querySelector('.modal-colors-count');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalFabric = document.getElementById('modalFabric');
+
+        const modalCloseBtn = document.getElementById('modalCloseBtn') || modal.querySelector('.modal-close-btn');
+        const modalOverlay = document.getElementById('modalOverlay') || modal.querySelector('.modal-overlay');
 
         function openModal(card) {
-            const img = card.querySelector('.product-img');
-            const code = card.querySelector('.product-code');
-            const title = card.querySelector('.product-title');
+            // Вземане на УНИКАЛНИТЕ данни от data- атрибутите на съответната кликната карта
+            const code = card.getAttribute('data-code');
+            const title = card.getAttribute('data-title');
+            const imgSrc = card.getAttribute('data-img');
+            const colors = card.getAttribute('data-colors');
+            const description = card.getAttribute('data-description');
+            const fabric = card.getAttribute('data-fabric');
 
-            if (modalImg && img) modalImg.src = img.src;
-            if (modalCode && code) modalCode.textContent = code.textContent;
-            if (modalTitle && title) modalTitle.textContent = title.textContent;
+            // Заместване на съдържанието в модалния прозорец
+            if (modalImg && imgSrc) modalImg.src = imgSrc;
+            if (modalCode && code) modalCode.textContent = code;
+            if (modalTitle && title) modalTitle.textContent = title;
+            if (modalColors && colors) modalColors.textContent = colors;
+            if (modalDescription && description) modalDescription.textContent = description;
+            if (modalFabric && fabric) modalFabric.textContent = fabric;
 
+            // Отваряне на модала и затягане на скрола
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Спираме скрола на страницата
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
@@ -180,6 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = '';
         }
 
+        // Закачане на събитие към всяка една от картите в каталога
         productCards.forEach(card => {
             card.addEventListener('click', () => openModal(card));
         });
