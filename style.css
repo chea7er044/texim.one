@@ -189,7 +189,7 @@ body {
 .product-text {
     display: flex;
     flex-direction: column;
-    gap: 0.15rem;
+    gap: 0.25rem; /* Еднакво разстояние между Номер, Заглавие и Цена */
     text-align: left;
 }
 
@@ -212,9 +212,10 @@ body {
     font-size: 0.98rem;
     font-weight: 500;
     color: #222222;
-    margin-top: 0.25rem;
+    margin-top: 0; /* Премахнат излишен марджин за еднакви разстояния */
     letter-spacing: 0.2px;
     font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.1;
 }
 
 /* ИКОНКА ЗА ЦВЕТОВЕТЕ В КАТАЛОГА (УВЕЛИЧЕНА СПРЯМО ВЕРИТИКАЛНИЯ ТЕКСТ) */
