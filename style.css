@@ -180,8 +180,8 @@ body {
 .product-info {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
+    align-items: center; /* Центрира иконката спрямо целия текстов блок */
+    gap: 1rem;
     margin-top: 0.6rem;
     padding: 0 0.5rem;
 }
@@ -217,9 +217,9 @@ body {
     font-family: system-ui, -apple-system, sans-serif;
 }
 
-/* ИКОНКА ЗА ЦВЕТОВЕТЕ В КАТАЛОГА */
+/* ИКОНКА ЗА ЦВЕТОВЕТЕ В КАТАЛОГА (УВЕЛИЧЕНА СПРЯМО ВЕРИТИКАЛНИЯ ТЕКСТ) */
 .color-badge {
-    height: 2.4rem;
+    height: 3.8rem; /* Разпъва се вертикално от цената до номера на артикула */
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
