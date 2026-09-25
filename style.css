@@ -64,6 +64,28 @@ body {
     display: block;
 }
 
+/* ИНДИКАТОРИ В ХЕДЪРА (BADGES) */
+.header-badges {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #555555;
+    font-family: system-ui, -apple-system, sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.badge-item {
+    white-space: nowrap;
+}
+
+.badge-divider {
+    color: #cccccc;
+    font-size: 0.8rem;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -123,7 +145,7 @@ body {
 }
 
 .product-card {
-    text-decoration: none;
+    /* text-decoration премахнато, защото вече е div, а не a (линк) */
     color: var(--text-color);
     display: flex;
     flex-direction: column;
@@ -159,7 +181,7 @@ body {
     display: flex;
     justify-content: center;   /* Центрира целия блок под снимката */
     align-items: center;
-    gap: 2rem;                  /* Обновено разстояние: 2rem (~32px) */
+    gap: 2rem;                 /* Обновено разстояние: 2rem (~32px) */
     margin-top: 0.6rem;
     padding: 0 0.5rem;
 }
@@ -195,6 +217,7 @@ body {
 }
 
 /* ================= PRODUCT SINGLE PAGE STYLES ================= */
+/* (Запазени са в случай че по-нататък добавиш индивидуални страници) */
 .product-container {
     max-width: 1200px;
     width: 100%;
@@ -394,6 +417,13 @@ body {
 }
 
 /* RESPONSIVE DESIGN & MOBILE MENU */
+/* Скриваме дългите текстове в хедъра на екрани под 1150px, за да не се счупи структурата Лого-Меню */
+@media (max-width: 1150px) {
+    .header-badges {
+        display: none;
+    }
+}
+
 @media (max-width: 1024px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
