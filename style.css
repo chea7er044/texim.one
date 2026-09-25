@@ -41,8 +41,8 @@ body {
 .navbar {
     max-width: 100%;
     margin: 0 auto;
-    padding-top: 10px;      /* Точно 10px отгоре на менюто */
-    padding-bottom: 0px;    /* Без излишен отстъп отдолу */
+    padding-top: 12px;      /* Симетричен отстъп отгоре */
+    padding-bottom: 12px;   /* Симетричен отстъп отдолу */
     padding-left: 3rem;
     padding-right: 3rem;
     display: flex;
@@ -120,7 +120,7 @@ body {
     color: var(--text-color);
 }
 
-/* MAIN CONTENT AREA (CATALOG) */
+/* MAIN CONTENT AREA (CATALOG & PAGES) */
 .page-content {
     flex: 1;
     width: 100%;
@@ -132,8 +132,8 @@ body {
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 10px;     /* Точно 10px между менюто и картите */
-    padding-bottom: 10px;  /* Точно 10px в дъното под картите */
+    padding-top: 10px;      /* Точно 10px между менюто и картите */
+    padding-bottom: 10px;   /* Точно 10px в дъното под картите */
     padding-left: 2rem;
     padding-right: 2rem;
 }
@@ -145,7 +145,6 @@ body {
 }
 
 .product-card {
-    /* text-decoration премахнато, защото вече е div, а не a (линк) */
     color: var(--text-color);
     display: flex;
     flex-direction: column;
@@ -215,6 +214,33 @@ body {
     object-fit: contain;
     flex-shrink: 0;
     margin-left: 0;
+}
+
+/* ================= INFO PAGES (SINGLE IMAGE - COLORS/SIZES/CARE) ================= */
+.info-page-section {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.info-image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.info-img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 16px;
+    display: block;
 }
 
 /* ================= PRODUCT MODAL (POPUP) ================= */
@@ -598,6 +624,8 @@ body {
     .navbar {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     .burger {
@@ -623,5 +651,10 @@ body {
 
     .products-grid {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .info-page-section {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
