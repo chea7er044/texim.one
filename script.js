@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
             
-            // Проверка за валиден селектор (избягва грешки при href="#")
+            // Проверка за валиден селектор
             if (targetId && targetId.length > 1) {
                 try {
                     const targetElement = document.querySelector(targetId);
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         swatches.forEach(s => s.classList.remove('active'));
         thumbnails.forEach(t => t.classList.remove('active'));
 
-        // Маркираме избрания цвят и миниатюра (ако съществуват)
+        // Маркираме избрания цвят и миниатюра
         if (activeSwatch) activeSwatch.classList.add('active');
         if (activeThumb) {
             activeThumb.classList.add('active');
@@ -137,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (color) {
                 updateSelectedColor(color);
             } else {
-                // Ако миниатюрата няма data-color, сменяме снимката директно
                 const imgSrc = thumb.getAttribute('data-img') || thumb.getAttribute('src');
                 thumbnails.forEach(t => t.classList.remove('active'));
                 thumb.classList.add('active');
@@ -146,8 +145,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // CSS стилизация за плавен преход на изображението
     if (mainImg) {
         mainImg.style.transition = 'opacity 0.15s ease-in-out';
+    }
+
+    // ==========================================
+    // 4. ПРОДУКТОВ МОДАЛЕН ПРОЗОРЕЦ (QUICK VIEW)
+    // ==========================================
+    const productCards = document.querySelectorAll('.product-card');
+    const modal = document.getElementById('productModal');
+
+    if (modal && productCards.length > 0) {
+        const modalImg = modal.querySelector('.modal-image-wrapper img');
+        const modalCode = modal.querySelector('.modal-code');
+        const modalTitle = modal.querySelector('.modal-title');
+        const modalCloseBtn = modal.querySelector('.modal-close-btn');
+        const modalOverlay = modal.querySelector('.modal-overlay');
+
+        function openModal(card) {
+            const img = card.querySelector('.product-img');
+            const code = card.querySelector('.product-code');
+            const title = card.querySelector('.product-title');
+
+            if (modalImg && img) modalImg.src = img.src;
+            if (modalCode && code) modalCode.textContent = code.textContent;
+            if (modalTitle && title) modalTitle.textContent = title.textContent;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Спираме скрола на страницата
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        productCards.forEach(card => {
+            card.addEventListener('click', () => openModal(card));
+        });
+
+        if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+        if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+
+        // Затваряне с натискане на Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
     }
 });
