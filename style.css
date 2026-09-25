@@ -150,6 +150,7 @@ body {
     display: flex;
     flex-direction: column;
     transition: transform 0.2s ease;
+    cursor: pointer;
 }
 
 .product-card:hover {
@@ -181,7 +182,7 @@ body {
     display: flex;
     justify-content: center;   /* Центрира целия блок под снимката */
     align-items: center;
-    gap: 2rem;                 /* Обновено разстояние: 2rem (~32px) */
+    gap: 2rem;                  /* Обновено разстояние: 2rem (~32px) */
     margin-top: 0.6rem;
     padding: 0 0.5rem;
 }
@@ -216,8 +217,145 @@ body {
     margin-left: 0;
 }
 
+/* ================= PRODUCT MODAL (POPUP) ================= */
+.product-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.25s ease, opacity 0.25s ease;
+}
+
+.product-modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 16px;
+    padding: 2rem;
+    z-index: 2001;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transform: translateY(20px);
+    transition: transform 0.25s ease;
+}
+
+.product-modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #222222;
+    line-height: 1;
+    transition: opacity 0.2s;
+}
+
+.modal-close-btn:hover {
+    opacity: 0.5;
+}
+
+.modal-body {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.modal-image-wrapper {
+    flex: 1;
+    max-width: 380px;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.modal-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-code {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #000000;
+    line-height: 1.1;
+}
+
+.modal-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #555555;
+    margin-bottom: 0.3rem;
+}
+
+.modal-colors-count {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #888888;
+    text-transform: uppercase;
+}
+
+.modal-divider {
+    height: 1px;
+    background-color: #eeeeee;
+    margin: 1rem 0;
+}
+
+.modal-section {
+    margin-bottom: 1rem;
+}
+
+.modal-section h4 {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #000000;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+}
+
+.modal-section p {
+    font-size: 0.9rem;
+    color: #444444;
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.45;
+}
+
 /* ================= PRODUCT SINGLE PAGE STYLES ================= */
-/* (Запазени са в случай че по-нататък добавиш индивидуални страници) */
 .product-container {
     max-width: 1200px;
     width: 100%;
@@ -417,7 +555,6 @@ body {
 }
 
 /* RESPONSIVE DESIGN & MOBILE MENU */
-/* Скриваме дългите текстове в хедъра на екрани под 1150px, за да не се счупи структурата Лого-Меню */
 @media (max-width: 1150px) {
     .header-badges {
         display: none;
@@ -442,6 +579,18 @@ body {
 
     .product-container {
         padding: 0 1.5rem;
+    }
+
+    .modal-body {
+        flex-direction: column;
+    }
+    .modal-image-wrapper {
+        max-width: 100%;
+    }
+    .modal-content {
+        padding: 1.5rem;
+        max-height: 90vh;
+        overflow-y: auto;
     }
 }
 
