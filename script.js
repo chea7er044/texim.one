@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const imgSrc = card.getAttribute('data-img') || card.querySelector('.product-img')?.src || '';
             const colors = card.getAttribute('data-colors') || '';
             const description = card.getAttribute('data-description') || '';
-            const fabric = card.getAttribute('data-fabric') || '';
+            let fabric = card.getAttribute('data-fabric') || '';
 
             if (modalImg && imgSrc) modalImg.src = imgSrc;
             if (modalCode) modalCode.textContent = code;
@@ -186,8 +186,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalDescription) modalDescription.textContent = description;
             
             if (modalFabric) {
-                modalFabric.textContent = fabric;
-                modalFabric.style.whiteSpace = 'pre-line'; // Запазва новите редове от data-fabric
+                // Преобразуваме новите редове в <br> и ползваме innerHTML за правилно изобразяване на всички булети
+                const formattedFabric = fabric.trim().replace(/\r?\n/g, '<br>');
+                modalFabric.innerHTML = formattedFabric;
             }
 
             modal.classList.add('active');
