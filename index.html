@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="file/logo/TEXIM%20ONE%20vertical.png">
     <!-- Font Awesome за иконите -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Външен CSS файл (версия 42.2) -->
+    <!-- Външен CSS файл (версия 43.0) -->
     <link rel="stylesheet" href="style.css?v=43.0">
 </head>
 <body>
@@ -276,49 +276,7 @@
         </div>
     </div>
 
-    <!-- Външен JavaScript файл (версия 42.2) -->
-    <script src="script.js?v=42.2"></script>
-    
-    <!-- Скрипт за отваряне и попълване на модала -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const productCards = document.querySelectorAll(".product-card");
-            const modal = document.getElementById("productModal");
-            const modalOverlay = document.getElementById("modalOverlay");
-            const modalCloseBtn = document.getElementById("modalCloseBtn");
-
-            const modalImg = document.getElementById("modalImg");
-            const modalCode = document.getElementById("modalCode");
-            const modalTitle = document.getElementById("modalTitle");
-            const modalPrice = document.getElementById("modalPrice");
-            const modalColors = document.getElementById("modalColors");
-            const modalDescription = document.getElementById("modalDescription");
-            const modalFabric = document.getElementById("modalFabric");
-
-            productCards.forEach(card => {
-                card.addEventListener("click", () => {
-                    modalImg.src = card.dataset.img || "";
-                    modalImg.alt = card.dataset.code || "";
-                    modalCode.textContent = card.dataset.code || "";
-                    modalTitle.textContent = card.dataset.title || "";
-                    modalPrice.textContent = card.dataset.price || "";
-                    modalColors.textContent = card.dataset.colors || "";
-                    modalDescription.textContent = card.dataset.description || "";
-                    
-                    // Зареждаме съдържанието като HTML, за да се зачетат <br> таговете и да се показват всички редове (вкл. цветовете)
-                    modalFabric.innerHTML = card.dataset.fabric || "";
-
-                    modal.classList.add("active");
-                });
-            });
-
-            const closeModal = () => {
-                modal.classList.remove("active");
-            };
-
-            if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
-            if (modalOverlay) modalOverlay.addEventListener("click", closeModal);
-        });
-    </script>
+    <!-- Външен JavaScript файл (версия 43.0) -->
+    <script src="script.js?v=43.0"></script>
 </body>
 </html>
