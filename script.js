@@ -1,10 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==========================================
-    // 1. МОБИЛНО БУРГЕР МЕНЮ (TOGGLE)
+    // 1. МОБИЛНО БУРГЕР МЕНЮ И ХЕДЪР БАНЕРИ
     // ==========================================
     const burgerBtn = document.getElementById('burgerBtn');
     const navMenu = document.getElementById('navMenu');
+    const headerBadges = document.querySelector('.header-badges');
+
+    // Клониране на индикаторите вътре в мобилното меню (ако са скрити в хедъра на мобилни)
+    if (navMenu && headerBadges && !document.querySelector('.mobile-badges-wrapper')) {
+        const mobileBadgesWrapper = document.createElement('li');
+        mobileBadgesWrapper.className = 'mobile-badges-wrapper';
+        mobileBadgesWrapper.innerHTML = headerBadges.innerHTML;
+        navMenu.appendChild(mobileBadgesWrapper);
+    }
 
     if (burgerBtn && navMenu) {
         burgerBtn.addEventListener('click', (e) => {
@@ -175,7 +184,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalPrice) modalPrice.textContent = price;
             if (modalColors) modalColors.textContent = colors;
             if (modalDescription) modalDescription.textContent = description;
-            if (modalFabric) modalFabric.textContent = fabric;
+            
+            if (modalFabric) {
+                modalFabric.textContent = fabric;
+                modalFabric.style.whiteSpace = 'pre-line'; // Запазва новите редове от data-fabric
+            }
 
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
