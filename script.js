@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.getElementById('navMenu');
     const headerBadges = document.querySelector('.header-badges');
 
-    // Клониране на индикаторите вътре в мобилното меню (ако са скрити в хедъра на мобилни)
+    // Клониране на индикаторите вътре в мобилното меню
     if (navMenu && headerBadges && !document.querySelector('.mobile-badges-wrapper')) {
         const mobileBadgesWrapper = document.createElement('li');
         mobileBadgesWrapper.className = 'mobile-badges-wrapper';
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('click', (e) => {
             if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !burgerBtn.contains(e.target)) {
                 navMenu.classList.remove('active');
-                const icon = burgerBtn.querySelector('i');
+                const icon = burgerBtn ? burgerBtn.querySelector('i') : null;
                 if (icon) {
                     icon.className = 'fa-solid fa-bars';
                 }
@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             behavior: 'smooth'
                         });
 
-                        // Затваряне на мобилното меню при клик върху линк
                         if (navMenu && navMenu.classList.contains('active')) {
                             navMenu.classList.remove('active');
                             const icon = burgerBtn ? burgerBtn.querySelector('i') : null;
@@ -169,7 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalOverlay = document.getElementById('modalOverlay') || modal.querySelector('.modal-overlay');
 
         function openModal(card) {
-            // Вземане от data- атрибути или fallback от структурата на картата
             const code = card.getAttribute('data-code') || card.querySelector('.product-code')?.textContent || '';
             const title = card.getAttribute('data-title') || card.querySelector('.product-title')?.textContent || '';
             const price = card.getAttribute('data-price') || card.querySelector('.product-card-price')?.textContent || '';
@@ -186,9 +184,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalDescription) modalDescription.textContent = description;
             
             if (modalFabric) {
-                // Преобразуваме новите редове в <br> и ползваме innerHTML за правилно изобразяване на всички булети
-                const formattedFabric = fabric.trim().replace(/\r?\n/g, '<br>');
-                modalFabric.innerHTML = formattedFabric;
+                // Директно зареждаме HTML съдържанието без да го чупим
+                // Ако съдържа обикновени нови редове, ги преобразува в <br>, а съществуващите <br> остават незасегнати
+                let formatted = fabric.replace(/\r?\n/g, '<br>');
+                modalFabric.innerHTML = formatted;
             }
 
             modal.classList.add('active');
