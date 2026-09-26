@@ -1,19 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==========================================
-    // 1. МОБИЛНО БУРГЕР МЕНЮ И ХЕДЪР БАНЕРИ
+    // 1. МОБИЛНО БУРГЕР МЕНЮ (TOGGLE)
     // ==========================================
     const burgerBtn = document.getElementById('burgerBtn');
     const navMenu = document.getElementById('navMenu');
-    const headerBadges = document.querySelector('.header-badges');
-
-    // Клониране на индикаторите вътре в мобилното меню
-    if (navMenu && headerBadges && !document.querySelector('.mobile-badges-wrapper')) {
-        const mobileBadgesWrapper = document.createElement('li');
-        mobileBadgesWrapper.className = 'mobile-badges-wrapper';
-        mobileBadgesWrapper.innerHTML = headerBadges.innerHTML;
-        navMenu.appendChild(mobileBadgesWrapper);
-    }
 
     if (burgerBtn && navMenu) {
         burgerBtn.addEventListener('click', (e) => {
@@ -36,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('click', (e) => {
             if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !burgerBtn.contains(e.target)) {
                 navMenu.classList.remove('active');
-                const icon = burgerBtn ? burgerBtn.querySelector('i') : null;
+                const icon = burgerBtn.querySelector('i');
                 if (icon) {
                     icon.className = 'fa-solid fa-bars';
                 }
@@ -63,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             behavior: 'smooth'
                         });
 
+                        // Затваряне на мобилното меню при клик върху линк
                         if (navMenu && navMenu.classList.contains('active')) {
                             navMenu.classList.remove('active');
                             const icon = burgerBtn ? burgerBtn.querySelector('i') : null;
@@ -168,13 +160,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalOverlay = document.getElementById('modalOverlay') || modal.querySelector('.modal-overlay');
 
         function openModal(card) {
+            // Вземане от data- атрибути или fallback от структурата на картата
             const code = card.getAttribute('data-code') || card.querySelector('.product-code')?.textContent || '';
             const title = card.getAttribute('data-title') || card.querySelector('.product-title')?.textContent || '';
             const price = card.getAttribute('data-price') || card.querySelector('.product-card-price')?.textContent || '';
             const imgSrc = card.getAttribute('data-img') || card.querySelector('.product-img')?.src || '';
             const colors = card.getAttribute('data-colors') || '';
             const description = card.getAttribute('data-description') || '';
-            let fabric = card.getAttribute('data-fabric') || '';
+            const fabric = card.getAttribute('data-fabric') || '';
 
             if (modalImg && imgSrc) modalImg.src = imgSrc;
             if (modalCode) modalCode.textContent = code;
@@ -182,13 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalPrice) modalPrice.textContent = price;
             if (modalColors) modalColors.textContent = colors;
             if (modalDescription) modalDescription.textContent = description;
-            
-            if (modalFabric) {
-                // Директно зареждаме HTML съдържанието без да го чупим
-                // Ако съдържа обикновени нови редове, ги преобразува в <br>, а съществуващите <br> остават незасегнати
-                let formatted = fabric.replace(/\r?\n/g, '<br>');
-                modalFabric.innerHTML = formatted;
-            }
+            if (modalFabric) modalFabric.textContent = fabric;
 
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
