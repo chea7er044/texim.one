@@ -19,6 +19,8 @@
     --bg-color: #ffffff;
     --text-color: #000000;
     --border-color: #000000;
+    --promo-bg: #000000;
+    --promo-text: #ffffff;
 }
 
 body {
@@ -28,6 +30,27 @@ body {
     flex-direction: column;
     min-height: 100vh;
     line-height: 1.4;
+}
+
+/* PROMO / ANNOUNCEMENT BAR */
+.promo-bar {
+    background-color: var(--promo-bg);
+    color: var(--promo-text);
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.promo-bar p {
+    margin: 0;
 }
 
 /* HEADER & NAVIGATION */
@@ -613,6 +636,11 @@ body {
 }
 
 @media (max-width: 768px) {
+    .promo-bar {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+
     .product-main {
         flex-direction: column;
         gap: 25px;
@@ -629,9 +657,11 @@ body {
     .modal-body {
         flex-direction: column;
     }
+    
     .modal-image-wrapper {
         max-width: 100%;
     }
+    
     .modal-content {
         padding: 1.5rem;
         max-height: 90vh;
