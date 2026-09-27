@@ -234,19 +234,20 @@ body {
 /* ================= FOOTER ================= */
 .footer {
     background-color: var(--bg-color);
-    border-top: 1px solid #eeeeee;
+    border-top: none;
     padding: 1.5rem 2rem;
     margin-top: auto;
 }
 
+.footer-content,
 .footer-badges {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    font-size: 0.9rem;
+    gap: 2rem;
+    font-size: 0.85rem;
     font-weight: 700;
     color: #000000;
     font-family: system-ui, -apple-system, sans-serif;
@@ -256,13 +257,15 @@ body {
     flex-wrap: wrap;
 }
 
+.footer-item,
 .badge-item {
     white-space: nowrap;
 }
 
+/* Скриване на междинните точки/разделители */
+.footer-divider,
 .badge-divider {
-    color: #000000;
-    font-size: 0.8rem;
+    display: none;
 }
 
 /* ================= PRODUCT MODAL (POPUP) ================= */
@@ -645,12 +648,10 @@ body {
     }
 
     /* На мобилни устройства футърът се подрежда вертикално */
+    .footer-content,
     .footer-badges {
         flex-direction: column;
         gap: 0.6rem;
-    }
-    .badge-divider {
-        display: none;
     }
 }
 
