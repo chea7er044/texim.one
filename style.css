@@ -239,7 +239,7 @@ body {
     margin-top: auto;
 }
 
-.footer-content {
+.footer-badges {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
@@ -256,11 +256,11 @@ body {
     flex-wrap: wrap;
 }
 
-.footer-item {
+.badge-item {
     white-space: nowrap;
 }
 
-.footer-divider {
+.badge-divider {
     color: #000000;
     font-size: 0.8rem;
 }
@@ -644,12 +644,12 @@ body {
         overflow-y: auto;
     }
 
-    /* На мобилни устройства футърът се подрежда вертикално за максимална четимост */
-    .footer-content {
+    /* На мобилни устройства футърът се подрежда вертикално */
+    .footer-badges {
         flex-direction: column;
         gap: 0.6rem;
     }
-    .footer-divider {
+    .badge-divider {
         display: none;
     }
 }
