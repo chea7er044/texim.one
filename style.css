@@ -41,8 +41,8 @@ body {
 .navbar {
     max-width: 100%;
     margin: 0 auto;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 16px;
+    padding-bottom: 16px;
     padding-left: 3rem;
     padding-right: 3rem;
     display: flex;
@@ -69,6 +69,7 @@ body {
     list-style: none;
     gap: 1rem;
     flex-shrink: 0;
+    align-items: center;
 }
 
 .nav-link {
@@ -78,17 +79,28 @@ body {
     font-size: 17px;
     letter-spacing: 0.5px;
     transition: opacity 0.2s ease, border-bottom 0.2s ease;
-    padding-bottom: 2px;
+    padding: 0;
+    line-height: 1;
+    position: relative;
 }
 
 .nav-link:hover {
     opacity: 0.5;
 }
 
-/* АКТИВНА СТРАНИЦА В МЕНЮТО */
+/* АКТИВНА СТРАНИЦА В МЕНЮТО (чертата е позиционирана абсолютно, за да не чупи вертикалния център) */
 .nav-link.active {
     opacity: 1;
-    border-bottom: 2px solid var(--text-color);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
 }
 
 .burger {
@@ -235,7 +247,10 @@ body {
 .footer {
     background-color: var(--bg-color);
     border-top: none;
-    padding: 1.5rem 2rem;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 2rem;
+    padding-right: 2rem;
     margin-top: auto;
 }
 
@@ -255,6 +270,7 @@ body {
     text-transform: uppercase;
     text-align: center;
     flex-wrap: wrap;
+    line-height: 1;
 }
 
 .footer-item,
@@ -659,8 +675,8 @@ body {
     .navbar {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
 
     .burger {
