@@ -64,28 +64,6 @@ body {
     display: block;
 }
 
-/* ИНДИКАТОРИ В ХЕДЪРА (BADGES) */
-.header-badges {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #000000;
-    font-family: system-ui, -apple-system, sans-serif;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-.badge-item {
-    white-space: nowrap;
-}
-
-.badge-divider {
-    color: #000000;
-    font-size: 0.8rem;
-}
-
 .nav-menu {
     display: flex;
     list-style: none;
@@ -251,6 +229,40 @@ body {
     object-fit: contain;
     display: block;
     border-radius: 0;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background-color: var(--bg-color);
+    border-top: 1px solid #eeeeee;
+    padding: 1.5rem 2rem;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #000000;
+    font-family: system-ui, -apple-system, sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.footer-item {
+    white-space: nowrap;
+}
+
+.footer-divider {
+    color: #000000;
+    font-size: 0.8rem;
 }
 
 /* ================= PRODUCT MODAL (POPUP) ================= */
@@ -600,12 +612,6 @@ body {
 }
 
 /* RESPONSIVE DESIGN & MOBILE MENU */
-@media (max-width: 1150px) {
-    .header-badges {
-        display: none;
-    }
-}
-
 @media (max-width: 1024px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -636,6 +642,15 @@ body {
         padding: 1.5rem;
         max-height: 90vh;
         overflow-y: auto;
+    }
+
+    /* На мобилни устройства футърът се подрежда вертикално за максимална четимост */
+    .footer-content {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+    .footer-divider {
+        display: none;
     }
 }
 
