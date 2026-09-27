@@ -88,7 +88,7 @@ body {
     opacity: 0.5;
 }
 
-/* АКТИВНА СТРАНИЦА В МЕНЮТО (чертата е позиционирана абсолютно, за да не чупи вертикалния център) */
+/* АКТИВНА СТРАНИЦА В МЕНЮТО */
 .nav-link.active {
     opacity: 1;
 }
@@ -247,11 +247,12 @@ body {
 .footer {
     background-color: var(--bg-color);
     border-top: none;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     margin-top: auto;
+    width: 100%;
 }
 
 .footer-content,
@@ -261,7 +262,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     font-size: 0.85rem;
     font-weight: 700;
     color: #000000;
@@ -270,12 +271,13 @@ body {
     text-transform: uppercase;
     text-align: center;
     flex-wrap: wrap;
-    line-height: 1;
+    line-height: 1.4;
 }
 
 .footer-item,
 .badge-item {
-    white-space: nowrap;
+    white-space: normal;
+    text-align: center;
 }
 
 /* Скриване на междинните точки/разделители */
@@ -654,20 +656,30 @@ body {
     .modal-body {
         flex-direction: column;
     }
+    
     .modal-image-wrapper {
         max-width: 100%;
     }
+    
     .modal-content {
         padding: 1.5rem;
         max-height: 90vh;
         overflow-y: auto;
     }
 
-    /* На мобилни устройства футърът се подрежда вертикално */
+    /* Подравняване на футъра за телефони и таблети */
     .footer-content,
     .footer-badges {
         flex-direction: column;
         gap: 0.6rem;
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer-item,
+    .badge-item {
+        width: 100%;
+        text-align: center;
     }
 }
 
