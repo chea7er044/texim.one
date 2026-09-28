@@ -64,6 +64,34 @@ body {
     display: block;
 }
 
+/* HEADER SOCIAL ICONS */
+.header-socials {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-left: auto; /* Поставя иконките вдясно до менюто/бургер бутона */
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.social-icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon:hover img {
+    opacity: 0.6;
+    transform: translateY(-1px);
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -689,6 +717,17 @@ body {
         padding-right: 1.5rem;
         padding-top: 12px;
         padding-bottom: 12px;
+    }
+
+    .header-socials {
+        margin-left: auto;
+        margin-right: 0.8rem;
+        gap: 0.8rem;
+    }
+
+    .social-icon img {
+        width: 20px;
+        height: 20px;
     }
 
     .burger {
