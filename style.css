@@ -19,7 +19,8 @@
     --bg-color: #ffffff;
     --text-color: #000000;
     --border-color: #000000;
-    --nav-gap: 0.5rem; /* Намалено разстояние на 0.5rem (8px) */
+    --nav-gap: 1rem;         /* Разстояние между страниците: 1rem */
+    --socials-gap: 0.5rem;   /* Разстояние между логата: 0.5rem */
 }
 
 body {
@@ -69,7 +70,7 @@ body {
 .header-socials {
     display: flex;
     align-items: center;
-    gap: var(--nav-gap); /* 0.5rem */
+    gap: var(--socials-gap); /* 0.5rem за логата */
     margin-left: auto;
 }
 
@@ -97,7 +98,7 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: var(--nav-gap); /* 0.5rem */
+    gap: var(--nav-gap); /* 1rem за страниците */
     flex-shrink: 0;
     align-items: center;
 }
@@ -722,7 +723,7 @@ body {
     .header-socials {
         margin-left: auto;
         margin-right: 0.8rem;
-        gap: var(--nav-gap);
+        gap: var(--socials-gap);
     }
 
     .burger {
