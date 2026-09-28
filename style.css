@@ -19,6 +19,7 @@
     --bg-color: #ffffff;
     --text-color: #000000;
     --border-color: #000000;
+    --nav-gap: 1rem; /* Общо разстояние между елементите в менюто */
 }
 
 body {
@@ -68,7 +69,7 @@ body {
 .header-socials {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: var(--nav-gap); /* РАЗСТОЯНИЕТО Е СЪЩОТО (1rem) КАТО ПРИ СТРАНИЦИТЕ */
     margin-left: auto;
 }
 
@@ -96,7 +97,7 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 1rem;
+    gap: var(--nav-gap); /* СЪЩОТО РАЗСТОЯНИЕ (1rem) */
     flex-shrink: 0;
     align-items: center;
 }
@@ -721,7 +722,7 @@ body {
     .header-socials {
         margin-left: auto;
         margin-right: 0.8rem;
-        gap: 0.9rem;
+        gap: var(--nav-gap); /* ЗАПАЗВА СЪЩОТО РАЗСТОЯНИЕ И НА МОБИЛНИ */
     }
 
     .burger {
