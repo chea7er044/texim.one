@@ -81,8 +81,8 @@ body {
 }
 
 .social-icon img {
-    width: 22px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
@@ -726,8 +726,8 @@ body {
     }
 
     .social-icon img {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
     }
 
     .burger {
