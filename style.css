@@ -19,7 +19,7 @@
     --bg-color: #ffffff;
     --text-color: #000000;
     --border-color: #000000;
-    --nav-gap: 1rem; /* Общо разстояние между елементите в менюто */
+    --nav-gap: 0.5rem; /* Намалено разстояние на 0.5rem (8px) */
 }
 
 body {
@@ -69,7 +69,7 @@ body {
 .header-socials {
     display: flex;
     align-items: center;
-    gap: var(--nav-gap); /* РАЗСТОЯНИЕТО Е СЪЩОТО (1rem) КАТО ПРИ СТРАНИЦИТЕ */
+    gap: var(--nav-gap); /* 0.5rem */
     margin-left: auto;
 }
 
@@ -97,7 +97,7 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: var(--nav-gap); /* СЪЩОТО РАЗСТОЯНИЕ (1rem) */
+    gap: var(--nav-gap); /* 0.5rem */
     flex-shrink: 0;
     align-items: center;
 }
@@ -722,7 +722,7 @@ body {
     .header-socials {
         margin-left: auto;
         margin-right: 0.8rem;
-        gap: var(--nav-gap); /* ЗАПАЗВА СЪЩОТО РАЗСТОЯНИЕ И НА МОБИЛНИ */
+        gap: var(--nav-gap);
     }
 
     .burger {
