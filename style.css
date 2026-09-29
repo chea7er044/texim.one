@@ -667,7 +667,7 @@ body {
     width: 100%;
     max-width: 850px;
     margin: 0 auto;
-    padding: 3rem 1.5rem;
+    padding: 10px 1.5rem; /* Изравнено с .products-section (10px отгоре и отдолу) */
 }
 
 .about-container {
@@ -677,7 +677,7 @@ body {
 .about-title {
     font-size: 2.2rem;
     font-weight: 800;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
     letter-spacing: 1px;
     color: var(--text-color);
@@ -686,8 +686,8 @@ body {
 .about-subtitle {
     font-size: 1.4rem;
     font-weight: 700;
-    margin-top: 2.5rem;
-    margin-bottom: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     text-align: center;
     letter-spacing: 0.5px;
     color: var(--text-color);
@@ -697,7 +697,7 @@ body {
     font-size: 1.05rem;
     line-height: 1.8;
     color: #222222;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.2rem;
     text-align: center;
     font-family: system-ui, -apple-system, sans-serif;
     font-weight: 400;
