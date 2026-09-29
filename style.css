@@ -667,7 +667,7 @@ body {
     width: 100%;
     max-width: 850px;
     margin: 0 auto;
-    padding: 10px 1.5rem; /* Изравнено с .products-section (10px отгоре и отдолу) */
+    padding: 10px 1.5rem;
 }
 
 .about-container {
@@ -677,7 +677,7 @@ body {
 .about-title {
     font-size: 2.2rem;
     font-weight: 800;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem; /* Намалено на 0.5rem */
     text-align: center;
     letter-spacing: 1px;
     color: var(--text-color);
@@ -687,7 +687,7 @@ body {
     font-size: 1.4rem;
     font-weight: 700;
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem; /* Намалено на 0.5rem (еднакво с title) */
     text-align: center;
     letter-spacing: 0.5px;
     color: var(--text-color);
