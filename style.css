@@ -58,7 +58,7 @@ body {
     align-items: center;
     text-decoration: none;
     flex-shrink: 0;
-    gap: 0.6rem; /* Разстояние между иконката и текста */
+    gap: 0.6rem;
 }
 
 .logo-img {
@@ -69,7 +69,7 @@ body {
 
 .logo-text {
     font-family: 'Futura PT Bold', sans-serif;
-    font-size: 1.9rem; /* Желаният размер за десктоп */
+    font-size: 1.9rem;
     font-weight: 800;
     color: var(--text-color);
     letter-spacing: 0.5px;
@@ -77,14 +77,14 @@ body {
     white-space: nowrap;
 }
 
-/* МЕНЮ СЪС СТРАНИЦИТЕ - Центрирано в средата */
+/* МЕНЮ СЪС СТРАНИЦИТЕ */
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: var(--nav-gap); /* 1rem за страниците */
+    gap: var(--nav-gap);
     align-items: center;
     justify-content: center;
-    flex: 1; /* Заема цялото налично пространство между логото и социалките */
+    flex: 1;
 }
 
 .nav-link {
@@ -103,7 +103,6 @@ body {
     opacity: 0.5;
 }
 
-/* АКТИВНА СТРАНИЦА В МЕНЮТО */
 .nav-link.active {
     opacity: 1;
 }
@@ -123,7 +122,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--socials-gap); /* 0.5rem за логата */
+    gap: var(--socials-gap);
     flex-shrink: 0;
 }
 
@@ -136,7 +135,6 @@ body {
     height: 32px;
 }
 
-/* ЕДНАКЪВ РАЗМЕР (32px) ЗА ВСИЧКИ ЕКРАНИ */
 .social-icon img {
     width: 32px;
     height: 32px;
@@ -158,7 +156,7 @@ body {
     line-height: 1;
 }
 
-/* MAIN CONTENT AREA (CATALOG & PAGES) */
+/* MAIN CONTENT AREA */
 .page-content {
     flex: 1;
     width: 100%;
@@ -194,7 +192,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* ЗАОБЛЕНИ ЪГЛИ НА ПАНЕЛИТЕ И ПЪЛНО ЗАПЪЛВАНЕ */
 .product-image-wrapper {
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -214,7 +211,6 @@ body {
     display: block;
 }
 
-/* ИНФОРМАЦИЯ ПОД СНИМКАТА В КАТАЛОГА */
 .product-info {
     display: flex;
     justify-content: space-between;
@@ -227,7 +223,7 @@ body {
 .product-text {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem; /* Уеднаквено разстояние между всички редове */
+    gap: 0.35rem;
     text-align: left;
 }
 
@@ -247,7 +243,6 @@ body {
     margin: 0;
 }
 
-/* СТИЛИЗИРАНЕ НА ЦЕНАТА В КАРТАТА */
 .product-card-price {
     font-size: 0.98rem;
     font-weight: 500;
@@ -258,7 +253,6 @@ body {
     line-height: 1;
 }
 
-/* ИКОНКА ЗА ЦВЕТОВЕТЕ В КАТАЛОГА */
 .color-badge {
     height: 3.8rem;
     width: auto;
@@ -425,7 +419,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.35rem; /* Уеднаквено разстояние между синия/черния код, името и цената */
+    gap: 0.35rem;
 }
 
 .modal-code {
@@ -458,18 +452,19 @@ body {
 .modal-specs-inline {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.8rem; /* Увеличено разстояние между елементите без точки */
     margin-top: 0.5rem;
     font-family: system-ui, -apple-system, sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
-    color: #222222;
+    color: #777777;
+    text-transform: uppercase;
     flex-wrap: wrap;
 }
 
+/* СКРИВАНЕ НА ТОЧКИТЕ РАЗДЕЛИТЕЛИ */
 .spec-divider {
-    color: #888888;
-    user-select: none;
+    display: none;
 }
 
 .modal-colors-count {
@@ -812,7 +807,7 @@ body {
 
 @media (max-width: 650px) {
     .logo-text {
-        font-size: 1.35rem; /* Оптимизиран за мобилни устройства */
+        font-size: 1.35rem;
     }
 
     .logo-img {
@@ -830,7 +825,6 @@ body {
         justify-content: space-between;
     }
 
-    /* Иконките за социалните мрежи - идеално центрирани между логото и бургара */
     .header-socials {
         display: flex;
         align-items: center;
@@ -839,7 +833,6 @@ body {
         gap: 0.6rem;
     }
 
-    /* Бургер менюто - плътно вдясно */
     .burger {
         display: flex;
         align-items: center;
@@ -847,7 +840,6 @@ body {
         margin-left: 0;
     }
 
-    /* Мобилно падащо меню: центрирано и покриващо точно ширината на екрана */
     .nav-menu {
         display: none;
         flex-direction: column;
