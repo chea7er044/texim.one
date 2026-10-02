@@ -787,11 +787,11 @@ body {
 
 @media (max-width: 650px) {
     .logo-text {
-        font-size: 1.4rem; /* Адаптиран за мобилни екрани */
+        font-size: 1.35rem; /* Оптимизиран за мобилни устройства */
     }
 
     .logo-img {
-        height: 30px;
+        height: 28px;
     }
 
     .navbar {
@@ -799,25 +799,30 @@ body {
         padding-right: 1rem;
         padding-top: 12px;
         padding-bottom: 12px;
-        position: relative; /* Правилно позиционира падащото меню */
+        position: relative;
+        display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
+    /* Иконките за социалните мрежи - идеално центрирани между логото и бургара */
     .header-socials {
         display: flex;
         align-items: center;
-        margin-left: auto; /* Връща залепването вдясно за мобилен изглед */
-        margin-right: 0.8rem;
-        gap: var(--socials-gap);
+        margin-left: auto;
+        margin-right: auto;
+        gap: 0.6rem;
     }
 
+    /* Бургер менюто - плътно вдясно */
     .burger {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-left: 0;
     }
 
-    /* Мобилно меню: центрирано и разпънато на целия екран */
+    /* Мобилно падащо меню: центрирано и покриващо точно ширината на екрана */
     .nav-menu {
         display: none;
         flex-direction: column;
@@ -832,7 +837,7 @@ body {
         gap: 1rem;
         text-align: center;
         z-index: 1001;
-        flex: initial; /* Премахва flex: 1 за мобилен изглед */
+        flex: initial;
     }
 
     .nav-menu.active {
