@@ -419,7 +419,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.4rem;
 }
 
 .modal-code {
@@ -454,7 +454,7 @@ body {
     align-items: center;
     gap: 0.8rem;
     margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
     font-family: system-ui, -apple-system, sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
@@ -477,9 +477,7 @@ body {
 }
 
 .modal-divider {
-    height: 1px;
-    background-color: #eeeeee;
-    margin: 0.75rem 0;
+    display: none; /* Премахваме ненужния разделител, за да няма двоен граница/празно място */
 }
 
 .modal-section {
@@ -496,15 +494,15 @@ body {
     text-transform: uppercase;
 }
 
-.modal-section p {
+/* ОПИСАНИЕ НА ПРОДУКТА - СИМЕТРИЧНИ РАЗСТОЯНИЯ ГОРЕ И ДОЛУ */
+.modal-section p,
+#modalFabric {
     font-size: 0.9rem;
     color: #444444;
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1.35;
-    margin: 0.6rem 0;
-}
-
-#modalFabric {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
     white-space: pre-line;
 }
 
