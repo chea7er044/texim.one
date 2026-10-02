@@ -152,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalCode = document.getElementById('modalCode') || modal.querySelector('.modal-code');
         const modalTitle = document.getElementById('modalTitle') || modal.querySelector('.modal-title');
         const modalPrice = document.getElementById('modalPrice') || modal.querySelector('.modal-price');
-        const modalColors = document.getElementById('modalColors') || modal.querySelector('.modal-colors-count');
         const modalDescription = document.getElementById('modalDescription');
         const modalFabric = document.getElementById('modalFabric');
 
@@ -165,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = card.getAttribute('data-title') || card.querySelector('.product-title')?.textContent || '';
             const price = card.getAttribute('data-price') || card.querySelector('.product-card-price')?.textContent || '';
             const imgSrc = card.getAttribute('data-img') || card.querySelector('.product-img')?.src || '';
-            const colors = card.getAttribute('data-colors') || '';
             const description = card.getAttribute('data-description') || '';
             const fabric = card.getAttribute('data-fabric') || '';
 
@@ -173,7 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalCode) modalCode.textContent = code;
             if (modalTitle) modalTitle.textContent = title;
             if (modalPrice) modalPrice.textContent = price;
-            if (modalColors) modalColors.textContent = colors;
             if (modalDescription) modalDescription.textContent = description;
             if (modalFabric) modalFabric.textContent = fabric;
 
