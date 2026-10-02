@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const description = card.getAttribute('data-description') || '';
             const fabric = card.getAttribute('data-fabric') || '';
             
-            // Вземане на спецификациите
+            // Вземане на спецификациите от конкретния продукт
             const sizes = card.getAttribute('data-sizes') || '';
             const fit = card.getAttribute('data-fit') || '';
             const weight = card.getAttribute('data-weight') || '';
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalDescription) modalDescription.textContent = description;
             if (modalFabric) modalFabric.textContent = fabric;
 
-            // Зареждане на спецификациите в модала
+            // Зареждане на динамичните спецификации
             if (modalSizes) modalSizes.textContent = sizes;
             if (modalFit) modalFit.textContent = fit;
             if (modalWeight) modalWeight.textContent = weight;
