@@ -69,7 +69,7 @@ body {
 
 .logo-text {
     font-family: 'Futura PT Bold', sans-serif;
-    font-size: 1.9rem; /* Обновено от 1.3rem на 1.9rem */
+    font-size: 1.9rem; /* Желаният размер за десктоп */
     font-weight: 800;
     color: var(--text-color);
     letter-spacing: 0.5px;
@@ -780,16 +780,25 @@ body {
 }
 
 @media (max-width: 650px) {
+    .logo-text {
+        font-size: 1.4rem; /* Прибрано за мобилен екран, за да има въздух */
+    }
+
+    .logo-img {
+        height: 30px;
+    }
+
     .navbar {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
         padding-top: 12px;
         padding-bottom: 12px;
+        position: relative; /* Необходим за правилното позициониране на падащото меню */
     }
 
     .header-socials {
         margin-left: auto;
-        margin-right: 0.8rem;
+        margin-right: 0.5rem;
         gap: var(--socials-gap);
     }
 
@@ -797,17 +806,21 @@ body {
         display: block;
     }
 
+    /* Мобилно меню: пълно покритие по ширина и точно центриране */
     .nav-menu {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
+        right: 0;
         width: 100%;
         background-color: var(--bg-color);
-        padding: 1rem 1.5rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        gap: 0.8rem;
+        padding: 1.2rem 1.5rem;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+        gap: 1rem;
+        text-align: center;
+        z-index: 1001;
     }
 
     .nav-menu.active {
