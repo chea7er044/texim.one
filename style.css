@@ -419,7 +419,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem; /* Консистентно разстояние между основните блокове */
+    gap: 0.35rem;
 }
 
 .modal-code {
@@ -452,9 +452,9 @@ body {
 .modal-specs-inline {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
-    margin-top: 0;
-    margin-bottom: 0;
+    gap: 0.8rem; /* Увеличено разстояние между елементите без точки */
+    margin-top: 0.5rem;
+    margin-bottom: 1rem; /* Фиксиран еднакъв отстъп над описанието */
     font-family: system-ui, -apple-system, sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
@@ -473,17 +473,17 @@ body {
     font-weight: 700;
     color: #888888;
     text-transform: uppercase;
-    margin-top: 0;
+    margin-top: 0.2rem;
 }
 
 .modal-divider {
     height: 1px;
     background-color: #eeeeee;
-    margin: 0.5rem 0; /* Намалено вертикално отстояние за разделителя */
+    margin: 1rem 0;
 }
 
 .modal-section {
-    margin-bottom: 0.5rem; /* Намалено отстояние отдолу */
+    margin-bottom: 1rem;
 }
 
 .modal-section h4 {
@@ -491,7 +491,8 @@ body {
     font-weight: 800;
     color: #000000;
     letter-spacing: 0.5px;
-    margin-bottom: 0.25rem; /* По-малко разстояние между заглавието и текста */
+    margin-top: 1rem; /* Уеднаквен отстъп над заглавието PRODUCT DETAILS */
+    margin-bottom: 0.3rem;
     text-transform: uppercase;
 }
 
@@ -499,7 +500,7 @@ body {
     font-size: 0.9rem;
     color: #444444;
     font-family: system-ui, -apple-system, sans-serif;
-    line-height: 1.35; /* Малко по-сбит и стегнат текст */
+    line-height: 1.45;
     margin: 0;
 }
 
