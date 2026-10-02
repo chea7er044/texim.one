@@ -154,6 +154,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalPrice = document.getElementById('modalPrice') || modal.querySelector('.modal-price');
         const modalDescription = document.getElementById('modalDescription');
         const modalFabric = document.getElementById('modalFabric');
+        
+        // Нови елементи за спецификациите в модала
+        const modalSizes = document.getElementById('modalSizes');
+        const modalFit = document.getElementById('modalFit');
+        const modalWeight = document.getElementById('modalWeight');
 
         const modalCloseBtn = document.getElementById('modalCloseBtn') || modal.querySelector('.modal-close-btn');
         const modalOverlay = document.getElementById('modalOverlay') || modal.querySelector('.modal-overlay');
@@ -166,6 +171,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const imgSrc = card.getAttribute('data-img') || card.querySelector('.product-img')?.src || '';
             const description = card.getAttribute('data-description') || '';
             const fabric = card.getAttribute('data-fabric') || '';
+            
+            // Вземане на спецификациите
+            const sizes = card.getAttribute('data-sizes') || '';
+            const fit = card.getAttribute('data-fit') || '';
+            const weight = card.getAttribute('data-weight') || '';
 
             if (modalImg && imgSrc) modalImg.src = imgSrc;
             if (modalCode) modalCode.textContent = code;
@@ -173,6 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalPrice) modalPrice.textContent = price;
             if (modalDescription) modalDescription.textContent = description;
             if (modalFabric) modalFabric.textContent = fabric;
+
+            // Зареждане на спецификациите в модала
+            if (modalSizes) modalSizes.textContent = sizes;
+            if (modalFit) modalFit.textContent = fit;
+            if (modalWeight) modalWeight.textContent = weight;
 
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
