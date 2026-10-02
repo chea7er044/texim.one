@@ -415,11 +415,23 @@ body {
     object-fit: cover;
 }
 
+/* ИЗЦЯЛО ЕДНАКВИ РАЗСТОЯНИЯ 0.5REM В МОДАЛА */
 .modal-info {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.4rem; /* Еднакво разстояние между всички елементи */
+    gap: 0.5rem;
+}
+
+.modal-info > *,
+.modal-info p,
+.modal-info h4,
+.modal-info ul,
+.modal-section,
+.modal-section h4,
+.modal-section p {
+    margin: 0 !important;
+    padding: 0;
 }
 
 .modal-code {
@@ -427,15 +439,13 @@ body {
     font-weight: 800;
     color: #000000;
     line-height: 1;
-    margin: 0;
 }
 
 .modal-title {
     font-size: 1.2rem;
     font-weight: 500;
     color: #555555;
-    line-height: 1;
-    margin: 0;
+    line-height: 1.1;
 }
 
 .modal-price {
@@ -445,24 +455,21 @@ body {
     letter-spacing: 0.2px;
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1;
-    margin: 0;
 }
 
-/* СПЕЦИФИКАЦИИ В МОДАЛА (РАЗМЕРИ • КРОЙКА • ГРАМАЖ) */
 .modal-specs-inline {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    margin: 0;
     font-family: system-ui, -apple-system, sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     color: #777777;
     text-transform: uppercase;
     flex-wrap: wrap;
+    line-height: 1;
 }
 
-/* СКРИВАНЕ НА ТОЧКИТЕ РАЗДЕЛИТЕЛИ */
 .spec-divider {
     display: none;
 }
@@ -472,15 +479,10 @@ body {
     font-weight: 700;
     color: #888888;
     text-transform: uppercase;
-    margin: 0;
 }
 
 .modal-divider {
     display: none;
-}
-
-.modal-section {
-    margin: 0;
 }
 
 .modal-section h4 {
@@ -488,18 +490,17 @@ body {
     font-weight: 800;
     color: #000000;
     letter-spacing: 0.5px;
-    margin: 0;
     text-transform: uppercase;
+    line-height: 1.2;
 }
 
-/* ОПИСАНИЕ НА ПРОДУКТА И ДЕТАЙЛИ - УЕДНАКВЕНИ РАЗСТОЯНИЯ */
 .modal-section p,
+#modalDescription,
 #modalFabric {
     font-size: 0.9rem;
     color: #444444;
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1.35;
-    margin: 0;
     white-space: pre-line;
 }
 
