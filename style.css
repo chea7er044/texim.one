@@ -468,6 +468,7 @@ body {
     text-transform: uppercase;
     flex-wrap: wrap;
     line-height: 1;
+    margin: 0 !important;
 }
 
 .spec-divider {
