@@ -329,6 +329,30 @@ body {
     display: none;
 }
 
+.footer-legal {
+    max-width: 1400px;
+    margin: 0.8rem auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.legal-link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: opacity 0.2s ease;
+}
+
+.legal-link:hover {
+    opacity: 0.5;
+}
+
 /* ================= PRODUCT MODAL (POPUP) ================= */
 .product-modal {
     position: fixed;
@@ -735,7 +759,8 @@ body {
     }
 
     .footer-content,
-    .footer-badges {
+    .footer-badges,
+    .footer-legal {
         flex-direction: column;
         gap: 0.6rem;
         align-items: center;
@@ -743,7 +768,8 @@ body {
     }
 
     .footer-item,
-    .badge-item {
+    .badge-item,
+    .legal-link {
         width: 100%;
         text-align: center;
     }
