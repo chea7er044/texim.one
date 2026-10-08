@@ -756,6 +756,28 @@ body {
     margin-bottom: 0.6rem;
 }
 
+/* СТИЛОВЕ ЗА НАДЗОРНИТЕ ОРГАНИ (КЗП / КЗЛД) */
+.supervisory-text {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.supervisory-text p {
+    font-family: system-ui, -apple-system, sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 1rem;
+    color: #222222;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.legal-link {
+    color: inherit;
+    text-decoration: underline;
+    font-family: system-ui, -apple-system, sans-serif !important;
+    font-weight: 400 !important;
+}
+
 /* RESPONSIVE DESIGN & MOBILE MENU */
 @media (max-width: 1024px) {
     .products-grid {
