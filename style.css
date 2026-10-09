@@ -30,6 +30,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     line-height: 1.4;
+    overflow-x: hidden; /* Предотвратява хоризонтален скрол */
 }
 
 /* HEADER & NAVIGATION */
@@ -38,6 +39,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
 }
 
 .navbar {
@@ -291,8 +293,8 @@ body {
 .footer {
     background-color: var(--bg-color);
     border-top: none;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
     margin-top: auto;
@@ -331,7 +333,7 @@ body {
 
 .footer-legal {
     max-width: 1400px;
-    margin: 0.3rem auto 0 auto;
+    margin: 0.8rem auto 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -447,7 +449,6 @@ body {
     object-fit: cover;
 }
 
-/* ИЗЦЯЛО ЕДНАКВИ РАЗСТОЯНИЯ 0.5REM В МОДАЛА */
 .modal-info {
     flex: 1;
     display: flex;
@@ -503,19 +504,11 @@ body {
     margin: 0 !important;
 }
 
-.spec-divider {
-    display: none;
-}
-
 .modal-colors-count {
     font-size: 0.85rem;
     font-weight: 700;
     color: #888888;
     text-transform: uppercase;
-}
-
-.modal-divider {
-    display: none;
 }
 
 .modal-section h4 {
@@ -537,93 +530,98 @@ body {
     white-space: pre-line;
 }
 
-/* ================= PRODUCT SINGLE PAGE STYLES ================= */
-.product-container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 30px auto;
-    padding: 0 2rem;
+/* RESPONSIVE DESIGN & MOBILE MENU */
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.product-main {
-    display: flex;
-    gap: 50px;
-    margin-bottom: 50px;
-}
+@media (max-width: 850px) {
+    .navbar {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        position: relative;
+    }
 
-.product-gallery {
-    flex: 1;
-    max-width: 500px;
-}
+    .logo-text {
+        font-size: 1.4rem;
+    }
 
-.main-image {
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    background-color: #f5f5f5;
-}
+    .logo-img {
+        height: 28px;
+    }
 
-.main-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
+    /* Скриваме главното хоризонтално меню и го правим падащо */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+        padding: 1.5rem 1rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        gap: 1.2rem;
+        text-align: center;
+        z-index: 1001;
+    }
 
-.thumbnail-list {
-    display: flex;
-    gap: 12px;
-    margin-top: 15px;
-    overflow-x: auto;
-    padding-bottom: 5px;
-}
+    /* Когато бургерът е цъкнат */
+    .nav-menu.active {
+        display: flex;
+    }
 
-.thumb {
-    width: 75px;
-    height: 75px;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: all 0.2s ease;
-    background-color: #f5f5f5;
-}
+    .header-socials {
+        margin-left: auto;
+        margin-right: 0.8rem;
+    }
 
-.thumb:hover, 
-.thumb.active {
-    border-color: #000000;
-}
+    .burger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.product-detail-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
+    .products-section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 
-.product-detail-info .product-code {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: #000000;
-    margin-bottom: 4px;
-}
+    .products-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
-.product-detail-info .product-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #000000;
-    margin-bottom: 15px;
-}
+    .footer-content,
+    .footer-badges,
+    .footer-legal {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+        width: 100%;
+    }
 
-.product-description {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #555555;
-    margin-bottom: 25px;
-    font-family: system-ui, -apple-system, sans-serif;
-    font-weight: 400;
-}
+    .footer-item,
+    .badge-item,
+    .legal-link {
+        width: 100%;
+        text-align: center;
+    }
 
-.specs-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #f9
+    .modal-body {
+        flex-direction: column;
+    }
+
+    .modal-image-wrapper {
+        max-width: 100%;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
