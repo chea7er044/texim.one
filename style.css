@@ -15,6 +15,11 @@
     font-family: 'Futura PT Bold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 :root {
     --bg-color: #ffffff;
     --text-color: #000000;
@@ -30,7 +35,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
     line-height: 1.4;
-    overflow-x: hidden; /* Предотвратява хоризонтален скрол */
 }
 
 /* HEADER & NAVIGATION */
@@ -52,7 +56,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .logo {
@@ -156,6 +160,7 @@ body {
     font-size: 1.8rem;
     color: var(--text-color);
     line-height: 1;
+    flex-shrink: 0;
 }
 
 /* MAIN CONTENT AREA */
@@ -326,11 +331,6 @@ body {
     text-align: center;
 }
 
-.footer-divider,
-.badge-divider {
-    display: none;
-}
-
 .footer-legal {
     max-width: 1400px;
     margin: 0.8rem auto 0 auto;
@@ -356,7 +356,6 @@ body {
     opacity: 0.5;
 }
 
-/* АКТИВНА / ИЗБРАНА СТРАНИЦА ВЪВ ФУТЪРА */
 .legal-link.active {
     opacity: 1;
     text-decoration: underline;
@@ -530,65 +529,79 @@ body {
     white-space: pre-line;
 }
 
-/* RESPONSIVE DESIGN & MOBILE MENU */
+/* ================= RESPONSIVE DESIGN & MOBILE MENU ================= */
 @media (max-width: 1024px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* МОБИЛЕН И ТАБЛЕТЕН ЕКРАН */
 @media (max-width: 850px) {
     .navbar {
-        padding-left: 1.2rem;
-        padding-right: 1.2rem;
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
         padding-top: 12px;
         padding-bottom: 12px;
         position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo {
+        gap: 0.4rem;
     }
 
     .logo-text {
-        font-size: 1.4rem;
+        font-size: 1.25rem;
     }
 
     .logo-img {
-        height: 28px;
+        height: 26px;
     }
 
-    /* Скриваме главното хоризонтално меню и го правим падащо */
+    /* ЗАДЪЛЖИТЕЛНО СКРИВАНЕ НА ХОРИЗОНТАЛНОТО МЕНЮ В МОБИЛЕН РЕЖИМ */
     .nav-menu {
-        display: none;
+        display: none !important;
         flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         background-color: var(--bg-color);
-        padding: 1.5rem 1rem;
+        padding: 1.2rem 1rem;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         gap: 1.2rem;
         text-align: center;
         z-index: 1001;
     }
 
-    /* Когато бургерът е цъкнат */
+    /* КОГАТО БУРГЕР МЕНЮТО Е ОТВОРЕНО */
     .nav-menu.active {
-        display: flex;
+        display: flex !important;
     }
 
     .header-socials {
         margin-left: auto;
-        margin-right: 0.8rem;
+        margin-right: 0.5rem;
+        gap: 0.3rem;
+    }
+
+    .social-icon img {
+        width: 26px;
+        height: 26px;
     }
 
     .burger {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: flex !important;
+        font-size: 1.6rem;
     }
 
     .products-section {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
     }
 
     .products-grid {
@@ -620,7 +633,7 @@ body {
     }
 
     .modal-content {
-        padding: 1.5rem;
+        padding: 1.2rem;
         max-height: 90vh;
         overflow-y: auto;
     }
