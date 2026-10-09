@@ -353,6 +353,13 @@ body {
     opacity: 0.5;
 }
 
+/* АКТИВНА СТРАНИЦА ВЪВ ФУТЪРА */
+.legal-link.active {
+    opacity: 1;
+    text-decoration: underline;
+    font-weight: 800;
+}
+
 /* ================= PRODUCT MODAL (POPUP) ================= */
 .product-modal {
     position: fixed;
