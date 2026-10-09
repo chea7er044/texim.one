@@ -346,11 +346,19 @@ body {
     text-decoration: none;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, text-decoration 0.2s ease;
+    position: relative;
 }
 
 .legal-link:hover {
     opacity: 0.5;
+}
+
+/* АКТИВНА / ИЗБРАНА СТРАНИЦА ВЪВ ФУТЪРА */
+.legal-link.active {
+    opacity: 1;
+    text-decoration: underline;
+    font-weight: 800;
 }
 
 /* ================= PRODUCT MODAL (POPUP) ================= */
@@ -618,220 +626,4 @@ body {
 .specs-table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 30px;
-    font-family: system-ui, -apple-system, sans-serif;
-}
-
-.specs-table td {
-    padding: 12px 16px;
-    border-bottom: 1px solid #eeeeee;
-    font-size: 0.9rem;
-}
-
-.specs-table tr:last-child td {
-    border-bottom: none;
-}
-
-.specs-table tr td:first-child {
-    font-weight: 600;
-    color: #666666;
-    width: 35%;
-}
-
-.specs-table tr td:last-child {
-    color: #111111;
-    font-weight: 500;
-}
-
-.colors-section h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-.color-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.color-box {
-    width: 28px;
-    height: 28px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: transform 0.15s ease;
-}
-
-.color-box:hover {
-    transform: scale(1.15);
-}
-
-.product-details-tabs {
-    border-top: 1px solid #eeeeee;
-    padding-top: 25px;
-    margin-top: 10px;
-}
-
-.tab-buttons {
-    display: flex;
-    gap: 25px;
-    border-bottom: 1px solid #dddddd;
-    margin-bottom: 20px;
-}
-
-.tab-btn {
-    background: none;
-    border: none;
-    padding: 10px 0;
-    font-size: 1.05rem;
-    font-weight: 700;
-    cursor: pointer;
-    color: #888888;
-    border-bottom: 3px solid transparent;
-    transition: all 0.2s ease;
-}
-
-.tab-btn.active, 
-.tab-btn:hover {
-    color: #000000;
-    border-bottom-color: #000000;
-}
-
-.tab-content {
-    display: none;
-    padding: 10px 0;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-.tab-content ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    font-family: system-ui, -apple-system, sans-serif;
-    font-weight: 400;
-    color: #444444;
-}
-
-.tab-content li {
-    margin-bottom: 8px;
-    font-size: 0.95rem;
-}
-
-/* RESPONSIVE DESIGN & MOBILE MENU */
-@media (max-width: 1024px) {
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .product-main {
-        flex-direction: column;
-        gap: 25px;
-    }
-
-    .product-gallery {
-        max-width: 100%;
-    }
-
-    .product-container {
-        padding: 0 1.5rem;
-    }
-
-    .modal-body {
-        flex-direction: column;
-    }
-    
-    .modal-image-wrapper {
-        max-width: 100%;
-    }
-    
-    .modal-content {
-        padding: 1.5rem;
-        max-height: 90vh;
-        overflow-y: auto;
-    }
-
-    .footer-content,
-    .footer-badges,
-    .footer-legal {
-        flex-direction: column;
-        gap: 0.6rem;
-        align-items: center;
-        width: 100%;
-    }
-
-    .footer-item,
-    .badge-item,
-    .legal-link {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-@media (max-width: 650px) {
-    .logo-text {
-        font-size: 1.35rem;
-    }
-
-    .logo-img {
-        height: 28px;
-    }
-
-    .navbar {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .header-socials {
-        display: flex;
-        align-items: center;
-        margin-left: auto;
-        margin-right: auto;
-        gap: 0.6rem;
-    }
-
-    .burger {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: 0;
-    }
-
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        width: 100%;
-        background-color: var(--bg-color);
-        padding: 1.2rem 1.5rem;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-        gap: 1rem;
-        text-align: center;
-        z-index: 1001;
-        flex: initial;
-    }
-
-    .nav-menu.active {
-        display: flex;
-    }
-
-    .products-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
+    background-color: #f9
