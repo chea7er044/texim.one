@@ -5,27 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONTACT INFORMATION | TEXIM ONE</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- SEO & Open Graph Meta Tags -->
-    <meta name="description" content="TEXIM ONE - T-Shirt, Sweatshirt and Hoodie">
-    <meta property="og:title" content="TEXIM ONE - Collection">
-    <meta property="og:description" content="The American Original Blank Apparel for Europe">
+    <meta name="description" content="TEXIM ONE - Contact Information & Legal Details">
+    <meta property="og:title" content="TEXIM ONE - Contact Information">
+    <meta property="og:description" content="Official contact details and legal entities for TEXIM ONE Ltd.">
     <meta property="og:image" content="../file/logo/TEXIM%20ONE%20vertical.png">
     <meta property="og:type" content="website">
 
     <!-- Favicon / Иконка за таба -->
     <link rel="icon" type="image/png" href="../file/logo/TEXIM%20ONE%20vertical.png">
-    
-    <!-- Font Awesome за иконите -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Външен CSS файл -->
-    <link rel="stylesheet" href="style.css?v=42.0">
+
+    <style>
+        .legal-page-container {
+            max-width: 900px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 0 2rem;
+            font-family: system-ui, -apple-system, sans-serif;
+            color: #111111;
+        }
+
+        .legal-page-title {
+            font-family: 'Futura PT Bold', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .legal-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .legal-section-title {
+            font-family: 'Futura PT Bold', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .info-card {
+            background-color: #f9f9f9;
+            padding: 1.2rem;
+            border-radius: 8px;
+        }
+
+        .info-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #666666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #000000;
+            line-height: 1.4;
+        }
+
+        .info-value a {
+            color: #000000;
+            text-decoration: underline;
+            transition: opacity 0.2s;
+        }
+
+        .info-value a:hover {
+            opacity: 0.6;
+        }
+    </style>
 </head>
 <body>
 
-<!-- HEADER / NAVIGATION -->
+    <!-- HEADER / NAVIGATION -->
     <header class="header">
         <nav class="navbar">
             <a href="../index.html" class="logo">
@@ -44,13 +112,13 @@
             <!-- HEADER SOCIAL ICONS -->
             <div class="header-socials">
                 <a href="https://www.instagram.com/ig.texim.one/" target="_blank" class="social-icon">
-                    <img src="/file/socials/Instagram.png" alt="Instagram">
+                    <img src="../file/socials/Instagram.png" alt="Instagram">
                 </a>
                 <a href="https://www.tiktok.com/@tt.texim.one" target="_blank" class="social-icon">
-                    <img src="/file/socials/TikTok.png" alt="TikTok">
+                    <img src="../file/socials/TikTok.png" alt="TikTok">
                 </a>
                 <a href="https://g.page/r/CdsT9C-uVC-OEBM/review" target="_blank" class="social-icon">
-                    <img src="/file/socials/Google.png" alt="Google">
+                    <img src="../file/socials/Google.png" alt="Google">
                 </a>
             </div>
 
@@ -60,19 +128,73 @@
         </nav>
     </header>
 
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-badges">
-        <span class="badge-item">FREE BOX NOW DELIVERY (24 HOURS). FREE RETURNS (14 DAYS). EVERY MONDAY, WE PLACE AN ORDER FOR IMPORTS FROM GERMANY (5-7 BUSINESS DAYS).</span>
-    </div>
-    <div class="footer-legal">
-        <a href="general-terms-and-conditions.html" class="legal-link">GENERAL TERMS & CONDITIONS</a>
-        <a href="privacy-policy.html" class="legal-link">PRIVACY POLICY</a>
-        <a href="shipping-and-returns.html" class="legal-link">SHIPPING & RETURNS</a>
-        <a href="contact-information.html" class="legal-link">CONTACT INFORMATION</a>
-    </div>
-</footer>
+    <!-- MAIN CONTENT -->
+    <main class="page-content">
+        <div class="legal-page-container">
+            <h1 class="legal-page-title">Данни за контакт</h1>
 
-    <script src="../script.js"></script>
-</body>
-</html>
+            <!-- ОСНОВНИ ОБСТОЯТЕЛСТВА -->
+            <section class="legal-section">
+                <h2 class="legal-section-title">Основни обстоятелства</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-label">Фирма / Наименование</div>
+                        <div class="info-value">ТЕКСИМ УАН ООД (TEXIM ONE Ltd.)</div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-label">ЕИК / ПИК</div>
+                        <div class="info-value">208482305</div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-label">Правна форма</div>
+                        <div class="info-value">Дружество с ограничена отговорност</div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-label">Телефон</div>
+                        <div class="info-value"><a href="tel:+359884846130" style="text-decoration: none;">+359 88 484 6130</a></div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-label">Имейл</div>
+                        <div class="info-value"><a href="mailto:texim1bg@gmail.com" style="text-decoration: none;">texim1bg@gmail.com</a></div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-label">Седалище и адрес на управление</div>
+                        <div class="info-value">БЪЛГАРИЯ, гр. Пловдив 4002, р-н Западен, бул. КОПРИВЩИЦА № 25, ет. 1, ап. 2</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- НАДЗОРНИ ОРГАНИ -->
+            <section class="legal-section">
+                <h2 class="legal-section-title">Надзорни органи</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-label">Комисия за защита на потребителите (КЗП)</div>
+                        <div class="info-value">
+                            <a href="https://kzp.bg" target="_blank" rel="noopener">www.kzp.bg</a>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-label">Комисия за защита на личните данни (КЗЛД)</div>
+                        <div class="info-value">
+                            <a href="https://cpdp.bg" target="_blank" rel="noopener">www.cpdp.bg</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-badges">
+            <span class="badge-item">FREE BOX NOW DELIVERY (24 HOURS). FREE RETURNS (14 DAYS). EVERY MONDAY, WE PLACE AN ORDER FOR IMPORTS FROM GERMANY (5-7 BUSINESS DAYS).</span>
+        </div>
+        <div class="footer-legal">
+            <a href="general-terms-and-conditions.html" class="legal-link">GENERAL TERMS &
