@@ -583,6 +583,11 @@ body {
         width: 100%;
         text-align: center;
     }
+
+    /* Скриване на помощния текст за зуум на мобилни устройства */
+    .zoom-hint-text {
+        display: none !important;
+    }
 }
 
 @media (max-width: 650px) {
