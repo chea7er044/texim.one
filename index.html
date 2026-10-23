@@ -334,4 +334,57 @@
     <!-- FOOTER (САМО ЮРИДИЧЕСКИ ЛИНКОВЕ) -->
     <footer class="footer">
         <div class="footer-legal">
-            <a href="page/privacy-policy.html" class
+            <a href="page/privacy-policy.html" class="legal-link">PRIVACY POLICY</a>
+            <a href="page/shipping-and-returns.html" class="legal-link">SHIPPING & RETURNS</a>
+            <a href="page/contact-information.html" class="legal-link">CONTACT INFORMATION</a>
+            <a href="page/general-terms-and-conditions.html" class="legal-link">GENERAL TERMS & CONDITIONS</a>
+        </div>
+    </footer>
+
+    <!-- PRODUCT DETAILS MODAL (POPUP) -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image-wrapper">
+                    <img src="" alt="Product Image" id="modalImg">
+                </div>
+                <div class="modal-info">
+                    <h2 class="modal-code" id="modalCode">N3600</h2>
+                    <h3 class="modal-title" id="modalTitle">Unisex Cotton T-Shirt</h3>
+                    <p class="modal-price" id="modalPrice">8.99 EUR</p>
+                    
+                    <!-- Спецификации на един ред -->
+                    <div class="modal-specs-inline">
+                        <span class="spec-tag" id="modalSizes">XS-2XL</span>
+                        <span class="spec-divider">•</span>
+                        <span class="spec-tag" id="modalFit">OVERSIZED FIT</span>
+                        <span class="spec-divider">•</span>
+                        <span class="spec-tag" id="modalWeight">230 G/M²</span>
+                    </div>
+
+                    <div class="modal-section" style="margin-top: 1rem;">
+                        <p id="modalDescription">Description text goes here...</p>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h4>Product details</h4>
+                        <p id="modalFabric" style="white-space: pre-line;">100% Combed Ring-Spun Cotton | 145 gsm</p>
+                    </div>
+
+                    <!-- ТРИТЕ БУТОНА ЗА SIZES, COLORS И CARE -->
+                    <div class="modal-action-buttons">
+                        <button type="button" class="modal-info-btn" onclick="openImageViewer('file/info/sizes.png')">SIZES</button>
+                        <button type="button" class="modal-info-btn" onclick="openImageViewer('file/info/colors.png')">COLORS</button>
+                        <button type="button" class="modal-info-btn" onclick="openImageViewer('file/info/care.png')">CARE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Външен JavaScript файл -->
+    <script src="script.js"></script>
+</body>
+</html>
