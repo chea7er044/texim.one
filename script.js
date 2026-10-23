@@ -247,7 +247,7 @@ function openImageViewer(imageSrc) {
             <div class="modal-overlay" onclick="closeImageViewer()"></div>
             <div class="modal-content" style="max-width: 950px; padding: 1.5rem; text-align: center;">
                 <button type="button" class="modal-close-btn" onclick="closeImageViewer()">&times;</button>
-                <div style="font-size: 0.75rem; color: #666; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Кликнете върху снимката за зуум и я насочвайте с мишката</div>
+                <div class="zoom-hint-text" style="font-size: 0.75rem; color: #666; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Кликнете върху снимката за зуум и я насочвайте с мишката</div>
                 <div id="infoImgContainer">
                     <img id="infoViewerImg" src="" alt="Information">
                 </div>
