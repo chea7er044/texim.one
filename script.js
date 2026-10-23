@@ -164,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalOverlay = document.getElementById('modalOverlay') || modal.querySelector('.modal-overlay');
 
         function openModal(card) {
-            // Вземане от data- атрибути или fallback от структурата на картата
             const code = card.getAttribute('data-code') || card.querySelector('.product-code')?.textContent || '';
             const title = card.getAttribute('data-title') || card.querySelector('.product-title')?.textContent || '';
             const price = card.getAttribute('data-price') || card.querySelector('.product-card-price')?.textContent || '';
@@ -172,7 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const description = card.getAttribute('data-description') || '';
             const fabric = card.getAttribute('data-fabric') || '';
             
-            // Вземане на спецификациите от конкретния продукт
             const sizes = card.getAttribute('data-sizes') || '';
             const fit = card.getAttribute('data-fit') || '';
             const weight = card.getAttribute('data-weight') || '';
@@ -184,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalDescription) modalDescription.textContent = description;
             if (modalFabric) modalFabric.textContent = fabric;
 
-            // Зареждане на динамичните спецификации
             if (modalSizes) modalSizes.textContent = sizes;
             if (modalFit) modalFit.textContent = fit;
             if (modalWeight) modalWeight.textContent = weight;
@@ -235,3 +232,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// ==========================================
+// 6. ФУНКЦИЯ ЗА ОТВАРЯНЕ НА ИНФО СНИМКИТЕ (SIZES, COLORS, CARE)
+// ==========================================
+function openImageViewer(imageSrc) {
+    // Създаване на динамичен модал за разглеждане на снимката, ако не съществува
+    let viewerModal = document.getElementById('infoImageViewerModal');
+    
+    if (!viewerModal) {
+        viewerModal = document.createElement('div');
+        viewerModal.id = 'infoImageViewerModal';
+        viewerModal.className = 'product-modal';
+        viewerModal.innerHTML = `
+            <div class="modal-overlay" onclick="closeImageViewer()"></div>
+            <div class="modal-content" style="max-width: 900px; padding: 1.5rem; text-align: center;">
+                <button type="button" class="modal-close-btn" onclick="closeImageViewer()">&times;</button>
+                <div style="width: 100%; max-height: 80vh; overflow: auto; margin-top: 1rem;">
+                    <img id="infoViewerImg" src="" alt="Information" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+                </div>
+            </div>
+        `;
+        document.body.appendChild(viewerModal);
+    }
+
+    const viewerImg = document.getElementById('infoViewerImg');
+    if (viewerImg) {
+        viewerImg.src = imageSrc;
+    }
+
+    viewerModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageViewer() {
+    const viewerModal = document.getElementById('infoImageViewerModal');
+    if (viewerModal) {
+        viewerModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
