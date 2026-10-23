@@ -357,6 +357,7 @@ body {
     color: #222222;
     line-height: 1;
     transition: opacity 0.2s;
+    z-index: 10;
 }
 
 .modal-close-btn:hover {
@@ -490,7 +491,7 @@ body {
     transform: translateY(-1px);
 }
 
-/* ИНТЕРАКТИВЕН ЗУУМ С НАСОЧВАНЕ НА МИШКАТА */
+/* ИНТЕРАКТИВЕН ЗУУМ С НАСОЧВАНЕ НА МИШКАТА (САМО ЗА ДЕСКТОП) */
 #infoImgContainer {
     position: relative;
     width: 100%;
@@ -498,7 +499,18 @@ body {
     overflow: hidden;
     border-radius: 8px;
     background: #f9f9f9;
-    cursor: zoom-in;
+}
+
+@media (min-width: 769px) {
+    #infoImgContainer {
+        cursor: zoom-in;
+    }
+    #infoImgContainer.zoomed {
+        cursor: zoom-out;
+    }
+    #infoImgContainer.zoomed #infoViewerImg {
+        transform: scale(2.2);
+    }
 }
 
 #infoViewerImg {
@@ -509,14 +521,6 @@ body {
     transition: transform 0.1s ease-out;
     transform-origin: center center;
     pointer-events: none;
-}
-
-#infoImgContainer.zoomed {
-    cursor: zoom-out;
-}
-
-#infoImgContainer.zoomed #infoViewerImg {
-    transform: scale(2.2);
 }
 
 /* ================= RESPONSIVE DESIGN ================= */
@@ -584,9 +588,12 @@ body {
         text-align: center;
     }
 
-    /* Скриване на помощния текст за зуум на мобилни устройства */
-    .zoom-hint-text {
-        display: none !important;
+    /* На мобилни устройства премахваме фиксираната височина на контейнера, 
+       за да се скролва нормално снимката без излишно празно пространство */
+    #infoImgContainer {
+        height: auto;
+        max-height: 65vh;
+        overflow-y: auto;
     }
 }
 
