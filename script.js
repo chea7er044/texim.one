@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
-// 6. ФУНКЦИЯ ЗА ОТВАРЯНЕ И ИНТЕРАКТИВЕН ЗУУМ С МИШКАТА (SIZES, COLORS, CARE)
+// 6. ФУНКЦИЯ ЗА ОТВАРЯНЕ НА ИНФО СНИМКИТЕ (БЕЗ ТЕКСТ, ЗУУМ САМО НА ДЕСКТОП)
 // ==========================================
 function openImageViewer(imageSrc) {
     let viewerModal = document.getElementById('infoImageViewerModal');
@@ -245,9 +245,8 @@ function openImageViewer(imageSrc) {
         viewerModal.className = 'product-modal';
         viewerModal.innerHTML = `
             <div class="modal-overlay" onclick="closeImageViewer()"></div>
-            <div class="modal-content" style="max-width: 950px; padding: 1.5rem; text-align: center;">
+            <div class="modal-content" style="max-width: 950px; padding: 2rem 1.5rem 1.5rem 1.5rem; text-align: center; position: relative;">
                 <button type="button" class="modal-close-btn" onclick="closeImageViewer()">&times;</button>
-                <div class="zoom-hint-text" style="font-size: 0.75rem; color: #666; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Кликнете върху снимката за зуум и я насочвайте с мишката</div>
                 <div id="infoImgContainer">
                     <img id="infoViewerImg" src="" alt="Information">
                 </div>
@@ -258,17 +257,20 @@ function openImageViewer(imageSrc) {
         const container = document.getElementById('infoImgContainer');
         const img = document.getElementById('infoViewerImg');
 
+        // Зуум логиката работи само при десктоп резолюции (> 768px)
         container.addEventListener('click', (e) => {
-            container.classList.toggle('zoomed');
-            if (container.classList.contains('zoomed')) {
-                updateImageOrigin(e, container, img);
-            } else {
-                img.style.transformOrigin = 'center center';
+            if (window.innerWidth > 768) {
+                container.classList.toggle('zoomed');
+                if (container.classList.contains('zoomed')) {
+                    updateImageOrigin(e, container, img);
+                } else {
+                    img.style.transformOrigin = 'center center';
+                }
             }
         });
 
         container.addEventListener('mousemove', (e) => {
-            if (container.classList.contains('zoomed')) {
+            if (window.innerWidth > 768 && container.classList.contains('zoomed')) {
                 updateImageOrigin(e, container, img);
             }
         });
