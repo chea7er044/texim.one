@@ -490,15 +490,33 @@ body {
     transform: translateY(-1px);
 }
 
-/* ЗУУМ И УВЕЛИЧАВАНЕ НА ИНФО СНИМКИТЕ */
-#infoViewerImg {
-    transition: transform 0.3s ease;
+/* ИНТЕРАКТИВЕН ЗУУМ С НАСОЧВАНЕ НА МИШКАТА */
+#infoImgContainer {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f9f9f9;
     cursor: zoom-in;
 }
 
-#infoViewerImg.zoomed {
-    transform: scale(1.6);
+#infoViewerImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.1s ease-out;
+    transform-origin: center center;
+    pointer-events: none;
+}
+
+#infoImgContainer.zoomed {
     cursor: zoom-out;
+}
+
+#infoImgContainer.zoomed #infoViewerImg {
+    transform: scale(2.2);
 }
 
 /* ================= RESPONSIVE DESIGN ================= */
