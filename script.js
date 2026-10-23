@@ -234,10 +234,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
-// 6. ФУНКЦИЯ ЗА ОТВАРЯНЕ НА ИНФО СНИМКИТЕ (SIZES, COLORS, CARE)
+// 6. ФУНКЦИЯ ЗА ОТВАРЯНЕ И ЗУУМ НА ИНФО СНИМКИТЕ (SIZES, COLORS, CARE)
 // ==========================================
 function openImageViewer(imageSrc) {
-    // Създаване на динамичен модал за разглеждане на снимката, ако не съществува
     let viewerModal = document.getElementById('infoImageViewerModal');
     
     if (!viewerModal) {
@@ -246,10 +245,11 @@ function openImageViewer(imageSrc) {
         viewerModal.className = 'product-modal';
         viewerModal.innerHTML = `
             <div class="modal-overlay" onclick="closeImageViewer()"></div>
-            <div class="modal-content" style="max-width: 900px; padding: 1.5rem; text-align: center;">
+            <div class="modal-content" style="max-width: 950px; padding: 1.5rem; text-align: center;">
                 <button type="button" class="modal-close-btn" onclick="closeImageViewer()">&times;</button>
-                <div style="width: 100%; max-height: 80vh; overflow: auto; margin-top: 1rem;">
-                    <img id="infoViewerImg" src="" alt="Information" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+                <div style="font-size: 0.75rem; color: #666; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Кликнете върху снимката за увеличение / намаление</div>
+                <div id="infoImgContainer" style="width: 100%; max-height: 75vh; overflow: auto; margin-top: 0.5rem; border-radius: 8px; background: #f9f9f9;">
+                    <img id="infoViewerImg" src="" alt="Information" onclick="toggleImageZoom(this)" style="width: 100%; height: auto; display: block; border-radius: 8px;">
                 </div>
             </div>
         `;
@@ -258,11 +258,16 @@ function openImageViewer(imageSrc) {
 
     const viewerImg = document.getElementById('infoViewerImg');
     if (viewerImg) {
+        viewerImg.classList.remove('zoomed');
         viewerImg.src = imageSrc;
     }
 
     viewerModal.classList.add('active');
     document.body.style.overflow = 'hidden';
+}
+
+function toggleImageZoom(imgElement) {
+    imgElement.classList.toggle('zoomed');
 }
 
 function closeImageViewer() {
