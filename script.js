@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
-// 6. ФУНКЦИЯ ЗА ОТВАРЯНЕ И ЗУУМ НА ИНФО СНИМКИТЕ (SIZES, COLORS, CARE)
+// 6. ФУНКЦИЯ ЗА ОТВАРЯНЕ И ИНТЕРАКТИВЕН ЗУУМ С МИШКАТА (SIZES, COLORS, CARE)
 // ==========================================
 function openImageViewer(imageSrc) {
     let viewerModal = document.getElementById('infoImageViewerModal');
@@ -247,18 +247,39 @@ function openImageViewer(imageSrc) {
             <div class="modal-overlay" onclick="closeImageViewer()"></div>
             <div class="modal-content" style="max-width: 950px; padding: 1.5rem; text-align: center;">
                 <button type="button" class="modal-close-btn" onclick="closeImageViewer()">&times;</button>
-                <div style="font-size: 0.75rem; color: #666; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Кликнете върху снимката за увеличение / намаление</div>
-                <div id="infoImgContainer" style="width: 100%; max-height: 75vh; overflow: auto; margin-top: 0.5rem; border-radius: 8px; background: #f9f9f9;">
-                    <img id="infoViewerImg" src="" alt="Information" onclick="toggleImageZoom(this)" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+                <div style="font-size: 0.75rem; color: #666; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Кликнете върху снимката за зуум и я насочвайте с мишката</div>
+                <div id="infoImgContainer">
+                    <img id="infoViewerImg" src="" alt="Information">
                 </div>
             </div>
         `;
         document.body.appendChild(viewerModal);
+
+        const container = document.getElementById('infoImgContainer');
+        const img = document.getElementById('infoViewerImg');
+
+        container.addEventListener('click', (e) => {
+            container.classList.toggle('zoomed');
+            if (container.classList.contains('zoomed')) {
+                updateImageOrigin(e, container, img);
+            } else {
+                img.style.transformOrigin = 'center center';
+            }
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (container.classList.contains('zoomed')) {
+                updateImageOrigin(e, container, img);
+            }
+        });
     }
 
+    const container = document.getElementById('infoImgContainer');
     const viewerImg = document.getElementById('infoViewerImg');
+    
+    if (container) container.classList.remove('zoomed');
     if (viewerImg) {
-        viewerImg.classList.remove('zoomed');
+        viewerImg.style.transformOrigin = 'center center';
         viewerImg.src = imageSrc;
     }
 
@@ -266,8 +287,11 @@ function openImageViewer(imageSrc) {
     document.body.style.overflow = 'hidden';
 }
 
-function toggleImageZoom(imgElement) {
-    imgElement.classList.toggle('zoomed');
+function updateImageOrigin(e, container, img) {
+    const rect = container.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    img.style.transformOrigin = `${x}% ${y}%`;
 }
 
 function closeImageViewer() {
