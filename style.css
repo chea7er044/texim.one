@@ -462,6 +462,34 @@ body {
     white-space: pre-line;
 }
 
+/* СТИЛ ЗА ТРИТЕ БУТОНА В МОДАЛА */
+.modal-action-buttons {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.modal-info-btn {
+    flex: 1;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    font-family: 'Futura PT Bold', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.modal-info-btn:hover {
+    opacity: 0.7;
+    transform: translateY(-2px);
+}
+
 /* ================= RESPONSIVE DESIGN ================= */
 @media (max-width: 1024px) {
     .products-grid {
