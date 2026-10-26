@@ -142,13 +142,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 4. ДИНАМИЧЕН ПРОДУКТОВ МОДАЛЕН ПРОЗОРЕЦ (QUICK VIEW с миниатюри)
+    // 4. ДИНАМИЧЕН ПРОДУКТОВ МОДАЛЕН ПРОЗОРЕЦ (QUICK VIEW с миниатюри и зуум)
     // ==========================================
     const productCards = document.querySelectorAll('.product-card');
     const modal = document.getElementById('productModal');
 
     if (modal && productCards.length > 0) {
         const modalImg = document.getElementById('modalImg') || modal.querySelector('.modal-image-wrapper img');
+        const modalImgContainer = document.getElementById('infoImgContainer');
         const modalThumbnailsContainer = document.getElementById('modalThumbnails');
         const modalCode = document.getElementById('modalCode') || modal.querySelector('.modal-code');
         const modalTitle = document.getElementById('modalTitle') || modal.querySelector('.modal-title');
@@ -163,6 +164,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const modalCloseBtn = document.getElementById('modalCloseBtn') || modal.querySelector('.modal-close-btn');
         const modalOverlay = document.getElementById('modalOverlay') || modal.querySelector('.modal-overlay');
+
+        // Зуум функционалност за модалната снимка
+        if (modalImgContainer && modalImg) {
+            modalImgContainer.addEventListener('click', (e) => {
+                if (window.innerWidth > 768) {
+                    modalImgContainer.classList.toggle('zoomed');
+                    if (modalImgContainer.classList.contains('zoomed')) {
+                        updateImageOrigin(e, modalImgContainer, modalImg);
+                    } else {
+                        modalImg.style.transformOrigin = 'center center';
+                    }
+                }
+            });
+
+            modalImgContainer.addEventListener('mousemove', (e) => {
+                if (window.innerWidth > 768 && modalImgContainer.classList.contains('zoomed')) {
+                    updateImageOrigin(e, modalImgContainer, modalImg);
+                }
+            });
+        }
 
         function openModal(card) {
             const code = card.getAttribute('data-code') || card.querySelector('.product-code')?.textContent || '';
@@ -197,8 +218,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 imagesList = [defaultImgSrc];
             }
 
-            // Задаване на първата снимка като основна в модала
-            if (modalImg && imagesList.length > 0) {
+            // Нулиране на зуума при отваряне на нов продукт
+            if (modalImgContainer) modalImgContainer.classList.remove('zoomed');
+            if (modalImg) {
+                modalImg.style.transformOrigin = 'center center';
                 modalImg.src = imagesList[0];
             }
 
@@ -214,9 +237,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         thumbImg.className = 'thumb';
                         if (index === 0) thumbImg.classList.add('active');
 
-                        // При клик на миниатюра се сменя голямата снимка
+                        // При клик на миниатюра се сменя голямата снимка и се изчиства зуума
                         thumbImg.addEventListener('click', () => {
-                            if (modalImg) modalImg.src = imgSrc;
+                            if (modalImgContainer) modalImgContainer.classList.remove('zoomed');
+                            if (modalImg) {
+                                modalImg.style.transformOrigin = 'center center';
+                                modalImg.src = imgSrc;
+                            }
                             modalThumbnailsContainer.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
                             thumbImg.classList.add('active');
                         });
@@ -233,6 +260,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function closeModal() {
+            if (modalImgContainer) modalImgContainer.classList.remove('zoomed');
+            if (modalImg) modalImg.style.transformOrigin = 'center center';
             modal.classList.remove('active');
             document.body.style.overflow = '';
         }
