@@ -410,7 +410,7 @@ body {
         cursor: zoom-out;
     }
     #infoImgContainer.zoomed #modalImg {
-        transform: scale(3);
+        transform: scale(3.3);
     }
 }
 
