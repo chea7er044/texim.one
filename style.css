@@ -539,6 +539,14 @@ body {
         gap: 1rem;
     }
 
+    .logo-img {
+        height: 42px; /* По-добър размер на логото за мобилни устройства */
+    }
+
+    .logo-text {
+        font-size: 2.1rem; /* По-балансиран размер на текста за мобилни */
+    }
+
     .header-center-info {
         font-size: 0.75rem;
         padding: 0;
@@ -598,11 +606,11 @@ body {
 
 @media (max-width: 650px) {
     .logo-text {
-        font-size: 1.35rem;
+        font-size: 1.8rem;
     }
 
     .logo-img {
-        height: 28px;
+        height: 36px;
     }
 
     .products-grid {
