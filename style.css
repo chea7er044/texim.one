@@ -396,7 +396,7 @@ body {
     object-fit: cover;
 }
 
-/* ПРЕЦИЗНО РАЗСТОЯНИЕ И СТИЛОВЕ В МОДАЛА */
+/* ЦЕЛИЯТ ПАНЕЛ С ЕДНАКВИ И КОМПАКТНИ РАЗСТОЯНИЯ (0.25rem) */
 .modal-info {
     flex: 1;
     display: flex;
@@ -443,13 +443,13 @@ body {
     align-items: center;
     gap: 0.8rem;
     font-family: system-ui, -apple-system, sans-serif;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: #777777;
     text-transform: uppercase;
     flex-wrap: wrap;
-    line-height: 1;
-    margin: 0 !important;
+    line-height: 1.2;
+    margin-top: 0.15rem !important;
 }
 
 .spec-divider {
@@ -463,23 +463,25 @@ body {
     letter-spacing: 0.5px;
     text-transform: uppercase;
     line-height: 1.2;
+    margin-top: 0.3rem !important;
 }
 
 .modal-section p,
 #modalDescription,
 #modalFabric {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #444444;
     font-family: system-ui, -apple-system, sans-serif;
-    line-height: 1.35;
+    line-height: 1.3;
     white-space: pre-line;
+    margin-top: 0.15rem !important;
 }
 
 /* КОМПАКТНИ БУТОНИ В МОДАЛА */
 .modal-action-buttons {
     display: flex;
     gap: 0.5rem;
-    margin-top: 0.8rem;
+    margin-top: 0.6rem !important;
 }
 
 .modal-info-btn {
