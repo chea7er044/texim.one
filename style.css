@@ -334,7 +334,7 @@ body {
     width: 90%;
     max-width: 800px;
     border-radius: 16px;
-    padding: 2.5rem 2rem 2rem 2rem; /* Увеличено горно отстояние, за да има място за хикса */
+    padding: 2.5rem 2rem 2rem 2rem;
     z-index: 2001;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     transform: translateY(20px);
@@ -345,32 +345,29 @@ body {
     transform: translateY(0);
 }
 
-/* СТРОГО ФИКСИРАНА И СТАНДАРТНА ПОЗИЦИЯ НА БУТОНА ЗА ЗАТВАРЯНЕ */
+/* САМО ЧИСТ ХИКД БЕЗ БЕЛ КРЪГ ИЛИ ФОН */
 .modal-close-btn {
     position: absolute !important;
-    top: 12px !important;
-    right: 15px !important;
+    top: 15px !important;
+    right: 20px !important;
     left: auto !important;
     bottom: auto !important;
     margin: 0 !important;
-    background: rgba(255, 255, 255, 0.9) !important;
+    background: none !important;
     border: none !important;
-    font-size: 1.8rem !important;
+    font-size: 2.2rem !important;
     cursor: pointer !important;
     color: #000000 !important;
     line-height: 1 !important;
     z-index: 99999 !important;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    width: auto;
+    height: auto;
+    box-shadow: none;
+    padding: 0 !important;
 }
 
 .modal-close-btn:hover {
-    opacity: 0.7;
+    opacity: 0.5;
 }
 
 .modal-body {
@@ -527,7 +524,7 @@ body {
 #infoViewerImg {
     width: 100% !important;
     height: auto !important;
-    object-fit: contain !important; /* Премахва всякакво изрязване и показва цялата таблица/снимка правилно */
+    object-fit: contain !important;
     display: block;
     transition: transform 0.1s ease-out;
     transform-origin: center center;
