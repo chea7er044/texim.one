@@ -135,16 +135,17 @@ body {
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     padding-left: 2rem;
     padding-right: 2rem;
 }
 
+/* РАЗСТОЯНИЕ МЕЖДУ РЕДОВЕТЕ НА АРТИКУЛИТЕ - УЕДНАКВЕНО НА 1rem */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 1rem 1.5rem; /* вертикален gap: 1rem, хоризонтален gap: 1.5rem */
 }
 
 .product-card {
