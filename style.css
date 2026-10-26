@@ -141,11 +141,10 @@ body {
     padding-right: 2rem;
 }
 
-/* РАЗСТОЯНИЕ МЕЖДУ РЕДОВЕТЕ НА АРТИКУЛИТЕ - УЕДНАКВЕНО НА 1rem */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem 1.5rem; /* вертикален gap: 1rem, хоризонтален gap: 1.5rem */
+    gap: 1rem 1.5rem;
 }
 
 .product-card {
@@ -188,10 +187,11 @@ body {
     padding: 0 0.5rem;
 }
 
+/* РАЗСТОЯНИЕ МЕЖДУ РЕДОВЕТЕ НА ТЕКСТА НА АРТИКУЛИТЕ - 0.25rem */
 .product-text {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.25rem;
     text-align: left;
 }
 
@@ -558,76 +558,4 @@ body {
     }
 
     .logo-text {
-        font-size: 2.2rem;
-    }
-
-    .header-center-info {
-        font-size: 0.75rem;
-        padding: 0;
-        margin-bottom: 0.3rem; 
-    }
-
-    .header-socials {
-        margin-left: 0;
-        margin-bottom: 0.3rem; 
-    }
-
-    .product-main {
-        flex-direction: column;
-        gap: 25px;
-    }
-
-    .product-gallery {
-        max-width: 100%;
-    }
-
-    .product-container {
-        padding: 0 1.5rem;
-    }
-
-    .modal-body {
-        flex-direction: column;
-    }
-    
-    .modal-image-wrapper {
-        max-width: 100%;
-    }
-    
-    .modal-content {
-        padding: 2rem 1rem 1rem 1rem;
-        max-height: 90vh;
-        overflow-y: auto;
-    }
-
-    .footer-legal {
-        flex-direction: column;
-        gap: 0.6rem;
-        align-items: center;
-        width: 100%;
-    }
-
-    .legal-link {
-        width: 100%;
-        text-align: center;
-    }
-
-    #infoImgContainer {
-        height: auto !important;
-        max-height: 70vh !important;
-        overflow-y: auto !important;
-    }
-}
-
-@media (max-width: 650px) {
-    .logo-text {
-        font-size: 1.9rem;
-    }
-
-    .logo-img {
-        height: 36px;
-    }
-
-    .products-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
+        font-size:
