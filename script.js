@@ -142,20 +142,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 4. ДИНАМИЧЕН ПРОДУКТОВ МОДАЛЕН ПРОЗОРЕЦ (QUICK VIEW)
+    // 4. ДИНАМИЧЕН ПРОДУКТОВ МОДАЛЕН ПРОЗОРЕЦ (QUICK VIEW с миниатюри)
     // ==========================================
     const productCards = document.querySelectorAll('.product-card');
     const modal = document.getElementById('productModal');
 
     if (modal && productCards.length > 0) {
         const modalImg = document.getElementById('modalImg') || modal.querySelector('.modal-image-wrapper img');
+        const modalThumbnailsContainer = document.getElementById('modalThumbnails');
         const modalCode = document.getElementById('modalCode') || modal.querySelector('.modal-code');
         const modalTitle = document.getElementById('modalTitle') || modal.querySelector('.modal-title');
         const modalPrice = document.getElementById('modalPrice') || modal.querySelector('.modal-price');
         const modalDescription = document.getElementById('modalDescription');
         const modalFabric = document.getElementById('modalFabric');
         
-        // Нови елементи за спецификациите в модала
+        // Спецификации в модала
         const modalSizes = document.getElementById('modalSizes');
         const modalFit = document.getElementById('modalFit');
         const modalWeight = document.getElementById('modalWeight');
@@ -167,7 +168,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const code = card.getAttribute('data-code') || card.querySelector('.product-code')?.textContent || '';
             const title = card.getAttribute('data-title') || card.querySelector('.product-title')?.textContent || '';
             const price = card.getAttribute('data-price') || card.querySelector('.product-card-price')?.textContent || '';
-            const imgSrc = card.getAttribute('data-img') || card.querySelector('.product-img')?.src || '';
+            const defaultImgSrc = card.getAttribute('data-img') || card.querySelector('.product-img')?.src || '';
+            const imagesAttr = card.getAttribute('data-images');
+            
             const description = card.getAttribute('data-description') || '';
             const fabric = card.getAttribute('data-fabric') || '';
             
@@ -175,7 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const fit = card.getAttribute('data-fit') || '';
             const weight = card.getAttribute('data-weight') || '';
 
-            if (modalImg && imgSrc) modalImg.src = imgSrc;
             if (modalCode) modalCode.textContent = code;
             if (modalTitle) modalTitle.textContent = title;
             if (modalPrice) modalPrice.textContent = price;
@@ -185,6 +187,46 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalSizes) modalSizes.textContent = sizes;
             if (modalFit) modalFit.textContent = fit;
             if (modalWeight) modalWeight.textContent = weight;
+
+            // Събиране на списъка със снимки за галерията
+            let imagesList = [];
+            if (imagesAttr) {
+                imagesList = imagesAttr.split(',').map(img => img.trim()).filter(img => img.length > 0);
+            }
+            if (imagesList.length === 0 && defaultImgSrc) {
+                imagesList = [defaultImgSrc];
+            }
+
+            // Задаване на първата снимка като основна в модала
+            if (modalImg && imagesList.length > 0) {
+                modalImg.src = imagesList[0];
+            }
+
+            // Генериране на миниатюрите под основната снимка
+            if (modalThumbnailsContainer) {
+                modalThumbnailsContainer.innerHTML = '';
+                if (imagesList.length > 1) {
+                    modalThumbnailsContainer.style.display = 'flex';
+                    imagesList.forEach((imgSrc, index) => {
+                        const thumbImg = document.createElement('img');
+                        thumbImg.src = imgSrc;
+                        thumbImg.alt = `${code} thumbnail ${index + 1}`;
+                        thumbImg.className = 'thumb';
+                        if (index === 0) thumbImg.classList.add('active');
+
+                        // При клик на миниатюра се сменя голямата снимка
+                        thumbImg.addEventListener('click', () => {
+                            if (modalImg) modalImg.src = imgSrc;
+                            modalThumbnailsContainer.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+                            thumbImg.classList.add('active');
+                        });
+
+                        modalThumbnailsContainer.appendChild(thumbImg);
+                    });
+                } else {
+                    modalThumbnailsContainer.style.display = 'none';
+                }
+            }
 
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
