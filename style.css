@@ -328,15 +328,8 @@ body {
     backdrop-filter: blur(4px);
 }
 
-/* Гарантираме, че всеки модален контейнер е относителна референтна точка за затварящия бутон */
-.modal-content, 
-.modal-dialog, 
-.modal-box,
-#infoImgContainer {
-    position: relative !important;
-}
-
 .modal-content {
+    position: relative !important;
     background-color: #ffffff;
     width: 90%;
     max-width: 800px;
@@ -352,19 +345,21 @@ body {
     transform: translateY(0);
 }
 
-/* УНИВЕРСАЛНА И СТАНДАРТНА ПОЗИЦИЯ НА БУТОНА ЗА ЗАТВАРЯНЕ (ГОРЕ ВДЯСНО) */
+/* СТРОГО ФИКСИРАНА И СТАНДАРТНА ПОЗИЦИЯ НА БУТОНА ЗА ЗАТВАРЯНЕ */
 .modal-close-btn {
     position: absolute !important;
     top: 15px !important;
     right: 20px !important;
+    left: auto !important;
+    bottom: auto !important;
+    margin: 0 !important;
     background: none !important;
     border: none !important;
     font-size: 2rem !important;
     cursor: pointer !important;
     color: #000000 !important;
     line-height: 1 !important;
-    transition: opacity 0.2s ease !important;
-    z-index: 9999 !important;
+    z-index: 99999 !important;
     padding: 5px !important;
 }
 
