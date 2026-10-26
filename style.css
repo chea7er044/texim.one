@@ -533,10 +533,10 @@ body {
     .navbar {
         padding-left: 1rem;
         padding-right: 1rem;
-        padding-top: 1rem;
-        padding-bottom: 0.8rem;
+        padding-top: 12px;
+        padding-bottom: 8px;
         flex-direction: column;
-        gap: 1.2rem; /* Еднакво разстояние между Логото и Текста със сроковете */
+        gap: 0.6rem; /* Компактно и еднакво разстояние между Логото и Текста със сроковете */
     }
 
     .logo-img {
@@ -547,17 +547,17 @@ body {
         font-size: 2.2rem;
     }
 
-    /* Изравнено разстояние от текста със сроковете до социалните икони */
+    /* Компактно и еднакво разстояние от текста със сроковете до социалните икони */
     .header-center-info {
         font-size: 0.75rem;
         padding: 0;
-        margin-bottom: 1.2rem; 
+        margin-bottom: 0.6rem; 
     }
 
-    /* Еднакво разстояние от социалните икони до първия артикул надолу */
+    /* Компактно и еднакво разстояние от социалните икони до първия артикул */
     .header-socials {
         margin-left: 0;
-        margin-bottom: 1.2rem; 
+        margin-bottom: 0.6rem; 
     }
 
     .product-main {
