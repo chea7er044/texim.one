@@ -75,14 +75,14 @@ body {
     white-space: nowrap;
 }
 
-/* ЦЕНТРАЛЕН ИНФОРМАЦИОНЕН ТЕКСТ В ХЕДЪРА */
+/* ЦЕНТРАЛЕН ИНФОРМАЦИОНЕН ТЕКСТ В ХЕДЪРА - 1rem */
 .header-center-info {
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1;
     padding: 0 1.5rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #000000;
     font-family: system-ui, -apple-system, sans-serif;
@@ -194,24 +194,27 @@ body {
     text-align: left;
 }
 
+/* ПРОДУКТОВ КОД НА АРТИКУЛИТЕ - 1rem */
 .product-code {
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 800;
     color: #000000;
     line-height: 1;
     margin: 0;
 }
 
+/* ЗАГЛАВИЕ НА АРТИКУЛИТЕ - 1rem */
 .product-title {
-    font-size: 1.02rem;
+    font-size: 1rem;
     color: #444444;
     font-weight: 500;
     line-height: 1;
     margin: 0;
 }
 
+/* ЦЕНА НА АРТИКУЛИТЕ - 1rem */
 .product-card-price {
-    font-size: 0.98rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #222222;
     margin: 0;
@@ -276,8 +279,9 @@ body {
     flex-wrap: wrap;
 }
 
+/* ЮРИДИЧЕСКИ ЛИНКОВЕ ВЪВ ФУТЪРА - 1rem */
 .legal-link {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #000000;
     text-decoration: none;
@@ -345,7 +349,7 @@ body {
     transform: translateY(0);
 }
 
-/* САМО ЧИСТ ХИКД БЕЗ БЕЛ КРЪГ ИЛИ ФОН */
+/* САМО ЧИСТ ХИКС БЕЗ БЕЛ КРЪГ ИЛИ ФОН */
 .modal-close-btn {
     position: absolute !important;
     top: 15px !important;
