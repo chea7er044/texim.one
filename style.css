@@ -384,16 +384,43 @@ body {
 .modal-image-wrapper {
     flex: 1;
     max-width: 380px;
-    aspect-ratio: 4 / 3;
-    border-radius: 12px;
-    overflow: hidden;
-    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
 }
 
-.modal-image-wrapper img {
+#modalImg {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+    display: block;
+}
+
+/* СТИЛОВЕ ЗА МИНИАТЮРИТЕ (THUMBNAILS) ПОД ОСНОВНАТА СНИМКА */
+.modal-thumbnails {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 2px;
+}
+
+.modal-thumbnails .thumb {
+    width: 65px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.5;
+    border: 2px solid transparent;
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.modal-thumbnails .thumb:hover,
+.modal-thumbnails .thumb.active {
+    opacity: 1;
+    border-color: #000000;
 }
 
 /* ЦЕЛИЯТ ПАНЕЛ С ЕДНАКВИ И КОМПАКТНИ РАЗСТОЯНИЯ (0.25rem) */
