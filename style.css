@@ -536,7 +536,7 @@ body {
         padding-top: 12px;
         padding-bottom: 8px;
         flex-direction: column;
-        gap: 0.1rem; /* Намалено на 0.1rem между логото и текста */
+        gap: 0.2rem; /* Точно 0.2rem между логото и текста със сроковете */
     }
 
     .logo-img {
@@ -547,17 +547,17 @@ body {
         font-size: 2.2rem;
     }
 
-    /* Намалено на 0.1rem от текста със сроковете до социалните икони */
+    /* Точно 0.2rem от текста със сроковете до социалните икони */
     .header-center-info {
         font-size: 0.75rem;
         padding: 0;
-        margin-bottom: 0.1rem; 
+        margin-bottom: 0.2rem; 
     }
 
-    /* Намалено на 0.1rem от социалните икони до първия артикул */
+    /* Точно 0.2rem от социалните икони до първия артикул */
     .header-socials {
         margin-left: 0;
-        margin-bottom: 0.1rem; 
+        margin-bottom: 0.2rem; 
     }
 
     .product-main {
