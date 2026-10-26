@@ -540,11 +540,11 @@ body {
     }
 
     .logo-img {
-        height: 42px; /* По-добър размер на логото за мобилни устройства */
+        height: 42px;
     }
 
     .logo-text {
-        font-size: 2.1rem; /* По-балансиран размер на текста за мобилни */
+        font-size: 2.2rem; /* Увеличено с 0.1rem */
     }
 
     .header-center-info {
@@ -606,7 +606,7 @@ body {
 
 @media (max-width: 650px) {
     .logo-text {
-        font-size: 1.8rem;
+        font-size: 1.9rem; /* Увеличено с 0.1rem */
     }
 
     .logo-img {
