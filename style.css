@@ -34,8 +34,7 @@ body {
 /* HEADER & NAVIGATION */
 .header {
     background-color: var(--bg-color);
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 1000;
 }
 
