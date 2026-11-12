@@ -213,13 +213,31 @@ body {
     margin: 0;
 }
 
+/* КОНТЕЙНЕР ЗА ЦЕНИТЕ НА КАРТАТА (НА ЕДИН РЕД) */
+.product-card-price-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
 /* ЦЕНА НА АРТИКУЛИТЕ - 1rem */
 .product-card-price {
     font-size: 1rem;
-    font-weight: 500;
-    color: #222222;
+    font-weight: 700;
+    color: #111111;
     margin: 0;
     letter-spacing: 0.2px;
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1;
+}
+
+/* СТАРА ЗАДРАСКАНА ЦЕНА НА КАРТАТА (ВДЯСНО) */
+.product-old-price {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #888888;
+    text-decoration: line-through;
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1;
 }
@@ -410,7 +428,7 @@ body {
         cursor: zoom-out;
     }
     #infoImgContainer.zoomed #modalImg {
-        transform: scale(3.3);
+        transform: scale(1.5);
     }
 }
 
@@ -482,11 +500,30 @@ body {
     line-height: 1 !important;
 }
 
+/* КОНТЕЙНЕР ЗА ЦЕНИТЕ В МОДАЛА (НА ЕДИН РЕД) */
+.modal-price-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.1rem !important;
+}
+
 .modal-price {
     font-size: 1rem !important;
-    font-weight: 500 !important;
-    color: #222222 !important;
+    font-weight: 700 !important;
+    color: #111111 !important;
     letter-spacing: 0.2px;
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1 !important;
+}
+
+/* СТАРА ЗАДРАСКАНА ЦЕНА В МОДАЛА (ВДЯСНО) */
+.modal-old-price {
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    color: #888888 !important;
+    text-decoration: line-through !important;
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1 !important;
 }
