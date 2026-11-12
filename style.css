@@ -428,7 +428,7 @@ body {
         cursor: zoom-out;
     }
     #infoImgContainer.zoomed #modalImg {
-        transform: scale(1.5);
+        transform: scale(3.0); /* Десктоп зуум точно на 3 */
     }
 }
 
