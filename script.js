@@ -189,6 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const code = card.getAttribute('data-code') || card.querySelector('.product-code')?.textContent || '';
             const title = card.getAttribute('data-title') || card.querySelector('.product-title')?.textContent || '';
             const price = card.getAttribute('data-price') || card.querySelector('.product-card-price')?.textContent || '';
+            const oldPrice = card.getAttribute('data-old-price') || card.querySelector('.product-old-price')?.textContent || '';
             const defaultImgSrc = card.getAttribute('data-img') || card.querySelector('.product-img')?.src || '';
             const imagesAttr = card.getAttribute('data-images');
             
@@ -202,6 +203,25 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalCode) modalCode.textContent = code;
             if (modalTitle) modalTitle.textContent = title;
             if (modalPrice) modalPrice.textContent = price;
+
+            // Управление на старата задраскана цена в модала (отдясно на актуалната)
+            const modalPriceWrapper = modal.querySelector('.modal-price-wrapper') || modalPrice.parentElement;
+            let modalOldPriceElement = modalPriceWrapper.querySelector('.modal-old-price');
+            
+            if (oldPrice) {
+                if (!modalOldPriceElement) {
+                    modalOldPriceElement = document.createElement('span');
+                    modalOldPriceElement.className = 'modal-old-price';
+                    modalPriceWrapper.appendChild(modalOldPriceElement);
+                }
+                modalOldPriceElement.textContent = oldPrice;
+                modalOldPriceElement.style.display = 'inline';
+            } else {
+                if (modalOldPriceElement) {
+                    modalOldPriceElement.style.display = 'none';
+                }
+            }
+
             if (modalDescription) modalDescription.textContent = description;
             if (modalFabric) modalFabric.textContent = fabric;
 
