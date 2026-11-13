@@ -221,22 +221,22 @@ body {
     gap: 0.5rem;
 }
 
-/* ЦЕНА НА АРТИКУЛИТЕ - 1rem */
+/* АКТУАЛНА (НОВА) ЦЕНА НА КАРТАТА - ЧЕРВЕНА */
 .product-card-price {
     font-size: 1rem;
     font-weight: 700;
-    color: #111111;
+    color: #d32f2f;
     margin: 0;
     letter-spacing: 0.2px;
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1;
 }
 
-/* СТАРА ЗАДРАСКАНА ЦЕНА НА КАРТАТА (ВДЯСНО) */
+/* СТАРА ЗАДРАСКАНА ЦЕНА НА КАРТАТА - ЧЕРНА */
 .product-old-price {
     font-size: 0.9rem;
     font-weight: 500;
-    color: #888888;
+    color: #000000;
     text-decoration: line-through;
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1;
@@ -509,20 +509,21 @@ body {
     margin-top: 0.1rem !important;
 }
 
+/* АКТУАЛНА (НОВА) ЦЕНА В МОДАЛА - ЧЕРВЕНА */
 .modal-price {
     font-size: 1rem !important;
     font-weight: 700 !important;
-    color: #111111 !important;
+    color: #d32f2f !important;
     letter-spacing: 0.2px;
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1 !important;
 }
 
-/* СТАРА ЗАДРАСКАНА ЦЕНА В МОДАЛА (ВДЯСНО) */
+/* СТАРА ЗАДРАСКАНА ЦЕНА В МОДАЛА - ЧЕРНА */
 .modal-old-price {
     font-size: 0.9rem !important;
     font-weight: 500 !important;
-    color: #888888 !important;
+    color: #000000 !important;
     text-decoration: line-through !important;
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1 !important;
