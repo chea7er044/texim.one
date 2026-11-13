@@ -232,12 +232,13 @@ body {
     line-height: 1;
 }
 
-/* СТАРА ЗАДРАСКАНА ЦЕНА НА КАРТАТА - ЧЕРНА */
+/* СТАРА ЗАДРАСКАНА ЦЕНА НА КАРТАТА - ЧЕРНА, ЕДНАКЪВ РАЗМЕР И ТЕГЛО */
 .product-old-price {
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 700;
     color: #000000;
     text-decoration: line-through;
+    letter-spacing: 0.2px;
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1;
 }
@@ -519,12 +520,13 @@ body {
     line-height: 1 !important;
 }
 
-/* СТАРА ЗАДРАСКАНА ЦЕНА В МОДАЛА - ЧЕРНА */
+/* СТАРА ЗАДРАСКАНА ЦЕНА В МОДАЛА - ЧЕРНА, ЕДНАКЪВ РАЗМЕР И ТЕГЛО */
 .modal-old-price {
-    font-size: 0.9rem !important;
-    font-weight: 500 !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
     color: #000000 !important;
     text-decoration: line-through !important;
+    letter-spacing: 0.2px;
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1 !important;
 }
